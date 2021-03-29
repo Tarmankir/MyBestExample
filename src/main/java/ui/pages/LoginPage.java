@@ -1,5 +1,8 @@
 package ui.pages;
 
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import ui.enums.Credentials;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
