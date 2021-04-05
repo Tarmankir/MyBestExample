@@ -14,13 +14,13 @@ import static org.testng.Assert.assertEquals;
 public class LoginPage {
 
     @FindBy(css = "#email_field")
-    private WebElement loginen;
+    private WebElement loginIn;
 
     @FindBy(css = "#password_field")
-    private WebElement passen;
+    private WebElement passwordIn;
 
     @FindBy(css = ".button")
-    private WebElement button;
+    private WebElement buttonIn;
 
     @FindBy(css = ".dropdown__user-info")
     private WebElement urlIn;
@@ -32,27 +32,27 @@ public class LoginPage {
     }
 
     @Step("Login in site")
-    @Given("Entry data for authorization")
-    public void loginIn(Credentials creds) {
-        typeLogin(creds.login);
-        typePass(creds.pass);
+//    @Given("Entry data for authorization")
+    public void loginInSite(Credentials cred) {
+        typeLogin(cred.login);
+        typePass(cred.pass);
     }
 
     public void typeLogin(String login) {
-        loginen.sendKeys(login);
+        loginIn.sendKeys(login);
     }
 
     public void typePass(String pass) {
-        passen.sendKeys(pass);
+        passwordIn.sendKeys(pass);
     }
 
     @Step("Click on the Login site")
-    @When("Authorization on site")
+//    @When("Authorization on site")
     public void clickLogin(){
-        button.click();
+        buttonIn.click();
     }
 
-    @Then("Check authorization on site")
+//    @Then("Check authorization on site")
     public void checkLogin(String text) {
         assertEquals(urlIn.getAttribute("href"), text);
     }
