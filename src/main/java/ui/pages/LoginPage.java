@@ -14,13 +14,13 @@ import static org.testng.Assert.assertEquals;
 public class LoginPage {
 
     @FindBy(css = "#email_field")
-    private WebElement loginIn;
+    private WebElement loginField;
 
     @FindBy(css = "#password_field")
-    private WebElement passwordIn;
+    private WebElement passwordField;
 
     @FindBy(css = ".button")
-    private WebElement buttonIn;
+    private WebElement buttonSignUp;
 
     @FindBy(css = ".dropdown__user-info")
     private WebElement urlIn;
@@ -39,17 +39,17 @@ public class LoginPage {
     }
 
     public void typeLogin(String login) {
-        loginIn.sendKeys(login);
+        loginField.sendKeys(login);
     }
 
     public void typePass(String pass) {
-        passwordIn.sendKeys(pass);
+        passwordField.sendKeys(pass);
     }
 
     @Step("Click on the Login site")
 //    @When("Authorization on site")
     public void clickLogin(){
-        buttonIn.click();
+        buttonSignUp.click();
     }
 
 //    @Then("Check authorization on site")
