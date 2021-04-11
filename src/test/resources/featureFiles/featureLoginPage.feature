@@ -1,6 +1,6 @@
 Feature: Testing authorization functionality
 
-  Scenario: Login in site
+  Scenario: Sign up in site
     Given Open site
     When Enter login ivakidov@mail.ru
     And Enter password School593

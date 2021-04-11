@@ -1,8 +1,5 @@
 package ui.pages;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import ui.enums.Credentials;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
@@ -32,7 +29,6 @@ public class LoginPage {
     }
 
     @Step("Login in site")
-//    @Given("Entry data for authorization")
     public void loginInSite(Credentials cred) {
         typeLogin(cred.login);
         typePass(cred.pass);
@@ -47,12 +43,10 @@ public class LoginPage {
     }
 
     @Step("Click on the Login site")
-//    @When("Authorization on site")
     public void clickLogin(){
         buttonSignUp.click();
     }
 
-//    @Then("Check authorization on site")
     public void checkLogin(String text) {
         assertEquals(urlIn.getAttribute("href"), text);
     }

@@ -8,11 +8,13 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.pages.LoginPage;
 import ui.settings.FirefoxSetup;
+import ui.settings.SeleniumListener;
+
 import static ui.enums.Credentials.*;
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.settings.Config.getSetting;
 
-@Listeners()
+@Listeners(SeleniumListener.class)
 public class LoginPageTest extends FirefoxSetup {
 
     private WebDriver driver;
