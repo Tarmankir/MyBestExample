@@ -1,22 +1,31 @@
 package ui.pagesSelenide;
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.Selenide.*;
 
 public class FeedbackPageTest {
 
-    private FeedbackPage feedbackPageTest;
+    private FeedbackPage feedbackPage;
+
+    @BeforeMethod
+    public void feedbackPageBefore() {
+        open("https://habr.com/ru/feedback/");
+        feedbackPage = page(FeedbackPage.class);
+    }
 
     @Test
     public void feedbackPageTest() {
-        open("https://habr.com/ru/feedback/");
-//        page(driver, FeedbackPage.class);
-//        feedbackPageTest.raskSpisokTake();
-//        feedbackPageTest.spisokOptionTake();
-//        feedbackPageTest.emailFieldTake();
-        feedbackPageTest.massageFieldTake();
-//        feedbackPageTest.checkSubmitButton("Отправить");
+        feedbackPage.listOptionTake();
+        feedbackPage.emailFieldTake();
+        feedbackPage.massageFieldTake();
+        feedbackPage.checkSubmitButton("Отправить");
+    }
+
+    @AfterClass
+    void afterClass() {
+        closeWindow();
     }
 }

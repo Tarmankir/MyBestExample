@@ -1,15 +1,18 @@
 package api;
 
-import static io.restassured.path.json.JsonPath.given;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.given;
 
 public class LoginPageApi {
 
-    public static void getSite() {
+    @Test
+    public void getRequest() {
         given()
-                .get("https://spb.rabota.ru/passport/sign-in/?redirectTo=%2F");
-    }
-
-    public static void main(String[] args) {
-        getSite();
+                .baseUri("https://yandex.ru/")
+                .when()
+                .get()
+                .then()
+                .assertThat()
+                .statusCode(200);
     }
 }
