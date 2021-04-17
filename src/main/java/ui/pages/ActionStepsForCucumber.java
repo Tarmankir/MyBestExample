@@ -4,27 +4,19 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import ui.pagesSelenide.FeedbackPage;
 
-import java.util.concurrent.TimeUnit;
-
-import static org.openqa.selenium.support.PageFactory.initElements;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.page;
 
 public class ActionStepsForCucumber {
 
     private FeedbackPage feedbackPage;
-    private WebDriver driver;
 
     @Given("Open site")
     public void getSite() {
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        feedbackPage = initElements(driver, FeedbackPage.class);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://habr.com/ru/feedback/");
+        open("https://habr.com/ru/feedback/");
+        feedbackPage = page(FeedbackPage.class);
     }
 
     @When("Click list options")
