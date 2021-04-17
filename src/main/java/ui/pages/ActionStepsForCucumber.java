@@ -29,8 +29,13 @@ public class ActionStepsForCucumber {
         feedbackPage.emailFieldTake();
     }
 
-    @Then("Enter massage")
+    @And("Enter massage")
     public void massageIn() {
         feedbackPage.massageFieldTake();
+    }
+
+    @Then("Check submit button")
+    public void buttonCheck() {
+        feedbackPage.checkSubmitButton("Отправить");
     }
 }
