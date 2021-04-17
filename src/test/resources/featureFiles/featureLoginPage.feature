@@ -1,8 +1,7 @@
 Feature: Testing authorization functionality
 
-  Scenario: Sign up in site
+  Scenario: Feed back page load
     Given Open site
-    When Get credentials
-    And Enter login
-    And Enter pass
-    Then Authorization on site
+    When Click list options
+    And Enter email
+    Then Enter massage
