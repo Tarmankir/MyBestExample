@@ -21,16 +21,16 @@ public class ActionStepsForCucumber {
 
     @When("Click list options")
     public void clickList() {
-        new FeedbackPage().listOptionTake();
+        feedbackPage.listOptionTake();
     }
 
     @And("Enter email")
     public void emailIn() {
-        new FeedbackPage().emailFieldTake();
+        feedbackPage.emailFieldTake();
     }
 
     @Then("Enter massage")
     public void massageIn() {
-        new FeedbackPage().massageFieldTake();
+        feedbackPage.massageFieldTake();
     }
 }
