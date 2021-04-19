@@ -13,6 +13,7 @@ public class ActionStepsCucumberFeedbackPage {
 
     private FeedbackPage feedbackPage;
 
+    //todo remove hardcoded values (use config.properties)
     @Given("Open site")
     public void getSite() {
         open("https://habr.com/ru/feedback/");

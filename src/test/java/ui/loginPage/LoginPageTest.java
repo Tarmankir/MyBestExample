@@ -14,6 +14,42 @@ import static ui.enums.Credentials.*;
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.settings.Config.getSetting;
 
+
+//todo refactor project structure
+
+/** main/java
+ *              api
+ *                      requests
+ *                      bodies
+ *              common
+ *                      enums
+ *                      options
+ *              ui
+ *                  selenium
+ *                          enums
+ *                          pages
+ *                  selenide
+ *                          enums
+ *                          pages
+ *                  cucumber
+ *                          selenium
+ *                                  FeedbackPageSteps.java
+ *                          selenide
+ *                                  LoginPageSteps.java
+ *                  settings
+ *
+ * main/test
+ *          api
+ *          ui
+ *              selenium
+ *                      feedbackPageTests
+ *              selenide
+ *                      loginPageTests
+ *
+ *
+ *
+ */
+
 @Listeners(SeleniumListener.class)
 public class LoginPageTest extends FirefoxSetup {
 
