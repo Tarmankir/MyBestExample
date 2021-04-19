@@ -9,7 +9,7 @@ import ui.pagesSelenide.FeedbackPage;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 
-public class ActionStepsForCucumber {
+public class ActionStepsCucumberFeedbackPage {
 
     private FeedbackPage feedbackPage;
 
