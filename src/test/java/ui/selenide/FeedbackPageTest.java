@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import ui.selenide.pages.FeedbackPage;
 
 import static com.codeborne.selenide.Selenide.*;
+import static ui.settings.Config.getSetting;
 
 public class FeedbackPageTest {
 
@@ -13,7 +14,7 @@ public class FeedbackPageTest {
 
     @BeforeMethod
     public void feedbackPageBefore() {
-        open("https://habr.com/ru/feedback/");
+        open(getSetting("feedbackURL"));
         feedbackPage = page(FeedbackPage.class);
     }
 
