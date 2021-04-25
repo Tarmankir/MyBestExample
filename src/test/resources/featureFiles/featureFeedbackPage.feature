@@ -7,4 +7,4 @@ Feature: Test feedback page
       When I am insert test data in list options
       And I am enter test email
       And I am enter test text massage
-      Then I am check submit button
+      Then I am check submit button contains Отправить

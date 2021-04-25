@@ -35,8 +35,8 @@ public class FeedbackPageSteps {
         feedbackPage.massageFieldTake();
     }
 
-    @Then("I am check submit button")
-    public void buttonCheck() {
-        feedbackPage.checkSubmitButton("Отправить");
+    @Then("^I am check submit button contains ([^\"]*)$")
+    public void buttonCheck(String button) {
+        feedbackPage.checkSubmitButton(button);
     }
 }

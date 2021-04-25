@@ -35,8 +35,8 @@ public class LoginPageSteps extends FirefoxSetup {
         loginPage.clickLogin();
     }
 
-    @Then("I am check user")
-    public void checkUser() {
-        loginPage.checkLogin("https://habr.com/ru/users/tarman332/");
+    @Then("^I am check user ID ([^\"]*)$")
+    public void checkUser(String ID) {
+        loginPage.checkLogin(ID);
     }
 }
