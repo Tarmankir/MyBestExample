@@ -1,11 +1,10 @@
 Feature: Testing login page functionality
-# todo refactor methods: change theirs signature
 
   Scenario: Login page authorization check
-    Given Open login page
-      When Login in site
-      And Click signup button
-      Then Check user
+    Given I am open login page
+      When I am use login page functionality to signup in site
+      And I am click signup button
+      Then I am check user
 
 
     # Given I am on the login page

@@ -14,28 +14,28 @@ public class FeedbackPageSteps {
     private FeedbackPage feedbackPage;
 
     //todo remove hardcoded values (use config.properties)
-    @Given("I open site")
+    @Given("I am open feedback page")
     public void getSite() {
         open("https://habr.com/ru/feedback/");
         feedbackPage = page(FeedbackPage.class);
     }
 
-    @When("I click list options")
+    @When("I am insert test data in list options")
     public void clickList() {
         feedbackPage.listOptionTake();
     }
 
-    @And("I enter email")
+    @And("I am enter test email")
     public void emailIn() {
         feedbackPage.emailFieldTake();
     }
 
-    @And("I enter massage")
+    @And("I am enter test text massage")
     public void massageIn() {
         feedbackPage.massageFieldTake();
     }
 
-    @Then("I check submit button")
+    @Then("I am check submit button")
     public void buttonCheck() {
         feedbackPage.checkSubmitButton("Отправить");
     }
