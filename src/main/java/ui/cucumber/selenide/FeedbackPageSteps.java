@@ -13,7 +13,6 @@ public class FeedbackPageSteps {
 
     private FeedbackPage feedbackPage;
 
-    //todo remove hardcoded values (use config.properties)
     @Given("I am open feedback page")
     public void getSite() {
         open("https://habr.com/ru/feedback/");
@@ -25,9 +24,9 @@ public class FeedbackPageSteps {
         feedbackPage.listOptionTake();
     }
 
-    @And("I am enter test email")
-    public void emailIn() {
-        feedbackPage.emailFieldTake();
+    @And("^I am enter test email ([^\"]*)$")
+    public void emailIn(String email) {
+        feedbackPage.emailFieldTake(email);
     }
 
     @And("I am enter test text massage")
