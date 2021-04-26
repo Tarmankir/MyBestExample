@@ -1,6 +1,6 @@
 Feature: Test feedback page
 
-    #todo add check of options throw data table (https://www.baeldung.com/cucumber-data-tables)
+    #todo assert options throw data table (https://www.baeldung.com/cucumber-data-tables)
 
   Scenario: Feedback page load and check button
     Given I am open feedback page
