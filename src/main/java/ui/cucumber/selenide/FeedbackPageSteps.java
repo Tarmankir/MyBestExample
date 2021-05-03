@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import ui.selenide.pages.FeedbackPage;
+import ui.selenide.FeedbackPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
@@ -24,9 +24,9 @@ public class FeedbackPageSteps {
         feedbackPage.listOptionTake();
     }
 
-    @And("^I am enter test email ([^\"]*)$")
-    public void emailIn(String email) {
-        feedbackPage.emailFieldTake(email);
+    @And("I am enter test email")
+    public void emailIn() {
+        feedbackPage.emailFieldTake();
     }
 
     @And("I am enter test text massage")

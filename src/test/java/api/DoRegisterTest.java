@@ -1,9 +1,10 @@
 package api;
 
+import api.specifications.RequestSpec;
+import api.specifications.ResponseSpec;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.JSON;
 import static org.apache.http.HttpStatus.SC_OK;
 
 public class DoRegisterTest {
@@ -16,13 +17,12 @@ public class DoRegisterTest {
     @Test
     public void postRequest() {
         given()
-                .contentType(JSON)
+                .spec(new RequestSpec().defaultRequestSpec())
                 .body(requestBody)
         .when()
-                .post("http://users.bugred.ru/tasks/rest/doregister" + "/posts")
+                .post("/tasks/rest/doregister/posts")
         .then()
-                .statusCode(SC_OK)
-                .contentType(JSON)
+                .spec(new ResponseSpec().defaultResponseSpec().statusCode(SC_OK))
                 .extract().response();
     }
 }

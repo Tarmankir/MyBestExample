@@ -3,7 +3,6 @@ package ui.selenide;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import ui.selenide.pages.FeedbackPage;
 
 import static com.codeborne.selenide.Selenide.*;
 import static ui.settings.Config.getSetting;
