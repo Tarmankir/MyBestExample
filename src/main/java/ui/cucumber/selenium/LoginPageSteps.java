@@ -19,24 +19,24 @@ public class LoginPageSteps extends FirefoxSetup {
     private LoginPage loginPage;
 
     @Given("I am open login page")
-    public void getSite() {
+    public void IAmOpenLoginPage() {
         driver = new FirefoxDriver(getOptions());
         loginPage = initElements(driver, LoginPage.class);
         driver.get(getSetting("baseUrl"));
     }
 
     @When("I am use login page functionality to signup in site")
-    public void loginIn() {
+    public void IAmUseLoginPageFunctionalityToSignupInSite() {
         loginPage.loginInSite(TEST1);
     }
 
     @And("I am click signup button")
-    public void signUp() {
+    public void IAmClickSignupButton() {
         loginPage.clickLogin();
     }
 
     @Then("^I am check user ID ([^\"]*)$")
-    public void checkUser(String ID) {
+    public void IAmCheckUserID(String ID) {
         loginPage.checkLogin(ID);
     }
 }
