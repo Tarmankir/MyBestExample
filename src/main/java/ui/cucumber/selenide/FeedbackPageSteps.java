@@ -36,17 +36,10 @@ public class FeedbackPageSteps {
         feedbackPage.emailFieldTake();
     }
 
-    @FindBy(css = "#message_textarea")
-    private SelenideElement massageField;
-
     @And("I am enter test text massage")
-//    public void massageIn() {
-//        feedbackPage.massageFieldTake();
-//   }
     public void IAmEnterTestTextMassage(DataTable table) {
-
-        List<List<String>> data = table.raw();
-        massageField.sendKeys(data.get(0).get(0));
+        List<String> data = table.asList();
+        feedbackPage.massageFieldTakeForCucumber(data.get(0));
     }
 
     @Then("^I am check submit button contains ([^\"]*)$")

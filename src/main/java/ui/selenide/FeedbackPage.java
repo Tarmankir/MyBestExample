@@ -15,6 +15,9 @@ public class FeedbackPage {
     @FindBy(css = "#message_textarea")
     private SelenideElement massageField;
 
+    @FindBy(css = "#message_textarea")
+    private SelenideElement massageFieldForCucumber;
+
     @FindBy(css = "input[name*='feedback_confidantial']")
     private SelenideElement checkboxInput;
 
@@ -31,6 +34,10 @@ public class FeedbackPage {
 
     public void massageFieldTake() {
         massageField.setValue("Текстовые тестовые данные");
+    }
+
+    public void massageFieldTakeForCucumber(String text) {
+        massageFieldForCucumber.setValue(text);
     }
 
     public void checkSubmitButton(String text) {
