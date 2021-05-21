@@ -10,17 +10,19 @@ import static ui.settings.Config.getSetting;
 public class ArticlesTest {
 
     private Articles articles;
+    private PagePost pagePost;
 
     @BeforeMethod
     public void articlesBefore() {
         open(getSetting("mainURL"));
         articles = page(Articles.class);
+        pagePost = page(PagePost.class);
     }
 
     @Test
     public void feedbackPageTest() {
-        articles.clickOnArticle("Уловка для обновления содержимого инициализации ОЗУ в битовых потоках ПЛИС Intel");
-        articles.clickOnShare();
+        articles.clickOnArticle("Разрабатывайте системы с открытой архитектурой");
+        pagePost.clickCommentsText();
     }
 
     @AfterClass

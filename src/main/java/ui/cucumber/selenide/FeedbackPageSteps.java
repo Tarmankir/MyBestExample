@@ -1,16 +1,12 @@
 package ui.cucumber.selenide;
 
-import com.codeborne.selenide.SelenideElement;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.messages.Messages;
-import org.openqa.selenium.support.FindBy;
 import ui.selenide.FeedbackPage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.open;

@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.Condition.text;
+
 public class FeedbackPage {
 
     @FindBy(css = "option[value*='8']")
@@ -41,6 +43,6 @@ public class FeedbackPage {
     }
 
     public void checkSubmitButton(String text) {
-        submitButton.shouldHave(Condition.text(text));
+        submitButton.shouldHave(text(text));
     }
 }
