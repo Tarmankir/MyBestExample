@@ -32,6 +32,7 @@ public class FeedbackPageSteps {
         feedbackPage.emailFieldTake();
     }
 
+    //todo assert options on drop-down
     @And("I am enter test text massage")
     public void IAmEnterTestTextMassage(DataTable table) {
         List<String> data = table.asList();
