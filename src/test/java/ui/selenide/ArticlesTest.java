@@ -11,6 +11,7 @@ import java.util.Random;
 import static com.codeborne.selenide.Selenide.*;
 import static ui.settings.Config.getSetting;
 
+//todo add tests
 public class ArticlesTest {
 
     private Articles articles;
@@ -27,7 +28,6 @@ public class ArticlesTest {
     public void feedbackPageTest() {
         articles.clickOnArticle("Разрабатывайте системы с открытой архитектурой"); //todo add random
         pagePost.clickCommentsText();
-
     }
 
     @AfterClass
