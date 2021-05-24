@@ -1,8 +1,10 @@
-package ui.selenide;
+package ui.selenide.pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
+import ui.selenide.enums.ThemesList;
 
 import static com.codeborne.selenide.Condition.text;
 
@@ -26,6 +28,12 @@ public class FeedbackPage {
     @FindBy(css = "button[name*='submit']")
     private SelenideElement submitButton;
 
+    @FindBy(css = ".select_wrap")
+    private SelenideElement themesField;
+
+    @FindBy(css = ".select_wrap > select > option")
+    private ElementsCollection themesList;
+
     public void listOptionTake() {
         listOption.click();
     }
@@ -44,5 +52,18 @@ public class FeedbackPage {
 
     public void checkSubmitButton(String text) {
         submitButton.shouldHave(text(text));
+    }
+
+    public void selectTheme(ThemesList theme) {
+        themesField.click();
+        themesList.get(theme.index).click();
+    }
+
+    public void checkThemesList() {
+        themesField.click();
+
+        for (int i = 0; i < themesList.size(); i++) {
+            themesList.get(i).shouldHave(Condition.exactText(ThemesList.getThemeByIndex(i).themeName));
+        }
     }
 }

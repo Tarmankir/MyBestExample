@@ -1,14 +1,14 @@
-package ui.selenide;
+package ui.selenide.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
 public class PagePost {
 
-    @FindBy(css = "#login")
-    private SelenideElement commentsText;
+    @FindBy(css = "post-stats__share")
+    private SelenideElement shareText;
 
     public void clickCommentsText() {
-        commentsText.click();
+        shareText.click();
     }
 }

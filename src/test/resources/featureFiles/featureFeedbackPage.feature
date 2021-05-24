@@ -8,4 +8,5 @@ Feature: Test feedback page
         | A store credit card usually is the next step |
         | Major credit card such as a Visa or MasterCard |
         | A credit card is an indispensable part of life in America |
+      And I am check list of themes
       Then I am check submit button contains Отправить

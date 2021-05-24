@@ -5,7 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import ui.selenide.FeedbackPage;
+import ui.selenide.pages.FeedbackPage;
 
 import java.util.List;
 
@@ -32,11 +32,16 @@ public class FeedbackPageSteps {
         feedbackPage.emailFieldTake();
     }
 
-    //todo assert options on drop-down
     @And("I am enter test text massage")
     public void IAmEnterTestTextMassage(DataTable table) {
         List<String> data = table.asList();
         feedbackPage.massageFieldTakeForCucumber(data.get(0));
+    }
+
+    @And("I am check list of themes")
+    public void IAmCheckListOfThemes() {
+        feedbackPage.selectTheme();
+        feedbackPage.checkThemesList();
     }
 
     @Then("^I am check submit button contains ([^\"]*)$")
