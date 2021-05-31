@@ -24,12 +24,21 @@ public enum ThemesList {
         return themeName;
     }
 
-    public static ThemesList getThemeByIndex(int themeName) {
+    public static ThemesList getThemeByIndex(String themeName) {
         for (ThemesList env : values()) {
             if (env.getTheme().equals(themeName)) {
                 return env;
             }
         }
-        throw new IllegalArgumentException("No enum found with url: [" + themeName + "]");
+        throw new IllegalArgumentException("No enum found with: [" + themeName + "]");
+    }
+
+    public static ThemesList getThemeByName(String themeName) {
+        for (ThemesList env : values()) {
+            if (env.getTheme().equals(themeName)) {
+                return env;
+            }
+        }
+        throw new IllegalArgumentException("No enum found with: [" + themeName + "]");
     }
 }

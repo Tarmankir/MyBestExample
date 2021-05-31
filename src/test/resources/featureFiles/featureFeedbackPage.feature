@@ -12,4 +12,5 @@ Feature: Test feedback page
         | Major credit card such as a Visa or MasterCard |
         | A credit card is an indispensable part of life in America |
       And I am check list of themes
+      And I am click on the Гениальная идея
       Then I am check submit button contains Отправить

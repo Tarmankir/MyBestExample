@@ -38,10 +38,14 @@ public class FeedbackPageSteps {
         feedbackPage.massageFieldTakeForCucumber(data.get(0));
     }
 
-    @And("I am check list of themes")
+/*    @And("I am check list of themes")
     public void IAmCheckListOfThemes() {
-        feedbackPage.selectTheme();
         feedbackPage.checkThemesList();
+    }*/
+
+    @And("^I am click on the ([^\"]*)$")
+    public void IAmClickOnTheTheme(String theme) {
+        feedbackPage.selectTheme(theme);
     }
 
     @Then("^I am check submit button contains ([^\"]*)$")

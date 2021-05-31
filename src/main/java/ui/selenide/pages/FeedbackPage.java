@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import ui.selenide.enums.ThemesList;
 
 import static com.codeborne.selenide.Condition.text;
+import static ui.selenide.enums.ThemesList.getThemeByName;
 
 public class FeedbackPage {
 
@@ -54,16 +55,21 @@ public class FeedbackPage {
         submitButton.shouldHave(text(text));
     }
 
-    public void selectTheme(ThemesList theme) {
-        themesField.click();
-        themesList.get(theme.index).click();
-    }
+//    public void selectTheme(ThemesList theme) {
+//        themesField.click();
+//        themesList.get(theme.index).click();
+//    }
 
+    public void selectTheme(String theme) {
+        themesField.click();
+        themesList.get(getThemeByName(theme).index).click();
+    }
+/*
     public void checkThemesList() {
         themesField.click();
 
         for (int i = 0; i < themesList.size(); i++) {
             themesList.get(i).shouldHave(Condition.exactText(ThemesList.getThemeByIndex(i).themeName));
         }
-    }
+    }*/
 }

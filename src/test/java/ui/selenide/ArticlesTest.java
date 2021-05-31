@@ -6,12 +6,9 @@ import org.testng.annotations.Test;
 import ui.selenide.pages.Articles;
 import ui.selenide.pages.PagePost;
 
-import java.util.Random;
-
 import static com.codeborne.selenide.Selenide.*;
 import static ui.settings.Config.getSetting;
 
-//todo add tests
 public class ArticlesTest {
 
     private Articles articles;
@@ -26,8 +23,9 @@ public class ArticlesTest {
 
     @Test
     public void feedbackPageTest() {
-        articles.clickOnArticle("Разрабатывайте системы с открытой архитектурой"); //todo add random
-        pagePost.clickCommentsText();
+        articles.openRandomArticle();
+        pagePost.clickShare();
+        pagePost.checkShareButton("Поделиться");
     }
 
     @AfterClass
