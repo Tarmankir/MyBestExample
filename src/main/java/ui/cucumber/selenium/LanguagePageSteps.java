@@ -43,9 +43,4 @@ public class LanguagePageSteps extends FirefoxSetup {
     public void IAmCheckTextOnButtonLoginOnSite(String Text) {
         languagePage.checkButtonLogin(Text);
     }
-
-    @Then("I am close the browser")
-    public void IAmCloseTheBrowser() {
-        driver.close();
-    }
 }

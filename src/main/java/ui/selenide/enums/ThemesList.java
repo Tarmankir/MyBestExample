@@ -12,11 +12,11 @@ public enum ThemesList {
     GREAT_IDEA (7, "Гениальная идея"),
     COOPERATION_OFFER (8, "Предложение сотрудничества");
 
-    public int index;
+    public int themeIndex;
     public String themeName;
 
-    ThemesList(int index, String themeName) {
-        this.index = index;
+    ThemesList(int themeIndex, String themeName) {
+        this.themeIndex = themeIndex;
         this.themeName = themeName;
     }
 
@@ -24,13 +24,17 @@ public enum ThemesList {
         return themeName;
     }
 
-    public static ThemesList getThemeByIndex(String themeName) {
+    public int getIndex() {
+        return themeIndex;
+    }
+
+    public static ThemesList getThemeByIndex(int themeIndex) {
         for (ThemesList env : values()) {
-            if (env.getTheme().equals(themeName)) {
+            if (env.getIndex() == themeIndex) {
                 return env;
             }
         }
-        throw new IllegalArgumentException("No enum found with: [" + themeName + "]");
+        throw new IllegalArgumentException("No enum found with: [" + themeIndex + "]");
     }
 
     public static ThemesList getThemeByName(String themeName) {

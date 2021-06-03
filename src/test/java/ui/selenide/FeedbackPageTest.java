@@ -20,7 +20,8 @@ public class FeedbackPageTest {
 
     @Test
     public void feedbackPageTest() {
-        feedbackPage.listOptionTake();
+        feedbackPage.selectTheme("Нарушение правил сайта");
+        feedbackPage.checkThemesList();
         feedbackPage.emailFieldTake();
         feedbackPage.massageFieldTake();
         feedbackPage.checkSubmitButton("Отправить");

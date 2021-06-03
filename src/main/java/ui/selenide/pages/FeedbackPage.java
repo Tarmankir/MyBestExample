@@ -11,9 +11,6 @@ import static ui.selenide.enums.ThemesList.getThemeByName;
 
 public class FeedbackPage {
 
-    @FindBy(css = "option[value*='8']")
-    private SelenideElement listOption;
-
     @FindBy(css = "input[name*='email']")
     private SelenideElement emailField;
 
@@ -35,10 +32,6 @@ public class FeedbackPage {
     @FindBy(css = ".select_wrap > select > option")
     private ElementsCollection themesList;
 
-    public void listOptionTake() {
-        listOption.click();
-    }
-
     public void emailFieldTake() {
         emailField.setValue("bigkir@yandex.ru");
     }
@@ -55,21 +48,15 @@ public class FeedbackPage {
         submitButton.shouldHave(text(text));
     }
 
-//    public void selectTheme(ThemesList theme) {
-//        themesField.click();
-//        themesList.get(theme.index).click();
-//    }
-
     public void selectTheme(String theme) {
-        themesField.click();
-        themesList.get(getThemeByName(theme).index).click();
+        themesList.get(getThemeByName(theme).themeIndex).click();
     }
-/*
+
     public void checkThemesList() {
         themesField.click();
 
         for (int i = 0; i < themesList.size(); i++) {
             themesList.get(i).shouldHave(Condition.exactText(ThemesList.getThemeByIndex(i).themeName));
         }
-    }*/
+    }
 }

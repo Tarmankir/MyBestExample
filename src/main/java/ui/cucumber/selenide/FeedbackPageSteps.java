@@ -11,6 +11,7 @@ import java.util.List;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
+import static ui.settings.Config.getSetting;
 
 public class FeedbackPageSteps {
 
@@ -18,13 +19,13 @@ public class FeedbackPageSteps {
 
     @Given("I am open feedback page")
     public void IAmOpenFeedbackPage() {
-        open("https://habr.com/ru/feedback/");
+        open(getSetting("feedbackURL"));
         feedbackPage = page(FeedbackPage.class);
     }
 
-    @When("I am insert test data in list options")
-    public void IAmInsertTestDataInListOptions() {
-        feedbackPage.listOptionTake();
+    @When("^I am insert test data in the themes list ([^\"]*)$")
+    public void IAmInsertTestDataInTheThemesList(String theme) {
+        feedbackPage.selectTheme(theme);
     }
 
     @And("I am enter test email")
@@ -38,14 +39,9 @@ public class FeedbackPageSteps {
         feedbackPage.massageFieldTakeForCucumber(data.get(0));
     }
 
-/*    @And("I am check list of themes")
+    @And("I am check list of themes")
     public void IAmCheckListOfThemes() {
         feedbackPage.checkThemesList();
-    }*/
-
-    @And("^I am click on the ([^\"]*)$")
-    public void IAmClickOnTheTheme(String theme) {
-        feedbackPage.selectTheme(theme);
     }
 
     @Then("^I am check submit button contains ([^\"]*)$")

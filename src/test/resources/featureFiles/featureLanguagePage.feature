@@ -5,5 +5,4 @@ Feature: Testing language settings functionality
       When I am click language settings
       And I am click english interface
       And I am click button save language settings
-      And I am check text on button login on site Log in
-      Then I am close the browser
+      Then I am check text on button login on site Log in

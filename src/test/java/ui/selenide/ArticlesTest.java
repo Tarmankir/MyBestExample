@@ -24,8 +24,7 @@ public class ArticlesTest {
     @Test
     public void feedbackPageTest() {
         articles.openRandomArticle();
-        pagePost.clickShare();
-        pagePost.checkShareButton("Поделиться");
+        pagePost.checkShareButton("Комментировать");
     }
 
     @AfterClass
