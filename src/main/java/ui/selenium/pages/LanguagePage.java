@@ -9,13 +9,13 @@ import static org.testng.Assert.assertEquals;
 
 public class LanguagePage {
 
-    @FindBy(css = "body > div.layout > div.layout__row.layout__row_footer > div > div > div.footer-grid__item.footer-grid__item_link.footer-grid__item_lang > a")
+    @FindBy(css = "a[class='footer__link js-show_lang_settings']")
     private WebElement langSettings;
 
-    @FindBy(css = "#lang-settings-form > fieldset:nth-child(1) > div:nth-child(3) > span > label")
+    @FindBy(css = "label[for='hl_langs_en']")
     private WebElement engInterface;
 
-    @FindBy(css = "#lang-settings-form > div > button")
+    @FindBy(css = "button[type='submit']")
     private WebElement buttonSaveLang;
 
     @FindBy(css = "#login")
