@@ -47,6 +47,7 @@ public class LoginPage {
         buttonSignUp.click();
     }
 
+    @Step("Check user url equals test url")
     public void checkLogin(String text) {
         assertEquals(urlIn.getAttribute("href"), text);
     }

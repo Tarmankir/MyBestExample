@@ -22,9 +22,10 @@ public class ArticlesTest {
     }
 
     @Test
-    public void feedbackPageTest() {
+    public void articlesPageTest() {
         articles.openRandomArticle();
-        pagePost.checkShareButton("Комментировать");
+        articles.checkCommentsCounter(pagePost.getCommentsCountForArticle());
+        pagePost.checkShareButton("Поделиться");
     }
 
     @AfterClass

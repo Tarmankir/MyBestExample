@@ -7,10 +7,17 @@ import static com.codeborne.selenide.Condition.text;
 
 public class PagePost {
 
-    @FindBy(css = "#post-stats-comments-count")
+    @FindBy(css = "span[title='Поделиться']")
     private SelenideElement shareText;
+
+    @FindBy(css = ".post-stats__views-count")
+    private SelenideElement postViewsCount;
 
     public void checkShareButton(String text) {
         shareText.shouldHave(text(text));
+    }
+
+    public String getCommentsCountForArticle() {
+        return postViewsCount.getText();
     }
 }

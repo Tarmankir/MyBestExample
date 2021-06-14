@@ -38,5 +38,6 @@ public class LoginPageSteps extends FirefoxSetup {
     @Then("^I am check user ID ([^\"]*)$")
     public void IAmCheckUserID(String ID) {
         loginPage.checkLogin(ID);
+        driver.close();
     }
 }

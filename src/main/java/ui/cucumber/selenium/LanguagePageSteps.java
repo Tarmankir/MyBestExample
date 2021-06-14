@@ -42,5 +42,6 @@ public class LanguagePageSteps extends FirefoxSetup {
     @Then("^I am check text on button login on site ([^\"]*)$")
     public void IAmCheckTextOnButtonLoginOnSite(String Text) {
         languagePage.checkButtonLogin(Text);
+        driver.close();
     }
 }
