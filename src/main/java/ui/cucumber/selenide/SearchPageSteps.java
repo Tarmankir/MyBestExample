@@ -1,27 +1,24 @@
-package ui.cucumber.selenium;
+package ui.cucumber.selenide;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import ui.selenium.pages.SearchPage;
+import ui.selenide.pages.SearchPage;
 import ui.settings.FirefoxSetup;
 
-import static org.openqa.selenium.support.PageFactory.initElements;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.page;
 import static ui.settings.Config.getSetting;
 
 public class SearchPageSteps extends FirefoxSetup {
 
-    private WebDriver driver;
     private SearchPage searchPage;
 
-    @Given("I am open main page and search")
-    public void IAmOpenMainPageAndSearch() {
-        driver = new FirefoxDriver(getOptions());
-        searchPage = initElements(driver, SearchPage.class);
-        driver.get(getSetting("mainURL"));
+    @Given("I am open main page and click search")
+    public void IAmOpenMainPageAndClickSearch() {
+        open(getSetting("mainURL"));
+        searchPage = page(SearchPage.class);
     }
 
     @When("I am click on search button")
@@ -37,6 +34,5 @@ public class SearchPageSteps extends FirefoxSetup {
     @Then("^I am check search text equals test text ([^\"]*)$")
     public void IAmCheckSearchTextEqualsTestText(String Text) {
         searchPage.checkSearch(Text);
-        driver.close();
     }
 }

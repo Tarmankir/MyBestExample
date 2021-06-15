@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import ui.selenide.pages.FeedbackPage;
+import ui.settings.FirefoxSetup;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static ui.settings.Config.getSetting;
 
-public class FeedbackPageSteps {
+public class FeedbackPageSteps extends FirefoxSetup {
 
     private FeedbackPage feedbackPage;
 
