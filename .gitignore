@@ -3,3 +3,4 @@ allure-results/
 target/
 MyBestExample.iml
 build/
+MyTests.iml
