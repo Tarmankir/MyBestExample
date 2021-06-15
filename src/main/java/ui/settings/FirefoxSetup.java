@@ -15,7 +15,7 @@ public abstract class FirefoxSetup {
         options.addArguments("window-size=1280x768");
         FirefoxDriverManager.firefoxdriver().setup();
 
-        Configuration.baseUrl = "";
+        Configuration.baseUrl = "https://habr.com/ru/";
         Configuration.browserSize = "";
 
         return options;
