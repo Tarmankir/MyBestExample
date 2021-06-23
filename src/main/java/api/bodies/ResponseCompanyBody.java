@@ -2,6 +2,8 @@ package api.bodies;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class ResponseCompanyBody {
 
     @SerializedName("type")
@@ -12,6 +14,30 @@ public class ResponseCompanyBody {
 
     @SerializedName("company")
     private CompanySubObjectBody company;
+
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("type")
+    private String type;
+
+    @SerializedName("inn")
+    private Integer inn;
+
+    @SerializedName("ogrn")
+    private Integer ogrn;
+
+    @SerializedName("kpp")
+    private Integer kpp;
+
+    @SerializedName("phone")
+    private Integer phone;
+
+    @SerializedName("adress")
+    private String adress;
+
+    @SerializedName("users")
+    private List<String> users;
 
     public String getType() {
         return type;
