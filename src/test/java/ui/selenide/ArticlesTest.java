@@ -31,6 +31,6 @@ public class ArticlesTest extends FirefoxSetup {
     public void articlesPageTest() {
         articles.openRandomArticle();
         articles.checkCommentsCounter(pagePost.getCommentsCountForArticle());
-        pagePost.checkShareButton("Поделиться");
+        pagePost.checkPostViewsTitle("Количество просмотров");
     }
 }

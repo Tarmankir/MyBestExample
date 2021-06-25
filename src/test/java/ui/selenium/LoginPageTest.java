@@ -36,6 +36,6 @@ public class LoginPageTest extends FirefoxSetup {
     public void loginPageTest() {
         loginPage.loginInSite(TEST1);
         loginPage.clickLogin();
-        loginPage.checkLogin("https://habr.com/ru/users/tarman332/");
+        loginPage.checkLogin("https://account.habr.com/settings/?consumer=default");
     }
 }

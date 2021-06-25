@@ -3,18 +3,18 @@ package ui.selenide.pages;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.codeborne.selenide.Condition.text;
+import static org.testng.Assert.assertEquals;
 
 public class PagePost {
 
-    @FindBy(css = "span[title='Поделиться']")
-    private SelenideElement shareText;
+    @FindBy(css = "span[title='Количество просмотров']")
+    private SelenideElement postViews;
 
-    @FindBy(css = ".post-stats__views-count")
+    @FindBy(css = ".tm-icon-wrapper__value")
     private SelenideElement postViewsCount;
 
-    public void checkShareButton(String text) {
-        shareText.shouldHave(text(text));
+    public void checkPostViewsTitle(String text) {
+        assertEquals(postViews.getAttribute("title"), text);
     }
 
     public String getCommentsCountForArticle() {

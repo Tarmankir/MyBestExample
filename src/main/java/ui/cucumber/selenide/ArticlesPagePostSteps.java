@@ -34,8 +34,8 @@ public class ArticlesPagePostSteps extends FirefoxSetup {
         articles.checkCommentsCounter(pagePost.getCommentsCountForArticle());
     }
 
-    @Then("^I am check share button contains ([^\"]*)$")
+    @Then("^I am check post views title contains ([^\"]*)$")
     public void IAmCheckShareButton(String text) {
-        pagePost.checkShareButton(text);
+        pagePost.checkPostViewsTitle(text);
     }
 }

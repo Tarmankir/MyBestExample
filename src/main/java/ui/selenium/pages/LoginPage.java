@@ -16,10 +16,10 @@ public class LoginPage {
     @FindBy(css = "#password_field")
     private WebElement passwordField;
 
-    @FindBy(css = ".button")
+    @FindBy(css = "button[type='submit']")
     private WebElement buttonSignUp;
 
-    @FindBy(css = ".dropdown__user-info")
+    @FindBy(css = ".user-info__name")
     private WebElement urlIn;
 
     private WebDriver driver;

@@ -7,12 +7,12 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ui.selenium.pages.LanguagePage;
-import ui.settings.CucumberRunnerSelenium;
+import ui.settings.FirefoxSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.settings.Config.getSetting;
 
-public class LanguagePageSteps extends CucumberRunnerSelenium {
+public class LanguagePageSteps extends FirefoxSetup {
 
     private WebDriver driver;
     private LanguagePage languagePage;
@@ -42,5 +42,6 @@ public class LanguagePageSteps extends CucumberRunnerSelenium {
     @Then("^I am check text on button login on site ([^\"]*)$")
     public void IAmCheckTextOnButtonLoginOnSite(String Text) {
         languagePage.checkButtonLogin(Text);
+        driver.close();
     }
 }

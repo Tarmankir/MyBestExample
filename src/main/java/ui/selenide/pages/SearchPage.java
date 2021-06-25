@@ -7,14 +7,11 @@ import static org.testng.Assert.assertEquals;
 
 public class SearchPage {
 
-    @FindBy(css = "#search-form-btn")
+    @FindBy(css = "a[href*='/ru/search/']")
     private SelenideElement searchButton;
 
-    @FindBy(css = "#search-form-field")
+    @FindBy(css = ".tm-input-text-decorated__input")
     private SelenideElement searchField;
-
-    @FindBy(css = ".search-field__input")
-    private SelenideElement searchFieldInput;
 
     public void clickOnSearchButton() {
         searchButton.click();
@@ -26,6 +23,6 @@ public class SearchPage {
     }
 
     public void checkSearch(String text) {
-        assertEquals(searchFieldInput.getAttribute("value"), text);
+        assertEquals(searchField.getAttribute("value"), text);
     }
 }

@@ -39,13 +39,13 @@ public class CreateCompany {
                         .body(new Gson().toJson(requestCompanyBody))
                         .spec(new RequestSpecBuilder().log(LogDetail.ALL).build())
                 .when()
-                        .post("http://users.bugred.ru/tasks/rest/createuser")
+                        .post("http://users.bugred.ru/tasks/rest/createcompany")
                 .then()
                         .statusCode(SC_OK)
                         .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
                         .extract().response().as(ResponseCompanyBody.class, ObjectMapperType.GSON);
 
         assertEquals(defaultResponse().getType(), responseCompanyBody.getType());
-        assertEquals(defaultResponse().getId_company(), responseCompanyBody.getId_company());
+//        assertEquals(defaultResponse().getId_company(), responseCompanyBody.getId_company());
     }
 }

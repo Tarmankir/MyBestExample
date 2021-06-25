@@ -9,16 +9,16 @@ import static org.testng.Assert.assertEquals;
 
 public class LanguagePage {
 
-    @FindBy(css = "a[class='footer__link js-show_lang_settings']")
+    @FindBy(xpath = "//button[contains(text(),'Настройка языка')]")
     private WebElement langSettings;
 
-    @FindBy(css = "label[for='hl_langs_en']")
+    @FindBy(xpath = "//input[@id=\"uiEnglish\"]/ancestor::label")
     private WebElement engInterface;
 
     @FindBy(css = "button[type='submit']")
     private WebElement buttonSaveLang;
 
-    @FindBy(css = "#login")
+    @FindBy(css = "a[href*='/kek/v1/auth/habrahabr/?back=/en/all/&hl=en']")
     private WebElement buttonLogin;
 
     private WebDriver driver;

@@ -12,15 +12,15 @@ import static org.testng.Assert.assertEquals;
 
 public class Articles {
 
-    @FindBy(css = ".shortcuts_items > li")
+    @FindBy(css = ".tm-articles-list > .tm-articles-list__item")
     private ElementsCollection articlesList;
 
-    @FindBy(css = ".post-stats__views-count")
+    @FindBy(css = ".tm-icon-wrapper__value")
     private SelenideElement articlesViewsCount;
 
     public void openRandomArticle() {
         Random random = new Random();
-        articlesList.get(random.nextInt(articlesList.size())).find(By.cssSelector(".post-stats__item_comments")).click();
+        articlesList.get(random.nextInt(articlesList.size())).find(By.cssSelector(".tm-icon-wrapper__value")).click();
     }
 
     public void checkCommentsCounter(String count) {

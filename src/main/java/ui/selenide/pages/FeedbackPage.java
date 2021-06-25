@@ -14,22 +14,22 @@ public class FeedbackPage {
     @FindBy(css = "input[name*='email']")
     private SelenideElement emailField;
 
-    @FindBy(css = "#message_textarea")
+    @FindBy(css = "textarea[name='message']")
     private SelenideElement massageField;
 
-    @FindBy(css = "#message_textarea")
+    @FindBy(css = "textarea[name='message']")
     private SelenideElement massageFieldForCucumber;
 
-    @FindBy(css = "input[name*='feedback_confidantial']")
+    @FindBy(css = "label[for='personal_agreement']")
     private SelenideElement checkboxInput;
 
-    @FindBy(css = "button[name*='submit']")
+    @FindBy(css = "button[type='submit']")
     private SelenideElement submitButton;
 
-    @FindBy(css = ".select_wrap")
+    @FindBy(css = "select[name='type']")
     private SelenideElement themesField;
 
-    @FindBy(css = ".select_wrap > select > option")
+    @FindBy(css = "select[name='type'] > option")
     private ElementsCollection themesList;
 
     public void emailFieldTake() {
