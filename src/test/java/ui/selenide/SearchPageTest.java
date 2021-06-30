@@ -27,7 +27,7 @@ public class SearchPageTest extends FirefoxSetup {
 
     @DataProvider(name = "searchTestProvider")
     public Object[] dataProvider() {
-        return new Object[]{"Администрирование", "Программирование", "Тестирование"};
+        return new Object[]{"12345678", "Programming", "Тестирование"};
     }
 
     @Test(dataProvider = "searchTestProvider")

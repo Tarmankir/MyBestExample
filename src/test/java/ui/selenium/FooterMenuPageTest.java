@@ -29,6 +29,7 @@ public class FooterMenuPageTest extends FirefoxSetup {
     @Test
     public void footerMenuPageTest() {
         footerMenuPage.clickLinkContent();
+        footerMenuPage.clickLinkContent2();
         footerMenuPage.switchWindowBack();
         footerMenuPage.checkButtonLogin("Войти");
     }
