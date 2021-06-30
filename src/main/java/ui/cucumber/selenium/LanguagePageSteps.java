@@ -5,21 +5,21 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import ui.selenium.pages.LanguagePage;
-import ui.settings.FirefoxSetup;
+import ui.settings.DriverSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.settings.Config.getSetting;
 
-public class LanguagePageSteps extends FirefoxSetup {
+public class LanguagePageSteps extends DriverSetup {
 
     private WebDriver driver;
     private LanguagePage languagePage;
 
     @Given("I am open main page")
     public void IAmOpenMainPage() {
-        driver = new FirefoxDriver(getOptions());
+        driver = new ChromeDriver(getOptions());
         languagePage = initElements(driver, LanguagePage.class);
         driver.get(getSetting("mainURL"));
     }

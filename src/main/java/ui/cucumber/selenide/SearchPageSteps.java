@@ -5,13 +5,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import ui.selenide.pages.SearchPage;
-import ui.settings.FirefoxSetup;
+import ui.settings.DriverSetup;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static ui.settings.Config.getSetting;
 
-public class SearchPageSteps extends FirefoxSetup {
+public class SearchPageSteps extends DriverSetup {
 
     private SearchPage searchPage;
 

@@ -4,12 +4,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ui.selenide.pages.FeedbackPage;
-import ui.settings.FirefoxSetup;
+import ui.settings.DriverSetup;
 
 import static com.codeborne.selenide.Selenide.*;
 import static ui.settings.Config.getSetting;
 
-public class FeedbackPageTest extends FirefoxSetup {
+public class FeedbackPageTest extends DriverSetup {
 
     private FeedbackPage feedbackPage;
 

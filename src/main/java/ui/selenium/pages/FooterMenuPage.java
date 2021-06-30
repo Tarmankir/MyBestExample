@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.Set;
-
 import static org.testng.Assert.assertEquals;
 
 public class FooterMenuPage {

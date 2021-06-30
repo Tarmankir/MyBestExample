@@ -5,22 +5,22 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import ui.selenium.pages.LoginPage;
-import ui.settings.FirefoxSetup;
+import ui.settings.DriverSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.selenium.enums.Credentials.TEST1;
 import static ui.settings.Config.getSetting;
 
-public class LoginPageSteps extends FirefoxSetup {
+public class LoginPageSteps extends DriverSetup {
 
     private WebDriver driver;
     private LoginPage loginPage;
 
     @Given("I am open login page")
     public void IAmOpenLoginPage() {
-        driver = new FirefoxDriver(getOptions());
+        driver = new ChromeDriver(getOptions());
         loginPage = initElements(driver, LoginPage.class);
         driver.get(getSetting("baseUrl"));
     }
