@@ -9,7 +9,7 @@ public abstract class FirefoxSetup {
 
     public FirefoxOptions getOptions() {
         options = new FirefoxOptions();
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("window-size=1280x768");
