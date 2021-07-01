@@ -5,11 +5,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ui.selenide.pages.SearchPage;
+import ui.settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.*;
 import static ui.settings.Config.getSetting;
 
-public class SearchPageTest {
+public class SearchPageTest extends SelenideDriverSetup {
 
     private SearchPage searchPage;
 
