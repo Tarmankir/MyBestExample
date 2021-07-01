@@ -4,3 +4,4 @@ target/
 MyBestExample.iml
 build/
 MyTests.iml
+FooterMenuPageTest.java

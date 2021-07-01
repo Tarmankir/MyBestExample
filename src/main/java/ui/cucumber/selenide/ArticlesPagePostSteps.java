@@ -6,13 +6,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import ui.selenide.pages.Articles;
 import ui.selenide.pages.PagePost;
-import ui.settings.DriverSetup;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static ui.settings.Config.getSetting;
 
-public class ArticlesPagePostSteps extends DriverSetup {
+public class ArticlesPagePostSteps {
 
     private Articles articles;
     private PagePost pagePost;
