@@ -22,6 +22,7 @@ public class CreateCompany {
 
     @Test
     void createCompany() {
+
         RequestCompanyBody requestCompanyBody = new RequestCompanyBody();
 
         List<String> users = new ArrayList<>();
