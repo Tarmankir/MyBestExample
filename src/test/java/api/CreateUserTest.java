@@ -22,8 +22,8 @@ public class CreateUserTest {
 
         requestCreateUserBody.setEmail("test_cu_6@mail.com");
         requestCreateUserBody.setName("Yunni");
-        requestCreateUserBody.setTasks("Тестировать");
-        requestCreateUserBody.setCompanies("Рогаикопыта");
+//        requestCreateUserBody.setTasks("Тестировать");
+//        requestCreateUserBody.setCompanies("Рогаикопыта");
         requestCreateUserBody.setHobby("swim");
         requestCreateUserBody.setAdres("SpB, Nevsky 18");
         requestCreateUserBody.setName1("Alex");

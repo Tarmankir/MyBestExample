@@ -36,6 +36,6 @@ public class LoginPageTest extends DriverSetup {
     public void loginPageTest() {
         loginPage.loginInSite(TEST1);
         loginPage.clickLogin();
-        loginPage.checkLogin("https://account.habr.com/settings/?consumer=default");
+        loginPage.checkLogin("Tarman332");
     }
 }
