@@ -1,5 +1,8 @@
 package ui.selenium.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.selenium.enums.Credentials;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
@@ -20,9 +23,10 @@ public class LoginPage {
     private WebElement buttonSignUp;
 
     @FindBy(css = ".user-info__name")
-    private WebElement urlIn;
+    private WebElement userInfo;
 
     private WebDriver driver;
+    private WebDriverWait wait;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -49,8 +53,8 @@ public class LoginPage {
 
     @Step("Check user url equals test url")
     public void checkLogin(String text) {
-        assertEquals(urlIn.getText(), text);
+        wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".user-info__name")));
+        assertEquals(userInfo.getText(), text);
     }
-
-    //test comment 123
 }
