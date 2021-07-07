@@ -6,7 +6,8 @@ public class CreateUserResponseData {
 
     public static ResponseCreateUserBody defaultResponse() {
         ResponseCreateUserBody responseCreateUserBody = new ResponseCreateUserBody();
-        responseCreateUserBody.setEmail("test_cu_6@mail.com");
+        responseCreateUserBody.setType("error");
+        responseCreateUserBody.setMessage("Пользователь с таким email уже существует ");
         return responseCreateUserBody;
     }
 }

@@ -9,6 +9,9 @@ import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static api.testData.CreateUserResponseData.defaultResponse;
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_OK;
@@ -20,32 +23,39 @@ public class CreateUserTest {
     void createUser() {
         RequestCreateUserBody requestCreateUserBody = new RequestCreateUserBody();
 
+        List<String> tasks = new ArrayList<>();
+        tasks.add("12");
+
+        List<String> companies = new ArrayList<>();
+        companies.add("36");
+        companies.add("37");
+
         requestCreateUserBody.setEmail("test_cu_6@mail.com");
-        requestCreateUserBody.setName("Yunni");
-//        requestCreateUserBody.setTasks("Тестировать");
-//        requestCreateUserBody.setCompanies("Рогаикопыта");
-        requestCreateUserBody.setHobby("swim");
-        requestCreateUserBody.setAdres("SpB, Nevsky 18");
-        requestCreateUserBody.setName1("Alex");
-        requestCreateUserBody.setSurname1("Pushkin");
-        requestCreateUserBody.setFathername1("Serg");
-        requestCreateUserBody.setCat("Murka");
-        requestCreateUserBody.setDog("Lara");
-        requestCreateUserBody.setParrot("Kakadu");
-        requestCreateUserBody.setCavy("Doss");
-        requestCreateUserBody.setHamster("Moss");
-        requestCreateUserBody.setSquirrel("Anss");
-        requestCreateUserBody.setPhone("89992077778");
-        requestCreateUserBody.setInn("12332144458");
+        requestCreateUserBody.setName("Рест 6");
+        requestCreateUserBody.setTasks(tasks);
+        requestCreateUserBody.setCompanies(companies);
+        requestCreateUserBody.setHobby("Стрельба из лука, Настолки");
+        requestCreateUserBody.setAdres("адрес 1");
+        requestCreateUserBody.setName1("Тестовый, ясен пень");
+        requestCreateUserBody.setSurname1("Иванов");
+        requestCreateUserBody.setFathername1("Петров");
+        requestCreateUserBody.setCat("Маруся");
+        requestCreateUserBody.setDog("Ушастый");
+        requestCreateUserBody.setParrot("Васька");
+        requestCreateUserBody.setCavy("Кто ты?");
+        requestCreateUserBody.setHamster("Хомяк");
+        requestCreateUserBody.setSquirrel("Белая горячка к нам пришла");
+        requestCreateUserBody.setPhone("333 33 33");
+        requestCreateUserBody.setInn("123456789012");
         requestCreateUserBody.setGender("m");
-        requestCreateUserBody.setBirthday("18");
-        requestCreateUserBody.setDate_start("19");
+        requestCreateUserBody.setBirthday("01.01.1900");
+        requestCreateUserBody.setDate_start("11.11.2000");
 
         ResponseCreateUserBody responseCreateUserBody =
         given()
                 .contentType(ContentType.JSON)
-                .body(requestCreateUserBody)
                 .spec(new RequestSpecBuilder().log(LogDetail.ALL).build())
+                .body(requestCreateUserBody)
         .when()
                 .post("http://users.bugred.ru/tasks/rest/createuser")
         .then()
@@ -53,6 +63,7 @@ public class CreateUserTest {
                 .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
                 .extract().response().as(ResponseCreateUserBody.class, ObjectMapperType.GSON);
 
-        assertEquals(defaultResponse().getEmail(), responseCreateUserBody.getEmail());
+        assertEquals(defaultResponse().getType(), responseCreateUserBody.getType());
+        assertEquals(defaultResponse().getMessage(), responseCreateUserBody.getMessage());
     }
 }
