@@ -3,21 +3,20 @@ package ui.selenium.pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import static org.testng.Assert.assertEquals;
 
 public class FooterMenuPage {
 
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[3]/div/div/div[3]/div/ul/li[1]/a")
-    private WebElement linkContent;
+    @FindBy(css = "a[href*='/ru/docs/help/']")
+    private WebElement siteMap;
 
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[3]/div/div/div[4]/div/ul/li[5]/a")
-    private WebElement linkContent2;
+    @FindBy(css = "a[href*='/ru/megaprojects/']")
+    private WebElement megaProjects;
 
-    @FindBy(css = "a[href*='/kek/v1/auth/habrahabr/?back=/ru/docs/help/rules/&hl=ru']")
-    private WebElement buttonLogin;
+    @FindBy(css = "a[href*='/ru/all/']")
+    private WebElement buttonText;
 
     private WebDriver driver;
 
@@ -25,24 +24,23 @@ public class FooterMenuPage {
         this.driver = driver;
     }
 
-    @Step("Open site and click link content")
-    public void clickLinkContent() {
-        linkContent.click();
+    @Step("Open site and click site map")
+    public void clickSiteMap() {
+        siteMap.click();
     }
 
-    public void clickLinkContent2() {
-        Actions action = new Actions(driver);
-        action.moveToElement(linkContent2).build().perform();
+    @Step("Open site and click mega projects")
+    public void clickMegaProjects() {
+        megaProjects.click();
     }
 
     @Step("Click switch to window title")
     public void switchWindowBack(){
-        String home = driver.getCurrentUrl();
-        driver.get(home);
+        driver.navigate().back();
     }
 
-    @Step("Check text on button login on site")
-    public void checkButtonLogin(String text) {
-        assertEquals(buttonLogin.getText(), text);
+    @Step("Check text on button on site")
+    public void checkText(String text) {
+        assertEquals(buttonText.getText(), text);
     }
 }

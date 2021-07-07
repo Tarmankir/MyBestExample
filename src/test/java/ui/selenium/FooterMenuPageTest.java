@@ -29,9 +29,9 @@ public class FooterMenuPageTest extends DriverSetup {
 
     @Test
     public void footerMenuPageTest() {
-        footerMenuPage.clickLinkContent();
-        footerMenuPage.clickLinkContent2();
+        footerMenuPage.clickSiteMap();
+        footerMenuPage.clickMegaProjects();
         footerMenuPage.switchWindowBack();
-        footerMenuPage.checkButtonLogin("Войти");
+        footerMenuPage.checkText("Все потоки");
     }
 }
