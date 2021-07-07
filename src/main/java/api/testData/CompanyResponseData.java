@@ -6,8 +6,8 @@ public class CompanyResponseData {
 
     public static ResponseCompanyBody defaultResponse() {
         ResponseCompanyBody responseCompanyBody = new ResponseCompanyBody();
-        responseCompanyBody.setType("success");
-//        responseCompanyBody.setId_company(63);
+        responseCompanyBody.setType("error");
+        responseCompanyBody.setMessage(" company_users  не указаны сотрудники");
         return responseCompanyBody;
     }
 }

@@ -12,7 +12,6 @@ public class SelenideDriverSetup {
 //        options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("window-size=1280,768");
         WebDriverManager.chromedriver().setup();
         return options;

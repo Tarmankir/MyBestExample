@@ -7,11 +7,8 @@ public class ResponseCompanyBody {
     @SerializedName("type")
     private String type;
 
-    @SerializedName("id_company")
-    private Integer id_company;
-
-    @SerializedName("company")
-    private CompanySubObjectBody company;
+    @SerializedName("message")
+    private String message;
 
     public String getType() {
         return type;
@@ -21,19 +18,11 @@ public class ResponseCompanyBody {
         this.type = type;
     }
 
-    public Integer getId_company() {
-        return id_company;
+    public String getMessage() {
+        return message;
     }
 
-    public void setId_company(Integer id_company) {
-        this.id_company = id_company;
-    }
-
-    public CompanySubObjectBody getCompany() {
-        return company;
-    }
-
-    public void setCompany(CompanySubObjectBody company) {
-        this.company = company;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

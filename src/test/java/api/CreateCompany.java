@@ -29,16 +29,16 @@ public class CreateCompany {
         users.add("test_anna@gmail.com");
         users.add("mrak20@list.ru");
 
-        requestCompanyBody.setCompany_name("Тестовая компания");
+        requestCompanyBody.setCompany_name("Алкоголики и тунеядцы");
         requestCompanyBody.setCompany_type("ООО");
         requestCompanyBody.setCompany_users(users);
-        requestCompanyBody.setEmail_owner("test21233@mail.ru");
+        requestCompanyBody.setEmail_owner("aa+1@mail.com");
 
         ResponseCompanyBody responseCompanyBody =
                 given()
                         .contentType(ContentType.JSON)
-                        .body(new Gson().toJson(requestCompanyBody))
                         .spec(new RequestSpecBuilder().log(LogDetail.ALL).build())
+                        .body(new Gson().toJson(requestCompanyBody))
                 .when()
                         .post("http://users.bugred.ru/tasks/rest/createcompany")
                 .then()
@@ -47,6 +47,6 @@ public class CreateCompany {
                         .extract().response().as(ResponseCompanyBody.class, ObjectMapperType.GSON);
 
         assertEquals(defaultResponse().getType(), responseCompanyBody.getType());
-//        assertEquals(defaultResponse().getId_company(), responseCompanyBody.getId_company());
+        assertEquals(defaultResponse().getMessage(), responseCompanyBody.getMessage());
     }
 }
