@@ -36,6 +36,6 @@ public class LoginPageTest extends DriverSetup {
     public void loginPageTest() {
         loginPage.loginInSite(TEST1);
         loginPage.clickLogin();
-        loginPage.checkLogin("Tarman332");
+        loginPage.checkLogin("Приветствуем вас, @Tarman332");
     }
 }

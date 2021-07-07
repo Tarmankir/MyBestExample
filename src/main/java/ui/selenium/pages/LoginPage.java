@@ -22,7 +22,7 @@ public class LoginPage {
     @FindBy(css = "button[type='submit']")
     private WebElement buttonSignUp;
 
-    @FindBy(css = ".user-info__name")
+    @FindBy(css = ".welcome__title")
     private WebElement userInfo;
 
     private WebDriver driver;
@@ -53,8 +53,8 @@ public class LoginPage {
 
     @Step("Check user url equals test url")
     public void checkLogin(String text) {
-        wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".user-info__name")));
+        wait = new WebDriverWait(driver, 60);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".welcome__title")));
         assertEquals(userInfo.getText(), text);
     }
 }

@@ -35,8 +35,8 @@ public class LoginPageSteps extends DriverSetup {
         loginPage.clickLogin();
     }
 
-    @Then("^I am check user ID ([^\"]*)$")
-    public void IAmCheckUserID(String ID) {
+    @Then("^I am check user login massage ([^\"]*)$")
+    public void IAmCheckUserLoginMassage(String ID) {
         loginPage.checkLogin(ID);
         driver.close();
     }
