@@ -53,7 +53,7 @@ public class LoginPage {
 
     @Step("Check user url equals test url")
     public void checkLogin(String text) {
-        wait = new WebDriverWait(driver, 60);
+        wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".welcome__title")));
         assertEquals(userInfo.getText(), text);
     }
