@@ -15,12 +15,12 @@ public class Articles {
     @FindBy(css = ".tm-articles-list > .tm-articles-list__item")
     private ElementsCollection articlesList;
 
-    @FindBy(css = ".tm-icon-wrapper__value")
+    @FindBy(css = ".tm-icon-counter__value")
     private SelenideElement articlesViewsCount;
 
     public void openRandomArticle() {
         Random random = new Random();
-        articlesList.get(random.nextInt(articlesList.size())).find(By.cssSelector(".tm-icon-wrapper__value")).click();
+        articlesList.get(random.nextInt(articlesList.size())).find(By.cssSelector(".tm-icon-counter__value")).click();
     }
 
     public void checkCommentsCounter(String count) {

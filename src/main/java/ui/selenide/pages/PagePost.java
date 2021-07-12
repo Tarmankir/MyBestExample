@@ -10,7 +10,7 @@ public class PagePost {
     @FindBy(css = "span[title='Количество просмотров']")
     private SelenideElement postViews;
 
-    @FindBy(css = ".tm-icon-wrapper__value")
+    @FindBy(css = ".tm-icon-counter__value")
     private SelenideElement postViewsCount;
 
     public void checkPostViewsTitle(String text) {
