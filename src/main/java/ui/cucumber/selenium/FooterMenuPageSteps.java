@@ -17,8 +17,8 @@ public class FooterMenuPageSteps extends DriverSetup {
     private WebDriver driver;
     private FooterMenuPage footerMenuPage;
 
-    @Given("I am open main page")
-    public void IAmOpenMainPage() {
+    @Given("I am open main page for footer testing")
+    public void IAmOpenMainPageForFooterTesting() {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         driver.get(getSetting("mainURL"));
