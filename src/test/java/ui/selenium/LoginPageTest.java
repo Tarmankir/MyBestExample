@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.selenium.pages.LoginPage;
-import ui.settings.DriverSetup;
+import ui.settings.SeleniumDriverSetup;
 import ui.settings.SeleniumListener;
 
 import static ui.selenium.enums.Credentials.*;
@@ -15,7 +15,7 @@ import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.settings.Config.getSetting;
 
 @Listeners(SeleniumListener.class)
-public class LoginPageTest extends DriverSetup {
+public class LoginPageTest extends SeleniumDriverSetup {
 
     private WebDriver driver;
     private LoginPage loginPage;

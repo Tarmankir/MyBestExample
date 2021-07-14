@@ -7,14 +7,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.selenium.pages.FooterMenuPage;
-import ui.settings.DriverSetup;
+import ui.settings.SeleniumDriverSetup;
 import ui.settings.SeleniumListener;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.settings.Config.getSetting;
 
 @Listeners(SeleniumListener.class)
-public class FooterMenuPageTest extends DriverSetup {
+public class FooterMenuPageTest extends SeleniumDriverSetup {
 
     private WebDriver driver;
     private FooterMenuPage footerMenuPage;

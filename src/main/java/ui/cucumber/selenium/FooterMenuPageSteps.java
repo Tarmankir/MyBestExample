@@ -7,12 +7,12 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ui.selenium.pages.FooterMenuPage;
-import ui.settings.DriverSetup;
+import ui.settings.SeleniumDriverSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.settings.Config.getSetting;
 
-public class FooterMenuPageSteps extends DriverSetup {
+public class FooterMenuPageSteps extends SeleniumDriverSetup {
 
     private WebDriver driver;
     private FooterMenuPage footerMenuPage;

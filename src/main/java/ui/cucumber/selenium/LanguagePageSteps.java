@@ -7,12 +7,12 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ui.selenium.pages.LanguagePage;
-import ui.settings.DriverSetup;
+import ui.settings.SeleniumDriverSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.settings.Config.getSetting;
 
-public class LanguagePageSteps extends DriverSetup {
+public class LanguagePageSteps extends SeleniumDriverSetup {
 
     private WebDriver driver;
     private LanguagePage languagePage;

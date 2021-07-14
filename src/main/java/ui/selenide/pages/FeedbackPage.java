@@ -26,10 +26,10 @@ public class FeedbackPage {
     @FindBy(css = "button[type='submit']")
     private SelenideElement submitButton;
 
-    @FindBy(css = "select[name='type']")
+    @FindBy(css = "select[name='themeId']")
     private SelenideElement themesField;
 
-    @FindBy(css = "select[name='type'] > option")
+    @FindBy(css = "select[name='themeId'] > option")
     private ElementsCollection themesList;
 
     public void emailFieldTake() {

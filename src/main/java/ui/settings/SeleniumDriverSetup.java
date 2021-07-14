@@ -3,7 +3,7 @@ package ui.settings;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public abstract class DriverSetup {
+public abstract class SeleniumDriverSetup {
 
     private ChromeOptions options;
 

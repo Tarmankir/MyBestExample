@@ -6,7 +6,7 @@ import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeSuite;
 
-public class SelenideDriverSetup {
+public abstract class SelenideDriverSetup {
 
     private ChromeOptions options;
 

@@ -7,13 +7,13 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ui.selenium.pages.LoginPage;
-import ui.settings.DriverSetup;
+import ui.settings.SeleniumDriverSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.selenium.enums.Credentials.TEST1;
 import static ui.settings.Config.getSetting;
 
-public class LoginPageSteps extends DriverSetup {
+public class LoginPageSteps extends SeleniumDriverSetup {
 
     private WebDriver driver;
     private LoginPage loginPage;
