@@ -13,7 +13,7 @@ public class SelenideDriverSetup {
     @BeforeSuite
     public void getOptions() {
         options = new ChromeOptions();
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("window-size=1280,768");
