@@ -8,7 +8,9 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import ui.settings.ApiListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,8 @@ import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.testng.AssertJUnit.assertEquals;
 
-public class CreateCompanyTest {
+@Listeners(ApiListener.class)
+public class CheckCompanyTest {
 
     @Test
     void createCompany() {

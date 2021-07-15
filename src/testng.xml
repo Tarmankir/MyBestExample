@@ -1,28 +1,24 @@
-<suite name="API">
-    <test name="Regression testing">
+<suite name="Volumetric testing">
+    <test name="Selenide">
+        <classes>
+            <class name="ui.selenide.FeedbackPageTest"/>
+            <class name="ui.selenide.SearchPageTest"/>
+            <class name="ui.selenide.ArticlesTest"/>
+        </classes>
+    </test>
+    <test name="Selenium">
+        <classes>
+            <class name="ui.selenium.FooterMenuPageTest"/>
+            <class name="ui.selenium.LanguagePageTest"/>
+            <class name="ui.selenium.LoginPageTest"/>
+        </classes>
+    </test>
+    <test name="API">
         <classes>
             <class name="api.BugRedTest"/>
-            <class name="api.CreateCompanyTest"/>
-            <class name="api.CreateUserTest"/>
+            <class name="api.CheckCompanyTest"/>
+            <class name="api.CheckUserTest"/>
             <class name="api.DoRegisterTest"/>
         </classes>
     </test>
-</suite>
-<suite name="Selenide">
-<test name="Functional testing">
-    <classes>
-        <class name="ui.selenide.FeedbackPageTest"/>
-        <class name="ui.selenide.SearchPageTest"/>
-        <class name="ui.selenide.ArticlesTest"/>
-    </classes>
-</test>
-</suite>
-<suite name="Selenium">
-<test name="Functional testing">
-    <classes>
-        <class name="ui.selenium.FooterMenuPageTest"/>
-        <class name="ui.selenium.LanguagePageTest"/>
-        <class name="ui.selenium.LoginPageTest"/>
-    </classes>
-</test>
 </suite>

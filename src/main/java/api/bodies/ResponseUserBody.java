@@ -2,7 +2,7 @@ package api.bodies;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ResponseCreateUserBody {
+public class ResponseUserBody {
 
     @SerializedName("type")
     private String type;
