@@ -24,7 +24,6 @@ public class CheckUserTest {
 
     @Test
     void createUser() {
-        RequestUserBody requestUserBody = new RequestUserBody();
 
         List<String> tasks = new ArrayList<>();
         tasks.add("12");
@@ -33,26 +32,28 @@ public class CheckUserTest {
         companies.add("36");
         companies.add("37");
 
-        requestUserBody.setEmail("test_cu_6@mail.com");
-        requestUserBody.setName("Рест 6");
-        requestUserBody.setTasks(tasks);
-        requestUserBody.setCompanies(companies);
-        requestUserBody.setHobby("Стрельба из лука, Настолки");
-        requestUserBody.setAdres("адрес 1");
-        requestUserBody.setName1("Тестовый, ясен пень");
-        requestUserBody.setSurname1("Иванов");
-        requestUserBody.setFathername1("Петров");
-        requestUserBody.setCat("Маруся");
-        requestUserBody.setDog("Ушастый");
-        requestUserBody.setParrot("Васька");
-        requestUserBody.setCavy("Кто ты?");
-        requestUserBody.setHamster("Хомяк");
-        requestUserBody.setSquirrel("Белая горячка к нам пришла");
-        requestUserBody.setPhone("333 33 33");
-        requestUserBody.setInn("123456789012");
-        requestUserBody.setGender("m");
-        requestUserBody.setBirthday("01.01.1900");
-        requestUserBody.setDate_start("11.11.2000");
+        RequestUserBody requestUserBody = RequestUserBody.builder()
+                .email("test_cu_6@mail.com")
+                .name("Рест 6")
+                .tasks(tasks)
+                .companies(companies)
+                .hobby("Стрельба из лука, Настолки")
+                .adres("адрес 1")
+                .name1("Тестовый, ясен пень")
+                .surname1("Иванов")
+                .fathername1("Петров")
+                .cat("Маруся")
+                .dog("Ушастый")
+                .parrot("Васька")
+                .cavy("Кто ты?")
+                .hamster("Хомяк")
+                .squirrel("Белая горячка к нам пришла")
+                .phone("333 33 33")
+                .inn("123456789012")
+                .gender("m")
+                .birthday("01.01.1900")
+                .date_start("11.11.2000")
+                .build();
 
         ResponseUserBody responseUserBody =
         given()
