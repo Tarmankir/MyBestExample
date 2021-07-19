@@ -26,7 +26,7 @@ public class CheckUserTest {
     void createUser() {
 
         List<String> tasks = new ArrayList<>();
-        tasks.add("12");
+        tasks.add("15");
 
         List<String> companies = new ArrayList<>();
         companies.add("36");
