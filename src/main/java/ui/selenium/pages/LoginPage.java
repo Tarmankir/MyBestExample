@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.assertEquals;
 
 public class LoginPage {
@@ -53,8 +55,7 @@ public class LoginPage {
 
     @Step("Check user url equals test url")
     public void checkLogin(String text) {
-        wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".welcome__title")));
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         assertEquals(userInfo.getText(), text);
     }
 }
