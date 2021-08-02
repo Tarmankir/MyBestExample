@@ -5,6 +5,8 @@ import java.util.List;
 
 public class DataUserBody {
 
+    //todo add faker for generating data
+
     public RequestUserBody fullUserBody() {
 
         List<String> tasks = new ArrayList<>();
