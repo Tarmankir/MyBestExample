@@ -26,11 +26,11 @@ public class CheckCompanyTest {
     @Test
     void createCompany() {
 
-        RequestCompanyBody requestCompanyBody = new RequestCompanyBody();
-
         List<String> users = new ArrayList<>();
         users.add("test_anna@gmail.com");
         users.add("mrak20@list.ru");
+
+        RequestCompanyBody requestCompanyBody = new RequestCompanyBody();
 
         requestCompanyBody.setCompany_name("Алкоголики и тунеядцы");
         requestCompanyBody.setCompany_type("ООО");
