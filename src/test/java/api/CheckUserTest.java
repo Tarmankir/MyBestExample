@@ -1,7 +1,9 @@
 package api;
 
 import api.bodies.DataUserBody;
+import api.bodies.RequestUserBody;
 import api.bodies.ResponseUserBody;
+import api.objects.User;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
@@ -11,6 +13,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.settings.ApiListener;
 
+import static api.assertions.UserAssertions.checkSuccessfulResponseBody;
 import static api.testData.UserResponseData.defaultResponse;
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_OK;
@@ -22,22 +25,9 @@ public class CheckUserTest {
     @Test
     void createUserFull() {
 
-        new DataUserBody().fullUserBody();
-
-        ResponseUserBody responseUserBody =
-        given()
-                .contentType(ContentType.JSON)
-                .spec(new RequestSpecBuilder().log(LogDetail.ALL).build())
-                .body(new DataUserBody().fullUserBody())
-        .when()
-                .post("http://users.bugred.ru/tasks/rest/createuser")
-        .then()
-                .statusCode(SC_OK)
-                .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
-                .extract().response().as(ResponseUserBody.class, ObjectMapperType.GSON);
-
-        assertEquals(defaultResponse().getType(), responseUserBody.getType());
-        assertEquals(defaultResponse().getMessage(), responseUserBody.getMessage());
+        RequestUserBody userBody = new DataUserBody().fullUserBody();
+        ResponseUserBody responseUserBody = new User().createUser(userBody);
+        checkSuccessfulResponseBody(userBody, responseUserBody);
     }
 
     @Test

@@ -2,6 +2,7 @@ package api;
 
 import api.bodies.RequestCompanyBody;
 import api.bodies.ResponseCompanyBody;
+import com.github.javafaker.Faker;
 import com.google.gson.Gson;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -26,13 +27,18 @@ public class CheckCompanyTest {
     @Test
     void createCompany() {
 
+        Faker faker = new Faker();
+        String title = faker.name().title();
+        String email1 = faker.name().username() + "@mail.ru";
+        String email2 = faker.name().username() + "@mail.ru";
+
         List<String> users = new ArrayList<>();
-        users.add("test_anna@gmail.com");
-        users.add("mrak20@list.ru");
+        users.add(email1);
+        users.add(email2);
 
         RequestCompanyBody requestCompanyBody = new RequestCompanyBody();
 
-        requestCompanyBody.setCompany_name("Алкоголики и тунеядцы");
+        requestCompanyBody.setCompany_name(title);
         requestCompanyBody.setCompany_type("ООО");
         requestCompanyBody.setCompany_users(users);
         requestCompanyBody.setEmail_owner("aa+1@mail.com");
