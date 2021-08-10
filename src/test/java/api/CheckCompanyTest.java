@@ -27,6 +27,7 @@ public class CheckCompanyTest {
     @Test
     void createCompany() {
 
+        //todo implement interfaces for faker
         Faker faker = new Faker();
         String title = faker.name().title();
         String email1 = faker.name().username() + "@mail.ru";
