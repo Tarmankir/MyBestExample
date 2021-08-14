@@ -1,4 +1,4 @@
-package api.bodies;
+package api.requestData;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;

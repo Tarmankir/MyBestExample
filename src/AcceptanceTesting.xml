@@ -15,10 +15,8 @@
     </test>
     <test name="API">
         <classes>
-            <class name="api.BugRedTest"/>
-            <class name="api.CheckCompanyTest"/>
-            <class name="api.CheckUserTest"/>
-            <class name="api.DoRegisterTest"/>
+            <class name="api.CreateCompanyTest"/>
+            <class name="api.CreateUserTest"/>
         </classes>
     </test>
 </suite>
