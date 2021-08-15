@@ -10,7 +10,7 @@ public class CompanyResponseData {
 
         return ResponseCompanyBody.builder()
                 .type("success")
-                .id_company(33)
+                .id_company(8)
                 .build();
     }
 }
