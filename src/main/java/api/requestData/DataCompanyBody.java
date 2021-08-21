@@ -15,8 +15,8 @@ public class DataCompanyBody {
     public RequestCompanyBody fullCompanyBody() {
 
         List<String> users = new ArrayList<>();
-        users.add("ttassignee18@test.com");
-        users.add("ttassignee18@test.com");
+        users.add("superhero@aa.ru");
+        users.add("superhero@aa.ru");
 
         return RequestCompanyBody.builder()
                 .company_name(companyName)
