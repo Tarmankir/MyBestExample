@@ -21,6 +21,8 @@ import static org.testng.AssertJUnit.assertEquals;
 @Listeners(ApiListener.class)
 public class CreateCompanyTest {
 
+    //todo add json schema validation https://github.com/rest-assured/rest-assured/wiki/Usage#json-schema-validation
+
     @Test
     @Step("Check company with full body request")
     void createCompany() {
