@@ -1,6 +1,6 @@
-package api.responseData;
+package api.etalons;
 
-import api.requestData.ResponseUserBody;
+import api.bodies.ResponseUserBody;
 import io.qameta.allure.Step;
 
 public class UserResponseData {

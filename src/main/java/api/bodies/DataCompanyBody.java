@@ -1,7 +1,7 @@
-package api.requestData;
+package api.bodies;
 
 import io.qameta.allure.Step;
-import ui.settings.DataFaker;
+import utils.DataFaker;
 
 import java.util.ArrayList;
 import java.util.List;

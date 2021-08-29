@@ -1,4 +1,4 @@
-package api.requestData;
+package api.bodies;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
@@ -73,4 +73,13 @@ public class RequestUserBody {
 
     @SerializedName("date_start")
     private String date_start;
+
+/*    @SerializedName("email")
+    private String email;
+
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("tasks")
+    private ArrayList tasks;*/
 }

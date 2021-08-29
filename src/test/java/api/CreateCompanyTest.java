@@ -1,7 +1,7 @@
 package api;
 
-import api.requestData.DataCompanyBody;
-import api.requestData.ResponseCompanyBody;
+import api.bodies.DataCompanyBody;
+import api.bodies.ResponseCompanyBody;
 import com.google.gson.Gson;
 import io.qameta.allure.Step;
 import io.restassured.builder.RequestSpecBuilder;
@@ -13,7 +13,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.settings.ApiListener;
 
-import static api.responseData.CompanyResponseData.defaultResponse;
+import static api.etalons.CompanyResponseData.defaultResponse;
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.testng.AssertJUnit.assertEquals;

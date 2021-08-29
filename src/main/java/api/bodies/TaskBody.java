@@ -1,4 +1,4 @@
-package api.requestData;
+package api.bodies;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
@@ -10,11 +10,11 @@ import lombok.Setter;
 @Setter
 @Data
 @Builder
-public class ResponseUserBody {
+public class TaskBody {
 
-    @SerializedName("type")
-    private String type;
+    @SerializedName("title")
+    private String title;
 
-    @SerializedName("message")
-    private String message;
+    @SerializedName("description")
+    private String description;
 }

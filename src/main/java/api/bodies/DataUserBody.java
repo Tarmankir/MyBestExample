@@ -1,7 +1,7 @@
-package api.requestData;
+package api.bodies;
 
 import io.qameta.allure.Step;
-import ui.settings.DataFaker;
+import utils.DataFaker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,8 @@ public class DataUserBody {
 
     DataFaker dataFaker = new DataFaker();
     String companyName = dataFaker.generateTitle();
+    String email = dataFaker.generateEmail();
+    String nameUser = dataFaker.generateName();
 
     @Step("Create user with full body request")
     public RequestUserBody fullUserBody() {
@@ -22,8 +24,8 @@ public class DataUserBody {
         companies.add(companyName);
 
         return RequestUserBody.builder()
-                .email("test_cu_6@mail.com")
-                .name("Рест 6")
+                .email(email)
+                .name(nameUser)
                 .tasks(tasks)
                 .companies(companies)
                 .hobby("Стрельба из лука, Настолки")
@@ -56,10 +58,22 @@ public class DataUserBody {
         companies.add(companyName);
 
         return RequestUserBody.builder()
-                .email("test_1@mail.com")
-                .name("Иванушка")
+                .email(email)
+                .name(nameUser)
                 .tasks(tasks)
                 .companies(companies)
                 .build();
     }
+
+/*    @Step("Create user with simple body request")
+    public RequestUserBody userBodyWithTask() {
+        return RequestUserBody.builder()
+                .email(email)
+                .name(nameUser)
+                .tasks(TaskBody.builder()
+                        .title("Первая задача")
+                        .description("Описание")
+                        .build())
+                .build();
+    }*/
 }

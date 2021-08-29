@@ -1,6 +1,6 @@
-package api.assertData;
+package api.assertions;
 
-import api.requestData.ResponseUserBody;
+import api.bodies.ResponseUserBody;
 import io.qameta.allure.Step;
 
 import static org.testng.AssertJUnit.assertEquals;
