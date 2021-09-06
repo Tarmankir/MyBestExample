@@ -1,14 +1,14 @@
 package api.etalons;
 
-import api.bodies.ResponseUserBody;
+import api.bodies.EtalonUserBody;
 import io.qameta.allure.Step;
 
-public class UserResponseData {
+public class EtalonUserResponseData {
 
     @Step("Reference response for check user body")
-    public ResponseUserBody defaultResponse() {
+    public EtalonUserBody defaultResponse() {
 
-        return ResponseUserBody.builder()
+        return EtalonUserBody.builder()
                 .type("error")
                 .message("компании не найдены")
                 .build();

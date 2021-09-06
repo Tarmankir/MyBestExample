@@ -18,4 +18,7 @@ public class MySQLClient {
         }
         return connection;
     }
+
+    public static int selectId(String userId)
+    "SELECT FROM"
 }

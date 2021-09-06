@@ -1,9 +1,11 @@
 package api;
 
+import api.bodies.EtalonUserBody;
 import api.entities.User;
 import api.bodies.DataUserBody;
 import api.bodies.RequestUserBody;
 import api.bodies.ResponseUserBody;
+import api.etalons.EtalonUserResponseData;
 import api.etalons.UserResponseData;
 import io.qameta.allure.Step;
 import org.testng.annotations.Listeners;
@@ -19,21 +21,22 @@ public class CreateUserTest {
     @Step("Check user with full body request")
     void createUserFull() {
         RequestUserBody dataUserBody = new DataUserBody().fullUserBody();
-        ResponseUserBody responseUserBody = new UserResponseData().defaultResponse();
+        EtalonUserBody etalonUserBody = new EtalonUserResponseData().defaultResponse();
+        ResponseUserBody responseUserBody = new User().getResponseUserBody();
         new User().createUser(dataUserBody);
-        checkSuccessfulResponseBody(responseUserBody, responseUserBody);
+        checkSuccessfulResponseBody(responseUserBody, etalonUserBody);
     }
 
-    @Test
+/*    @Test
     @Step("Check user with simple body request")
     void createUserSimple() {
         RequestUserBody dataUserBody = new DataUserBody().simpleUserBody();
         ResponseUserBody responseUserBody = new UserResponseData().defaultResponse();
         new User().createUser(dataUserBody);
         checkSuccessfulResponseBody(responseUserBody, responseUserBody);
-    }
+    }*/
 
-    /*@Test
+/*    @Test
     @Step("Check user with task")
     void createUserWithTask() {
         RequestUserBody dataUserBody = new DataUserBody().userBodyWithTask();

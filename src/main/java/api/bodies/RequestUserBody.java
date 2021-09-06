@@ -81,5 +81,5 @@ public class RequestUserBody {
     private String name;
 
     @SerializedName("tasks")
-    private ArrayList tasks;*/
+    private List<TaskBody> tasks;*/
 }
