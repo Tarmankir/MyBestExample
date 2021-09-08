@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @Data
 @Builder
-public class EtalonUserBody {
+public class VerificationUserBody {
 
         @SerializedName("type")
         private String type;

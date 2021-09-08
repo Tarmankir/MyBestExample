@@ -13,7 +13,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.settings.ApiListener;
 
-import static api.etalons.CompanyResponseData.defaultResponse;
+import static api.verifications.CompanyResponseData.defaultResponse;
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.testng.AssertJUnit.assertEquals;

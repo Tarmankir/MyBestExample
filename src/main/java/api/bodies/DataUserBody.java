@@ -9,11 +9,10 @@ import java.util.List;
 public class DataUserBody {
 
     DataFaker dataFaker = new DataFaker();
-    String companyName = dataFaker.generateTitle();
     String email = dataFaker.generateEmail();
     String nameUser = dataFaker.generateName();
 
-    @Step("Create user with full body request")
+/*    @Step("Create user with full body request")
     public RequestUserBody fullUserBody() {
 
         List<String> tasks = new ArrayList<>();
@@ -45,35 +44,37 @@ public class DataUserBody {
                 .birthday("01.01.1900")
                 .date_start("11.11.2000")
                 .build();
-    }
+    }*/
 
-    @Step("Create user with simple body request")
-    public RequestUserBody simpleUserBody() {
+    @Step("Create user with tasks")
+    public RequestUserBody userBodyWithTasks() {
 
-        List<String> tasks = new ArrayList<>();
-        tasks.add(companyName);
-
-        List<String> companies = new ArrayList<>();
-        companies.add(companyName);
-        companies.add(companyName);
+        List<TaskBody> tasks = new ArrayList<>();
+        tasks.add(TaskBody.builder()
+                .title("Первая задача")
+                .description("Тестовое описание задачи")
+                .build());
 
         return RequestUserBody.builder()
                 .email(email)
                 .name(nameUser)
                 .tasks(tasks)
-                .companies(companies)
                 .build();
     }
 
-/*    @Step("Create user with simple body request")
-    public RequestUserBody userBodyWithTask() {
+    @Step("Create user with incorrect data in body request")
+    public RequestUserBody userBodyWithIncorrectData() {
+
+        List<TaskBody> tasks = new ArrayList<>();
+        tasks.add(TaskBody.builder()
+                .title("Первая задача")
+                .description("Тестовое описание задачи")
+                .build());
+
         return RequestUserBody.builder()
-                .email(email)
+                .email("aa+1@mail.com")
                 .name(nameUser)
-                .tasks(TaskBody.builder()
-                        .title("Первая задача")
-                        .description("Описание")
-                        .build())
+                .tasks(tasks)
                 .build();
-    }*/
+    }
 }

@@ -1,4 +1,4 @@
-package api.etalons;
+package api.verifications;
 
 import api.bodies.CompanyBody;
 import api.bodies.ResponseCompanyBody;

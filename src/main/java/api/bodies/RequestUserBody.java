@@ -21,9 +21,9 @@ public class RequestUserBody {
     private String name;
 
     @SerializedName("tasks")
-    private List<String> tasks;
+    private List<TaskBody> tasks;
 
-    @SerializedName("companies")
+/*    @SerializedName("companies")
     private List<String> companies;
 
     @SerializedName("hobby")
@@ -72,14 +72,8 @@ public class RequestUserBody {
     private String birthday;
 
     @SerializedName("date_start")
-    private String date_start;
+    private String date_start;*
 
-/*    @SerializedName("email")
-    private String email;
-
-    @SerializedName("name")
-    private String name;
-
-    @SerializedName("tasks")
+/*    @SerializedName("tasks")
     private List<TaskBody> tasks;*/
 }
