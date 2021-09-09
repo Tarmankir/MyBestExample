@@ -17,4 +17,7 @@ public class ResponseUserBody {
 
     @SerializedName("message")
     private String message;
+
+    @SerializedName("name")
+    private String name;
 }

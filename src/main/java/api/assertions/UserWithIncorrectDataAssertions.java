@@ -6,10 +6,10 @@ import io.qameta.allure.Step;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class UserAssertions {
+public class UserWithIncorrectDataAssertions {
 
-    @Step("Check user response body")
-    public static void checkSuccessfulResponseBody(VerificationUserBody expected, ResponseUserBody actual) {
+    @Step("Check user response body with incorrect data")
+    public static void checkSuccessfulResponseBodyUserWithIncorrectData(VerificationUserBody expected, ResponseUserBody actual) {
         assertEquals(expected.getType(), actual.getType());
         assertEquals(expected.getMessage(), actual.getMessage());
     }

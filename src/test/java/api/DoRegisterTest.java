@@ -5,6 +5,7 @@ import io.qameta.allure.Step;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import org.json.JSONObject;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -20,15 +21,18 @@ public class DoRegisterTest {
             "  \"name\": \"br\",\n" +
             "  \"password\": \"123\" \n}";
 
-    JSONObject requestParams = new JSONObject();
+    @BeforeMethod
+    public void doRegisterBefore() {
+        JSONObject requestParams = new JSONObject();
         requestParams.put("email", "um1k099888@yandex.ru");
         requestParams.put("name", "Test");
         requestParams.put("password", 12000);
 
-    Map<String,String> requestParams2 = new HashMap<>();
+/*        Map<String, String> requestParams2 = new HashMap<>();
         requestParams2.put("email", "um1k099888@yandex.ru");
         requestParams2.put("name", "Test");
-        requestParams2.put("password", 12000);
+        requestParams2.put("password", 12000);*/
+    }
 
     @Test
     @Step("Check user registration")

@@ -17,4 +17,7 @@ public class VerificationUserBody {
 
         @SerializedName("message")
         private String message;
+
+        @SerializedName("name")
+        private String name;
 }

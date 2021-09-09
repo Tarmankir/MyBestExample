@@ -11,7 +11,8 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.settings.ApiListener;
 
-import static api.assertions.UserAssertions.checkSuccessfulResponseBody;
+import static api.assertions.UserWithIncorrectDataAssertions.checkSuccessfulResponseBodyUserWithIncorrectData;
+import static api.assertions.UserWithTasksAssertions.checkSuccessfulResponseBodyUserWithTasks;
 
 @Listeners(ApiListener.class)
 public class CreateUserTest {
@@ -19,18 +20,17 @@ public class CreateUserTest {
     @Test
     @Step("Check creation user with tasks")
     void createUserWithTasks() {
-        RequestUserBody dataUserBody = new DataUserBody().userBodyWithTasks();
-        ResponseUserBody responseUserBody = new User().createUser(dataUserBody);
-        new User().createUser(dataUserBody);
-//        checkSuccessfulResponseBody(responseUserBody, responseUserBody);
+        RequestUserBody requestUserBody = new DataUserBody().userBodyWithTasks();
+        ResponseUserBody responseUserBody = new User().createUser(requestUserBody);
+        checkSuccessfulResponseBodyUserWithTasks(requestUserBody, responseUserBody);
     }
 
     @Test
     @Step("Check creation user with incorrect data")
     void createUserWithIncorrectData() {
-        RequestUserBody dataUserBody = new DataUserBody().userBodyWithIncorrectData();
-        ResponseUserBody responseUserBody = new User().createUser(dataUserBody);
+        RequestUserBody requestUserBody = new DataUserBody().userBodyWithIncorrectData();
+        ResponseUserBody responseUserBody = new User().createUser(requestUserBody);
         VerificationUserBody verificationUserBody = new VerificationUserResponseData().response();
-        checkSuccessfulResponseBody(verificationUserBody, responseUserBody);
+        checkSuccessfulResponseBodyUserWithIncorrectData(verificationUserBody, responseUserBody);
     }
 }
