@@ -20,4 +20,7 @@ public class ResponseUserBody {
 
     @SerializedName("name")
     private String name;
+
+    @SerializedName("email")
+    private String email;
 }
