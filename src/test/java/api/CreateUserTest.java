@@ -26,6 +26,15 @@ public class CreateUserTest {
     }
 
     @Test
+    @Step("Check creation full user with tasks")
+    void createFullUserWithTasks() {
+        RequestUserBody requestUserBody = new DataUserBody().userFullBodyWithTasks();
+        ResponseUserBody responseUserBody = new User().createUser(requestUserBody);
+        checkSuccessfulResponseBodyUserWithTasks(requestUserBody, responseUserBody);
+    }
+
+
+    @Test
     @Step("Check creation user with incorrect data")
     void createUserWithIncorrectData() {
         RequestUserBody requestUserBody = new DataUserBody().userBodyWithIncorrectData();

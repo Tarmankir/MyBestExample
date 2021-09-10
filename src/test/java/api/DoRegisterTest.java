@@ -16,6 +16,8 @@ import static org.apache.http.HttpStatus.SC_OK;
 
 public class DoRegisterTest {
 
+    JSONObject requestParams;
+
     private static String requestBody = "{\n" +
             "  \"email\": \"um1k099888@yandex.ru\",\n" +
             "  \"name\": \"br\",\n" +
@@ -39,7 +41,7 @@ public class DoRegisterTest {
     public void doRegisterUser() {
         given()
                 .spec(new RequestSpec().defaultRequestSpec())
-                .body(requestBody)
+                .body(requestParams)
         .when()
                 .post("/tasks/rest/doregister/posts")
         .then()

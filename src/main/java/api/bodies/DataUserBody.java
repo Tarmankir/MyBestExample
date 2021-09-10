@@ -28,6 +28,37 @@ public class DataUserBody {
                 .build();
     }
 
+    @Step("Create full user with tasks")
+    public RequestUserBody userFullBodyWithTasks() {
+
+        List<TaskBody> tasks = new ArrayList<>();
+        tasks.add(TaskBody.builder()
+                .title("Первая задача")
+                .description("Тестовое описание задачи")
+                .build());
+
+        return RequestUserBody.builder()
+                .email(email)
+                .name(nameUser)
+                .tasks(tasks)
+                .hobby("Стрельба из лука, Настолки")
+                .adres("Улица Пушкина, дом Колотушкина")
+                .name1("Иван")
+                .surname1("Иванов")
+                .fathername1("Иван")
+                .cat("Мася")
+                .dog("Шарик")
+                .parrot("Петя")
+                .cavy("Аша")
+                .hamster("Хах")
+                .squirrel("Турт")
+                .phone("555 55 55")
+                .gender("m")
+                .birthday("11.11.1988")
+                .date_start("11.11.2000")
+                .build();
+    }
+
     @Step("Create user with incorrect data in body request")
     public RequestUserBody userBodyWithIncorrectData() {
 
