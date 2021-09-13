@@ -21,4 +21,8 @@ public class MySQLClient {
 /*
     public static int selectId(String userId)
     "SELECT FROM"*/
+
+    public static void main(String[] args) {
+        connectDataBase("127.0.0.1");
+    }
 }

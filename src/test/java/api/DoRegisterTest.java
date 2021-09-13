@@ -25,7 +25,6 @@ public class DoRegisterTest {
 
     @BeforeMethod
     public void doRegisterBefore() {
-        JSONObject requestParams = new JSONObject();
         requestParams.put("email", "um1k099888@yandex.ru");
         requestParams.put("name", "Test");
         requestParams.put("password", 12000);

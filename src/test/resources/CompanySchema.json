@@ -1,0 +1,16 @@
+{
+  "type": "success",
+  "id_company": 33,
+  "company": {
+    "name": "Central Integration Associate",
+    "type": "ООО",
+    "inn": "",
+    "ogrn": "",
+    "kpp": "",
+    "phone": "",
+    "adress": "",
+    "users": [
+      "superhero@aa.ru"
+    ]
+  }
+}

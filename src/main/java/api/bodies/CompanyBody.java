@@ -14,6 +14,9 @@ public class CompanyBody {
     @SerializedName("type")
     private String type;
 
+    @SerializedName("name")
+    private String name;
+
     @SerializedName("users")
     private List<String> users;
 }

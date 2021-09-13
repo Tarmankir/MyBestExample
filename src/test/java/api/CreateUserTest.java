@@ -1,11 +1,11 @@
 package api;
 
-import api.bodies.VerificationUserBody;
+import api.bodies.ErrorUserBody;
 import api.entities.User;
 import api.bodies.DataUserBody;
 import api.bodies.RequestUserBody;
 import api.bodies.ResponseUserBody;
-import api.verifications.VerificationUserResponseData;
+import api.verifications.ErrorUserResponseData;
 import io.qameta.allure.Step;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -39,7 +39,7 @@ public class CreateUserTest {
     void createUserWithIncorrectData() {
         RequestUserBody requestUserBody = new DataUserBody().userBodyWithIncorrectData();
         ResponseUserBody responseUserBody = new User().createUser(requestUserBody);
-        VerificationUserBody verificationUserBody = new VerificationUserResponseData().response();
-        checkSuccessfulResponseBodyUserWithIncorrectData(verificationUserBody, responseUserBody);
+        ErrorUserBody errorUserBody = new ErrorUserResponseData().response();
+        checkSuccessfulResponseBodyUserWithIncorrectData(errorUserBody, responseUserBody);
     }
 }

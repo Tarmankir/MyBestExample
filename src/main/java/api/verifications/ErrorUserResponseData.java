@@ -1,14 +1,14 @@
 package api.verifications;
 
-import api.bodies.VerificationUserBody;
+import api.bodies.ErrorUserBody;
 import io.qameta.allure.Step;
 
-public class VerificationUserResponseData {
+public class ErrorUserResponseData {
 
     @Step("Reference response for check user body with incorrect data")
-    public VerificationUserBody response() {
+    public ErrorUserBody response() {
 
-        return VerificationUserBody.builder()
+        return ErrorUserBody.builder()
                 .type("error")
                 .message("Пользователь с таким email уже существует ")
                 .build();

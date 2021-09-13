@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @Data
 @Builder
-public class VerificationUserBody {
+public class ErrorUserBody {
 
         @SerializedName("type")
         private String type;

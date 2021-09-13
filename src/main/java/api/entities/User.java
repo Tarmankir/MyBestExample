@@ -20,7 +20,8 @@ public class User {
 
     @Step("Create user")
     public ResponseUserBody createUser(RequestUserBody body) {
-        return responseUserBody = given()
+        return responseUserBody =
+                given()
                     .contentType(ContentType.JSON)
                     .spec(new RequestSpecBuilder().log(LogDetail.ALL).build())
                     .body(body)
