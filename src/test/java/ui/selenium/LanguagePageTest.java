@@ -13,7 +13,7 @@ import ui.settings.SeleniumListener;
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.settings.Config.getSetting;
 
-@Listeners(SeleniumListener.class)
+//@Listeners(SeleniumListener.class)
 public class LanguagePageTest extends SeleniumDriverSetup {
 
     private WebDriver driver;
