@@ -8,7 +8,7 @@ import ui.settings.ApiListener;
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_OK;
 
-@Listeners(ApiListener.class)
+//@Listeners(ApiListener.class)
 public class BugRedTest {
 
     @Test
