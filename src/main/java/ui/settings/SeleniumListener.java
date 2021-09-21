@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import java.io.ByteArrayInputStream;
-/*
+
 public class SeleniumListener implements ITestListener {
 
     @Attachment
@@ -22,4 +22,4 @@ public class SeleniumListener implements ITestListener {
         Object webDriverAttribute = result.getTestContext().getAttribute("WebDriver");
         captureScreenshot((WebDriver) webDriverAttribute);
     }
-}*/
+}
