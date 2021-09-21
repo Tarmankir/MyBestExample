@@ -10,7 +10,6 @@ public class FooterMenuFragment extends ElementsContainer {
     @FindBy(css = "a[href*='/ru/feedback/']")
     private SelenideElement technicalSupport;
 
-
     @Step("Click to technical support")
     public void clickTechnicalSupport() {
         technicalSupport.click();

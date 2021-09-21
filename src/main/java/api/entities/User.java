@@ -24,7 +24,7 @@ public class User {
                 given()
                     .contentType(ContentType.JSON)
                     .spec(new RequestSpecBuilder().log(LogDetail.ALL).build())
-                    .body(body)
+                    .body(body.toJsonWithoutNull())
                 .when()
                     .post("http://users.bugred.ru/tasks/rest/createuserwithtasks")
                 .then()

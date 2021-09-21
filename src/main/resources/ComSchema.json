@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "id_company": {
+      "type": "integer"
+    },
+    "company": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "inn": {
+          "type": "string"
+        },
+        "ogrn": {
+          "type": "string"
+        },
+        "kpp": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "adress": {
+          "type": "string"
+        },
+        "users": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "type",
+        "inn",
+        "ogrn",
+        "kpp",
+        "phone",
+        "adress",
+        "users"
+      ]
+    }
+  },
+  "required": [
+    "type",
+    "id_company",
+    "company"
+  ]
+}

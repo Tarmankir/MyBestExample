@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 @Data
 @Builder
-public class RequestUserBody {
+public class RequestUserBody implements Body{
 
     @SerializedName("email")
     private String email;

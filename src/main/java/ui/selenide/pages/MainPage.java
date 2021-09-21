@@ -7,4 +7,8 @@ public class MainPage {
 
     @FindBy(css = ".footer")
     private FooterMenuFragment footer;
+
+    public void clickOnFooterItem() {
+        footer.clickTechnicalSupport();
+    }
 }

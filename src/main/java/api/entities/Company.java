@@ -11,8 +11,6 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 
 public class Company {
 
-    //todo add json schema validation https://github.com/rest-assured/rest-assured/wiki/Usage#json-schema-validation
-
     @Step("Check company with full body request")
     public void createCompany(RequestCompanyBody body) {
                 given()
@@ -22,6 +20,6 @@ public class Company {
                 .when()
                         .post("http://users.bugred.ru/tasks/rest/createcompany")
                 .then()
-                        .assertThat().body(matchesJsonSchemaInClasspath("/src/test/resources/CompanySchema.json"));
+                        .assertThat().body(matchesJsonSchemaInClasspath("ComSchema.json"));
     }
 }

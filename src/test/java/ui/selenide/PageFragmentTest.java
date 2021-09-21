@@ -32,6 +32,7 @@ public class PageFragmentTest extends SelenideDriverSetup {
 
     @Test
     public void pageFragmentTest() {
+        mainPage.clickOnFooterItem();
         feedbackPage.checkSubmitButton("Отправить");
     }
 }

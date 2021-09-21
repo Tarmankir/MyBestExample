@@ -5,42 +5,36 @@ import com.google.gson.Gson;
 import io.qameta.allure.Step;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
-import org.json.JSONObject;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.settings.ApiListener;
-import utils.DataFaker;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
-import static org.apache.http.HttpStatus.SC_OK;
 
 @Listeners(ApiListener.class)
-public class DoRegisterTest {
+public class QuickSearchTest {
 
-    DataFaker dataFaker = new DataFaker();
-    String email = dataFaker.generateEmail();
-    String nameUser = dataFaker.generateName();
-
-    JSONObject requestBody = new JSONObject();
+    Map<String, Object> requestBody = new HashMap<>();
 
     @BeforeMethod
-    public void doRegisterBefore() {
-        requestBody.put("email", email);
-        requestBody.put("name", nameUser);
-        requestBody.put("password", "School5");
+    public void quickSearchBefore() {
+        requestBody.put("query", "Ромашка");
     }
 
     @Test
-    @Step("Check user registration")
-    public void doRegisterUser() {
+    @Step("Check company search")
+    public void quickSearchCompany() {
         given()
                 .spec(new RequestSpec().defaultRequestSpec())
                 .body(new Gson().toJson(requestBody))
         .when()
-                .post("/tasks/rest/doregister/posts")
+                .post("/tasks/rest/magicsearch")
         .then()
-                .statusCode(SC_OK)
+                .statusCode(230)
                 .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
                 .extract().response();
     }
