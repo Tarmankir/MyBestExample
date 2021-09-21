@@ -11,7 +11,7 @@ import org.testng.ITestResult;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
+/*
 public class ApiListener implements ITestListener {
 
     private ByteArrayOutputStream request = new ByteArrayOutputStream();
@@ -51,5 +51,4 @@ public class ApiListener implements ITestListener {
         byte[] array = log.toByteArray();
         log.reset();
         return array;
-    }
-}
+    }*/

@@ -9,7 +9,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import java.io.ByteArrayInputStream;
-
+/*
 public class SelenideListener implements ITestListener {
 
     @Attachment
@@ -23,4 +23,4 @@ public class SelenideListener implements ITestListener {
         Object webDriverAttribute = result.getTestContext().getAttribute("WebDriver");
         captureScreenshot((WebDriver) webDriverAttribute);
     }
-}
+}*/
