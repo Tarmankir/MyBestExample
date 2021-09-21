@@ -9,7 +9,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import java.io.ByteArrayInputStream;
 
-public class SeleniumListener implements ITestListener {
+public abstract class SeleniumListener implements ITestListener {
 
     @Attachment
     public byte[] captureScreenshot(WebDriver driver) {
