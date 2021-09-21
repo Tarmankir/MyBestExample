@@ -11,7 +11,6 @@ import ui.settings.SelenideListener;
 import static com.codeborne.selenide.Selenide.*;
 import static ui.settings.Config.getSetting;
 
-@Listeners(SelenideListener.class)
 public class FeedbackPageTest extends SelenideDriverSetup {
 
     private FeedbackPage feedbackPage;
