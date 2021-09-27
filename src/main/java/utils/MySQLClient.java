@@ -11,8 +11,8 @@ public class MySQLClient {
         Connection connection = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1" + "/" + "test_base" + "?autoReconnect=true",
-                    "kir", "School593");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306" + "/" + "test_base" + "?autoReconnect=true",
+                    "root", "School593");
         } catch(Exception e) {
             e.printStackTrace();
             fail("Connection to Data Base failed");
@@ -24,6 +24,6 @@ public class MySQLClient {
     "SELECT FROM"*/
 
     public static void main(String[] args) {
-        connectDataBase("127.0.0.1");
+        connectDataBase("localhost");
     }
 }

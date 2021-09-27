@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.selenide.pages.Articles;
+import ui.selenide.pages.MainPage;
 import ui.selenide.pages.PagePost;
 import ui.settings.SelenideDriverSetup;
 import ui.settings.SelenideListener;
@@ -15,14 +16,16 @@ import static ui.settings.Config.getSetting;
 @Listeners(SelenideListener.class)
 public class ArticlesTest extends SelenideDriverSetup {
 
-    private Articles articles;
-    private PagePost pagePost;
+/*    private Articles articles;
+    private PagePost pagePost;*/
+    private MainPage mainPage;
 
     @BeforeMethod
     public void articlesBefore() {
         open(getSetting("mainURL"));
-        articles = page(Articles.class);
-        pagePost = page(PagePost.class);
+/*        articles = page(Articles.class);
+        pagePost = page(PagePost.class);*/
+        mainPage = page(MainPage.class);
     }
 
     @AfterClass
@@ -32,8 +35,11 @@ public class ArticlesTest extends SelenideDriverSetup {
 
     @Test
     public void articlesPageTest() {
-        articles.openRandomArticle();
+/*        articles.openRandomArticle();
         articles.checkCommentsCounter(pagePost.getCommentsCountForArticle());
-        pagePost.checkPostViewsTitle("Количество просмотров");
+        pagePost.checkPostViewsTitle("Количество просмотров");*/
+        mainPage.openRandomArticle();
+        mainPage.checkCommentsCounter();
+        mainPage.checkPostViewsTitle();
     }
 }
