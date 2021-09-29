@@ -14,7 +14,6 @@ import static ui.selenium.enums.Credentials.*;
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.settings.Config.getSetting;
 
-@Listeners(SeleniumListener.class)
 public class LoginPageTest extends SeleniumDriverSetup {
 
     private WebDriver driver;
