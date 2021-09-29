@@ -12,7 +12,6 @@ import ui.settings.ApiListener;
 import static api.assertions.UserWithIncorrectDataAssertions.checkSuccessfulResponseBodyUserWithIncorrectData;
 import static api.assertions.UserWithTasksAssertions.checkSuccessfulResponseBodyUserWithTasks;
 
-@Listeners(ApiListener.class)
 public class CreateUserTest {
 
     @Test

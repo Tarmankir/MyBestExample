@@ -1,5 +1,7 @@
 package ui.settings;
 
+import com.codeborne.selenide.logevents.LogEvent;
+import com.codeborne.selenide.logevents.LogEventListener;
 import io.qameta.allure.Attachment;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.LogDetail;
@@ -12,7 +14,7 @@ import org.testng.ITestResult;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-public class ApiListener implements ITestListener {
+public class ApiListener implements LogEventListener {
 
     private ByteArrayOutputStream request = new ByteArrayOutputStream();
 
@@ -51,5 +53,15 @@ public class ApiListener implements ITestListener {
         byte[] array = log.toByteArray();
         log.reset();
         return array;
+    }
+
+    @Override
+    public void afterEvent(LogEvent logEvent) {
+
+    }
+
+    @Override
+    public void beforeEvent(LogEvent logEvent) {
+
     }
 }

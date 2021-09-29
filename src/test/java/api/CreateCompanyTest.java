@@ -7,7 +7,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.settings.ApiListener;
 
-@Listeners(ApiListener.class)
 public class CreateCompanyTest {
 
     @Test

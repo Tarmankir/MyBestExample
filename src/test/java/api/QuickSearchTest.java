@@ -15,7 +15,6 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-@Listeners(ApiListener.class)
 public class QuickSearchTest {
 
     Map<String, Object> requestBody = new HashMap<>();
