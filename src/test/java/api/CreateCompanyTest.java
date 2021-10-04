@@ -11,7 +11,7 @@ public class CreateCompanyTest {
 
     @Test
     @Step("Check creation company")
-    void createCompany() {
+    void checkCreationCompany() {
         new Company().createCompany(new DataCompanyBody().fullCompanyBody());
     }
 }

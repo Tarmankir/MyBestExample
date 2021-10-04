@@ -3,9 +3,7 @@ package ui.selenide;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import ui.selenide.pages.Articles;
 import ui.selenide.pages.MainPage;
-import ui.selenide.pages.PagePost;
 import ui.settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -35,7 +33,7 @@ public class ArticlesTest extends SelenideDriverSetup {
 /*        articles.openRandomArticle();
         articles.checkCommentsCounter(pagePost.getCommentsCountForArticle());
         pagePost.checkPostViewsTitle("Количество просмотров");*/
-        mainPage.openRandomArticle();
+        mainPage.openArticle();
         mainPage.checkCommentsCounter();
         mainPage.checkPostViewsTitle();
     }

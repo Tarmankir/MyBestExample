@@ -1,4 +1,4 @@
-package ui.selenide.pages;
+package ui.selenide.fragments;
 
 import com.codeborne.selenide.ElementsContainer;
 import com.codeborne.selenide.SelenideElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import static org.testng.Assert.assertEquals;
 
-public class PagePost extends ElementsContainer {
+public class PostFragment extends ElementsContainer {
 
     @FindBy(css = "span[title='Количество просмотров']")
     private SelenideElement postViews;
