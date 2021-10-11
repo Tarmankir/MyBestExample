@@ -4,26 +4,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.selenium.pages.FooterMenuPage;
-import ui.selenium.pages.MainMenuPageFragment;
+import ui.selenium.pages.MainMenuPage;
 import ui.settings.SeleniumDriverSetup;
-import ui.settings.SeleniumListener;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static ui.settings.Config.getSetting;
 
-public class MenuPageFragmentTest extends SeleniumDriverSetup {
+public class MenuPageTest extends SeleniumDriverSetup {
 
     private WebDriver driver;
     private FooterMenuPage footerMenuPage;
-    private MainMenuPageFragment mainMenuPageFragment;
+    private MainMenuPage mainMenuPage;
+
     @BeforeMethod
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
-        mainMenuPageFragment = initElements(driver, MainMenuPageFragment.class);
+        mainMenuPage = initElements(driver, MainMenuPage.class);
         driver.get(getSetting("mainURL"));
     }
 
@@ -34,7 +33,7 @@ public class MenuPageFragmentTest extends SeleniumDriverSetup {
 
     @Test
     public void menuPageFragmentTest() {
-        mainMenuPageFragment.clickDevelop();
+        mainMenuPage.clickDevelop();
         footerMenuPage.clickSiteMap();
         footerMenuPage.checkText("Все потоки");
     }

@@ -6,9 +6,7 @@ import io.qameta.allure.Step;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import ui.settings.ApiListener;
 
 import java.util.HashMap;
 import java.util.Map;

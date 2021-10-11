@@ -7,9 +7,7 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import org.json.JSONObject;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import ui.settings.ApiListener;
 import utils.DataFaker;
 
 import static io.restassured.RestAssured.given;

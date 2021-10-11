@@ -5,9 +5,7 @@ import api.bodies.DataUserBody;
 import api.bodies.RequestUserBody;
 import api.verifications.ErrorUserResponseData;
 import io.qameta.allure.Step;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import ui.settings.ApiListener;
 
 import static api.assertions.UserWithIncorrectDataAssertions.checkSuccessfulResponseBodyUserWithIncorrectData;
 import static api.assertions.UserWithTasksAssertions.checkSuccessfulResponseBodyUserWithTasks;

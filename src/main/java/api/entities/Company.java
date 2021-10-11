@@ -20,6 +20,6 @@ public class Company {
                 .when()
                         .post("http://users.bugred.ru/tasks/rest/createcompany")
                 .then()
-                        .assertThat().body(matchesJsonSchemaInClasspath("./test/resources/CheckCreationCompany.json"));
+                        .assertThat().body(matchesJsonSchemaInClasspath("CheckCreationCompany.json"));
     }
 }

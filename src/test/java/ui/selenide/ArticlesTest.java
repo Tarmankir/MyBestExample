@@ -7,20 +7,19 @@ import ui.selenide.pages.MainPage;
 import ui.settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.*;
+import static org.testng.Assert.assertEquals;
 import static ui.settings.Config.getSetting;
 
 public class ArticlesTest extends SelenideDriverSetup {
 
-/*    private Articles articles;
-    private PagePost pagePost;*/
     private MainPage mainPage;
+    private PostPage postPage;
 
     @BeforeMethod
     public void articlesBefore() {
         open(getSetting("mainURL"));
-/*        articles = page(Articles.class);
-        pagePost = page(PagePost.class);*/
         mainPage = page(MainPage.class);
+        postPage = page(PostPage.class);
     }
 
     @AfterClass
@@ -30,11 +29,8 @@ public class ArticlesTest extends SelenideDriverSetup {
 
     @Test
     public void articlesPageTest() {
-/*        articles.openRandomArticle();
-        articles.checkCommentsCounter(pagePost.getCommentsCountForArticle());
-        pagePost.checkPostViewsTitle("Количество просмотров");*/
-        mainPage.openArticle();
-        mainPage.checkCommentsCounter();
-        mainPage.checkPostViewsTitle();
+        mainPage.openArticle(8);
+        assertEquals(mainPage.getArticleVotesCount(8), postPage.getPostVotesCount());
+        assertEquals(mainPage.getArticleCommentsCount(8), postPage.getPostCommentsCount());
     }
 }

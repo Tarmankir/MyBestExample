@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class MainMenuPageFragment {
+public class MainMenuPage {
 
     @FindBy(css = "a[href='/ru/top']")
     private WebElement allStreams;
@@ -30,7 +30,7 @@ public class MainMenuPageFragment {
 
     private WebDriver driver;
 
-    public MainMenuPageFragment(WebDriver driver) {
+    public MainMenuPage(WebDriver driver) {
         this.driver = driver;
     }
 

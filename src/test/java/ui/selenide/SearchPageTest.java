@@ -13,7 +13,7 @@ public class SearchPageTest extends SelenideDriverSetup {
 
     @BeforeMethod
     public void SearchPageBefore() {
-        open(getSetting("mainURL"));
+        open(getSetting("searchURL"));
         searchPage = page(SearchPage.class);
     }
 

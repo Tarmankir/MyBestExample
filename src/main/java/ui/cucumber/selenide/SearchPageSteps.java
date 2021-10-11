@@ -17,7 +17,7 @@ public class SearchPageSteps extends SelenideDriverSetup {
 
     @Given("I am open main page and click search")
     public void IAmOpenMainPageAndClickSearch() {
-        open(getSetting("mainURL"));
+        open(getSetting("searchURL"));
         searchPage = page(SearchPage.class);
     }
 

@@ -13,7 +13,7 @@ import java.util.Random;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static ui.settings.Config.getSetting;
-
+/*
 public class ArticlesPagePostSteps extends SelenideDriverSetup {
 
     private ArticlesFragment articlesFragment;
@@ -41,4 +41,4 @@ public class ArticlesPagePostSteps extends SelenideDriverSetup {
     public void IAmCheckShareButton(String text) {
         postFragment.checkPostViewsTitle(text);
     }
-}
+}*/
