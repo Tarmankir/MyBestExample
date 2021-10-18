@@ -14,10 +14,6 @@ public class MainPage {
         articlesList.get(articleIndex).clickOnArticle();
     }
 
-    public String getArticleCommentsCount(int articleIndex) {
-        return articlesList.get(articleIndex).getCommentsCount().getText();
-    }
-
     public String getArticleVotesCount(int articleIndex) {
         return articlesList.get(articleIndex).getVotesCount().getText();
     }

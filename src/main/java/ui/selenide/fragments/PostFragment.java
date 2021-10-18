@@ -6,14 +6,14 @@ import org.openqa.selenium.support.FindBy;
 
 public class PostFragment extends ElementsContainer {
 
-    @FindBy(css = ".tm-article-comments-counter-link__value")
-    private SelenideElement postCommentsCount;
+    @FindBy(css = ".tm-article-snippet__title")
+    private SelenideElement postTitle;
 
     @FindBy(css = ".tm-votes-meter__value")
     private SelenideElement postVotesCount;
 
-    public SelenideElement getCommentsCountPost() {
-        return postCommentsCount;
+    public SelenideElement getPostTitle() {
+        return postTitle;
     }
 
     public SelenideElement getVotesCountPost() {
