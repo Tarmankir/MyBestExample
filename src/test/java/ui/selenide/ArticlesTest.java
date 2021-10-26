@@ -36,6 +36,6 @@ public class ArticlesTest extends SelenideDriverSetup {
     public void articlesPageTest() {
         mainPage.openArticle(8);
         postPage.checkPostTitle();
-//        assertEquals(votesCountOnMainPage, postPage.getPostVotesCount());
+        assertEquals(votesCountOnMainPage, postPage.getPostVotesCount());
     }
 }

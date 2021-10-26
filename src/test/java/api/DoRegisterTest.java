@@ -28,12 +28,18 @@ public class DoRegisterTest {
         requestBody.put("password", "School5");
     }
 
+    String requestBody2 = "{\n" +
+            "  \"password\": \"foo128345\",\n" +
+            "  \"name\": \"bar343842\",\n" +
+            "  \"email\": \"344648545sad@mail.com\" " +
+            "\n}";
+
     @Test
     @Step("Check user registration")
     public void doRegisterUser() {
         given()
                 .spec(new RequestSpec().defaultRequestSpec())
-                .body(new Gson().toJson(requestBody))
+                .body(requestBody2)
         .when()
                 .post("/tasks/rest/doregister/posts")
         .then()

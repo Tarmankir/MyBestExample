@@ -1,6 +1,5 @@
 package api.entities;
 
-import com.google.gson.Gson;
 import io.qameta.allure.Step;
 import io.restassured.builder.MultiPartSpecBuilder;
 import io.restassured.builder.RequestSpecBuilder;
@@ -21,19 +20,20 @@ public class Avatar {
         given()
                 .spec(new RequestSpecBuilder()
                         .addMultiPart(new MultiPartSpecBuilder(file)
+                                .controlName("avatar")
                                 .fileName(file.getName())
                                 .build())
                         .addMultiPart(new MultiPartSpecBuilder(email)
-                                .controlName(email)
+                                .controlName("email")
                                 .build())
                         .setContentType("multipart/form-data")
+                        .log(LogDetail.ALL)
                         .build())
-                .body(new Gson().toJson(requestBody))
         .when()
-                .post("/tasks/rest/addavatar")
+                .post("http://users.bugred.ru/tasks/rest/addavatar")
         .then()
-                .statusCode(SC_OK)
                 .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
+                .statusCode(SC_OK)
                 .extract().response();
     }
 }

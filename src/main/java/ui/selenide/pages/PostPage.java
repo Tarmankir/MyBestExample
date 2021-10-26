@@ -5,7 +5,7 @@ import ui.selenide.fragments.PostFragment;
 
 public class PostPage {
 
-    @FindBy(css = ".tm-misprint-area__wrapper")
+    @FindBy(css = ".tm-article-presenter__body")
     private PostFragment postBody;
 
     public String getPostVotesCount() {
