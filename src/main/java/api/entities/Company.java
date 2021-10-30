@@ -5,9 +5,9 @@ import io.qameta.allure.Step;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
+import io.restassured.module.jsv.JsonSchemaValidator;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class Company {
 
@@ -20,6 +20,6 @@ public class Company {
                 .when()
                         .post("http://users.bugred.ru/tasks/rest/createcompany")
                 .then()
-                        .assertThat().body(matchesJsonSchemaInClasspath("CheckCreationCompany.json"));
+                        .assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("CheckCreationCompany.json"));
     }
 }

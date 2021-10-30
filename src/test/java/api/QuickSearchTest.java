@@ -1,38 +1,28 @@
 package api;
 
+import api.bodies.QuickSearchBody;
+import api.schemes.QuickSearchScheme;
 import api.specifications.RequestSpec;
-import com.google.gson.Gson;
 import io.qameta.allure.Step;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 
 public class QuickSearchTest {
-
-    Map<String, Object> requestBody = new HashMap<>();
-
-    @BeforeMethod
-    public void quickSearchBefore() {
-        requestBody.put("query", "Ромашка");
-    }
 
     @Test
     @Step("Check company search")
     public void quickSearchCompany() {
         given()
                 .spec(new RequestSpec().defaultRequestSpec())
-                .body(new Gson().toJson(requestBody))
+                .body(new QuickSearchBody().quickSearchBody())
         .when()
                 .post("/tasks/rest/magicsearch")
         .then()
-                .statusCode(230)
                 .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
-                .extract().response();
+                .assertThat().body(matchesJsonSchema(new QuickSearchScheme().CheckQuickSearchBody()));
     }
 }

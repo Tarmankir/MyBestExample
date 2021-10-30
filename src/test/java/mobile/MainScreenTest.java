@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import mobile.screens.MainScreen;
 import mobile.settings.AppiumDriverSetup;
 import mobile.settings.Capabilities;
-import mobile.settings.Urls;
+import mobile.settings.Config;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,8 +21,9 @@ public class MainScreenTest extends AppiumDriverSetup {
 
     @BeforeMethod
     public void driverSet() throws MalformedURLException {
-        driver = new AppiumDriver(new Urls().urlAndroid(), new DesiredCapabilities(new Capabilities().androidCapabilities()));
+        driver = new AppiumDriver(new DesiredCapabilities(new Capabilities().androidCapabilities()));
         mainScreen = initElements(driver, MainScreen.class);
+        driver.get(Config.getSetting("urlAndroid"));
     }
 
     @AfterMethod

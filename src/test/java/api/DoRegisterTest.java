@@ -1,45 +1,23 @@
 package api;
 
+import api.bodies.DoRegisterBody;
 import api.specifications.RequestSpec;
-import com.google.gson.Gson;
 import io.qameta.allure.Step;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
-import org.json.JSONObject;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import utils.DataFaker;
 
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_OK;
 
 public class DoRegisterTest {
 
-    DataFaker dataFaker = new DataFaker();
-    String email = dataFaker.generateEmail();
-    String nameUser = dataFaker.generateName();
-
-    JSONObject requestBody = new JSONObject();
-
-    @BeforeMethod
-    public void doRegisterBefore() {
-        requestBody.put("email", email);
-        requestBody.put("name", nameUser);
-        requestBody.put("password", "School5");
-    }
-
-    String requestBody2 = "{\n" +
-            "  \"password\": \"foo128345\",\n" +
-            "  \"name\": \"bar343842\",\n" +
-            "  \"email\": \"344648545sad@mail.com\" " +
-            "\n}";
-
     @Test
     @Step("Check user registration")
     public void doRegisterUser() {
         given()
                 .spec(new RequestSpec().defaultRequestSpec())
-                .body(requestBody2)
+                .body(new DoRegisterBody().doRegisterBody())
         .when()
                 .post("/tasks/rest/doregister/posts")
         .then()

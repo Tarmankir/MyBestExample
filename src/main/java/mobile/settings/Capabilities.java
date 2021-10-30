@@ -12,7 +12,7 @@ public class Capabilities {
         capabilitiesAndroid.setCapability(PLATFORM_NAME, "Android");
         capabilitiesAndroid.setCapability(PLATFORM_VERSION, "11.0");
         capabilitiesAndroid.setCapability(DEVICE_NAME, "fe8pcqxs5d49mr45");
-        capabilitiesAndroid.setCapability(APP, "/home/kir/Apktest/screenshot-easy_4.1.6(29).apk");
+        capabilitiesAndroid.setCapability(APP, "/test/resources/screenshot-easy_4.1.6(29).apk");
         return capabilitiesAndroid;
     }
 }
