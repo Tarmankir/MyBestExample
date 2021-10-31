@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ui.selenium.pages.AccountPage;
 import ui.selenium.pages.LoginPage;
 import ui.settings.SeleniumDriverSetup;
 
@@ -16,12 +17,14 @@ public class LoginPageTest extends SeleniumDriverSetup {
 
     private WebDriver driver;
     private LoginPage loginPage;
+    private AccountPage accountPage;
 
     @BeforeMethod
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
         loginPage = initElements(driver, LoginPage.class);
-        driver.get(getSetting("baseUrl"));
+        accountPage = initElements(driver, AccountPage.class);
+        driver.get(getSetting("loginUrl"));
     }
 
     @AfterMethod
@@ -33,6 +36,6 @@ public class LoginPageTest extends SeleniumDriverSetup {
     public void loginPageTest() {
         loginPage.loginInSite(TEST1);
         loginPage.clickLogin();
-        loginPage.checkLogin("Приветствуем вас, @Tarman332");
+        accountPage.checkLogin("Приветствуем вас, @Tarman332");
     }
 }

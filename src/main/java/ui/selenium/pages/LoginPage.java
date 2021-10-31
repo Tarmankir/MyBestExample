@@ -1,17 +1,10 @@
 package ui.selenium.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.selenium.enums.Credentials;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.concurrent.TimeUnit;
-
-import static org.testng.Assert.assertEquals;
 
 public class LoginPage {
 
@@ -24,11 +17,7 @@ public class LoginPage {
     @FindBy(css = "button[type='submit']")
     private WebElement buttonSignUp;
 
-    @FindBy(css = ".welcome__title")
-    private WebElement userInfo;
-
     private WebDriver driver;
-    private WebDriverWait wait;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -51,11 +40,5 @@ public class LoginPage {
     @Step("Click on the Login site")
     public void clickLogin(){
         buttonSignUp.click();
-    }
-
-    @Step("Check user url equals test url")
-    public void checkLogin(String text) {
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        assertEquals(userInfo.getText(), text);
     }
 }
