@@ -33,6 +33,6 @@ public class MainScreenTest extends AppiumDriverSetup {
 
     @Test
     public void mainScreenTest() {
-
+        mainScreen.clickLogin();
     }
 }
