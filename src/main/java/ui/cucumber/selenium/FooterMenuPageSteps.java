@@ -10,7 +10,7 @@ import ui.selenium.pages.FooterMenuPage;
 import ui.settings.SeleniumDriverSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
-import static ui.settings.Config.getSetting;
+import static ui.settings.UiConfig.getUiSetting;
 
 public class FooterMenuPageSteps extends SeleniumDriverSetup {
 
@@ -21,7 +21,7 @@ public class FooterMenuPageSteps extends SeleniumDriverSetup {
     public void IAmOpenMainPageForFooterTesting() {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
-        driver.get(getSetting("mainURL"));
+        driver.get(getUiSetting("mainURL"));
     }
 
     @When("I am click site map")

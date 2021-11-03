@@ -17,7 +17,7 @@ public class SearchPage {
         searchButton.click();
     }
 
-    public void enterTestSearch(String text) {
+    public void enterTextInSearchField(String text) {
         searchField.setValue(text);
         searchField.pressEnter();
     }

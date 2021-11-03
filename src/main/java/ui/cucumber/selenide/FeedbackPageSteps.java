@@ -12,7 +12,7 @@ import java.util.List;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
-import static ui.settings.Config.getSetting;
+import static ui.settings.UiConfig.getUiSetting;
 
 public class FeedbackPageSteps extends SelenideDriverSetup {
 
@@ -20,7 +20,7 @@ public class FeedbackPageSteps extends SelenideDriverSetup {
 
     @Given("I am open feedback page")
     public void IAmOpenFeedbackPage() {
-        open(getSetting("feedbackURL"));
+        open(getUiSetting("feedbackURL"));
         feedbackPage = page(FeedbackPage.class);
     }
 

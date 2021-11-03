@@ -5,7 +5,7 @@ import ui.selenide.pages.SearchPage;
 import ui.settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.*;
-import static ui.settings.Config.getSetting;
+import static ui.settings.UiConfig.getUiSetting;
 
 public class SearchPageTest extends SelenideDriverSetup {
 
@@ -13,7 +13,7 @@ public class SearchPageTest extends SelenideDriverSetup {
 
     @BeforeMethod
     public void SearchPageBefore() {
-        open(getSetting("searchURL"));
+        open(getUiSetting("searchURL"));
         searchPage = page(SearchPage.class);
     }
 
@@ -30,7 +30,7 @@ public class SearchPageTest extends SelenideDriverSetup {
     @Test(dataProvider = "searchTestProvider")
     public void searchPageTest(String searchData) {
         searchPage.clickOnSearchButton();
-        searchPage.enterTestSearch(searchData);
+        searchPage.enterTextInSearchField(searchData);
         searchPage.checkSearch(searchData);
     }
 }

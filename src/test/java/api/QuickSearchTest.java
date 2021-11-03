@@ -5,10 +5,12 @@ import api.specifications.RequestSpec;
 import io.qameta.allure.Step;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
-import io.restassured.module.jsv.JsonSchemaValidator;
 import org.testng.annotations.Test;
 
+import java.io.File;
+
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 
 public class QuickSearchTest {
 
@@ -22,6 +24,6 @@ public class QuickSearchTest {
                 .post("/tasks/rest/magicsearch")
         .then()
                 .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
-                .assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("CheckQuickSearch.json"));
+                .assertThat().body(matchesJsonSchema(new File("src/test/resources/schemes/CheckQuickSearch.json")));
     }
 }

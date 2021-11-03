@@ -9,7 +9,7 @@ import ui.settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.*;
 import static org.testng.Assert.assertEquals;
-import static ui.settings.Config.getSetting;
+import static ui.settings.UiConfig.getUiSetting;
 
 public class ArticlesTest extends SelenideDriverSetup {
 
@@ -20,7 +20,7 @@ public class ArticlesTest extends SelenideDriverSetup {
 
     @BeforeMethod
     public void articlesBefore() {
-        open(getSetting("mainURL"));
+        open(getUiSetting("mainURL"));
         mainPage = page(MainPage.class);
         postPage = page(PostPage.class);
 

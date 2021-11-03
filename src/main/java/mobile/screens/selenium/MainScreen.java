@@ -1,4 +1,4 @@
-package mobile.screens;
+package mobile.screens.selenium;
 
 import io.appium.java_client.AppiumDriver;
 import io.qameta.allure.Step;

@@ -11,6 +11,6 @@ public class AddAvatarTest {
     @Test
     @Step("Check add avatar")
     void checkAddAvatar() {
-        new Avatar().addAvatar(new File("src/test/resources/avatar.png"), "superhero@aa.ru");
+        new Avatar().addAvatar(new File("src/test/resources/files/avatar.png"), "superhero@aa.ru");
     }
 }

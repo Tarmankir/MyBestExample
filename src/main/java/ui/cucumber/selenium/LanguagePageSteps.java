@@ -10,7 +10,7 @@ import ui.selenium.pages.LanguagePage;
 import ui.settings.SeleniumDriverSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
-import static ui.settings.Config.getSetting;
+import static ui.settings.UiConfig.getUiSetting;
 
 public class LanguagePageSteps extends SeleniumDriverSetup {
 
@@ -21,7 +21,7 @@ public class LanguagePageSteps extends SeleniumDriverSetup {
     public void IAmOpenMainPage() {
         driver = new ChromeDriver(getOptions());
         languagePage = initElements(driver, LanguagePage.class);
-        driver.get(getSetting("mainURL"));
+        driver.get(getUiSetting("mainURL"));
     }
 
     @When("I am click language settings")

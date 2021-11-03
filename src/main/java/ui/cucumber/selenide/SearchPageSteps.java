@@ -9,7 +9,7 @@ import ui.settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
-import static ui.settings.Config.getSetting;
+import static ui.settings.UiConfig.getUiSetting;
 
 public class SearchPageSteps extends SelenideDriverSetup {
 
@@ -17,7 +17,7 @@ public class SearchPageSteps extends SelenideDriverSetup {
 
     @Given("I am open main page and click search")
     public void IAmOpenMainPageAndClickSearch() {
-        open(getSetting("searchURL"));
+        open(getUiSetting("searchURL"));
         searchPage = page(SearchPage.class);
     }
 
@@ -28,7 +28,7 @@ public class SearchPageSteps extends SelenideDriverSetup {
 
     @And("^I am enter test text and go to search ([^\"]*)$")
     public void IAmEnterTestSearch(String Text) {
-        searchPage.enterTestSearch(Text);
+        searchPage.enterTextInSearchField(Text);
     }
 
     @Then("^I am check search text equals test text ([^\"]*)$")

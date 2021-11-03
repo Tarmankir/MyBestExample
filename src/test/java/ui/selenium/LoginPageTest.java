@@ -11,7 +11,7 @@ import ui.settings.SeleniumDriverSetup;
 
 import static ui.selenium.enums.Credentials.*;
 import static org.openqa.selenium.support.PageFactory.initElements;
-import static ui.settings.Config.getSetting;
+import static ui.settings.UiConfig.getUiSetting;
 
 public class LoginPageTest extends SeleniumDriverSetup {
 
@@ -24,7 +24,7 @@ public class LoginPageTest extends SeleniumDriverSetup {
         driver = new ChromeDriver(getOptions());
         loginPage = initElements(driver, LoginPage.class);
         accountPage = initElements(driver, AccountPage.class);
-        driver.get(getSetting("loginUrl"));
+        driver.get(getUiSetting("loginUrl"));
     }
 
     @AfterMethod

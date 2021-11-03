@@ -1,11 +1,5 @@
 .idea/
 allure-results/
 target/
-MyBestExample.iml
 build/
-MyTests.iml
-FooterMenuPageTest.java
-.idea/
-build/
-target/
-MyTests.iml
+.iml

@@ -7,7 +7,7 @@ import ui.selenide.pages.FeedbackPage;
 import ui.settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.*;
-import static ui.settings.Config.getSetting;
+import static ui.settings.UiConfig.getUiSetting;
 
 public class FeedbackPageTest extends SelenideDriverSetup {
 
@@ -15,7 +15,7 @@ public class FeedbackPageTest extends SelenideDriverSetup {
 
     @BeforeMethod
     public void feedbackPageBefore() {
-        open(getSetting("feedbackURL"));
+        open(getUiSetting("feedbackURL"));
         feedbackPage = page(FeedbackPage.class);
     }
 

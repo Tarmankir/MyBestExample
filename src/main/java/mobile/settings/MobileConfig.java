@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class Config {
+public class MobileConfig {
 
     private static final Properties properties = new Properties();
 
@@ -16,7 +16,7 @@ public class Config {
         }
     }
 
-    public static String getSetting(String key) {
+    public static String getMobileSetting(String key) {
         return properties.getProperty(key);
     }
 }
