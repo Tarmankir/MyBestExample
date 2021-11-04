@@ -23,7 +23,7 @@ public class SearchPageTest extends SelenideDriverSetup {
     }
 
     @DataProvider(name = "searchTestProvider")
-    public Object[] dataProvider() {
+    public Object[] searchDataProvider() {
         return new Object[]{"12345678", "Programming", "Тестирование"};
     }
 

@@ -1,9 +1,9 @@
 package api.entities;
 
+import api.specifications.ResponseSpec;
 import io.qameta.allure.Step;
 import io.restassured.builder.MultiPartSpecBuilder;
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import org.testng.annotations.Test;
 
@@ -32,8 +32,8 @@ public class Avatar {
         .when()
                 .post("http://users.bugred.ru/tasks/rest/addavatar")
         .then()
-                .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
                 .statusCode(SC_OK)
+                .spec(new ResponseSpec().defaultResponseSpec())
                 .extract().response();
     }
 }

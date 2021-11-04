@@ -2,6 +2,7 @@ package api;
 
 import api.bodies.DoRegisterBody;
 import api.specifications.RequestSpec;
+import api.specifications.ResponseSpec;
 import io.qameta.allure.Step;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
@@ -22,7 +23,7 @@ public class DoRegisterTest {
                 .post("/tasks/rest/doregister/posts")
         .then()
                 .statusCode(SC_OK)
-                .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
+                .spec(new ResponseSpec().defaultResponseSpec())
                 .extract().response();
     }
 }

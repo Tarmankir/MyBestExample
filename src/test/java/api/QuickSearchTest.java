@@ -2,9 +2,8 @@ package api;
 
 import api.bodies.QuickSearchBody;
 import api.specifications.RequestSpec;
+import api.specifications.ResponseSpec;
 import io.qameta.allure.Step;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.filter.log.LogDetail;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -23,7 +22,7 @@ public class QuickSearchTest {
         .when()
                 .post("/tasks/rest/magicsearch")
         .then()
-                .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
+                .spec(new ResponseSpec().defaultResponseSpec())
                 .assertThat().body(matchesJsonSchema(new File("src/test/resources/schemes/CheckQuickSearch.json")));
     }
 }

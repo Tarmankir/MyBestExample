@@ -1,10 +1,9 @@
 package api.entities;
 
 import api.bodies.RequestCompanyBody;
+import api.specifications.RequestSpec;
+import api.specifications.ResponseSpec;
 import io.qameta.allure.Step;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 
 import java.io.File;
@@ -18,12 +17,12 @@ public class Company {
     public void createCompany(RequestCompanyBody body) {
                 given()
                         .contentType(ContentType.JSON)
-                        .spec(new RequestSpecBuilder().log(LogDetail.ALL).build())
+                        .spec(new RequestSpec().defaultRequestSpec())
                         .body(body)
                 .when()
                         .post("http://users.bugred.ru/tasks/rest/createcompany")
                 .then()
-                        .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
+                        .spec(new ResponseSpec().defaultResponseSpec())
                         .assertThat().body(matchesJsonSchema(new File("src/test/resources/schemes/CheckCreationCompany.json")));
     }
 }

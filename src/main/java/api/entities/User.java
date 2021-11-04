@@ -2,11 +2,9 @@ package api.entities;
 
 import api.bodies.RequestUserBody;
 import api.bodies.ResponseUserBody;
+import api.specifications.RequestSpec;
+import api.specifications.ResponseSpec;
 import io.qameta.allure.Step;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.filter.log.LogDetail;
-import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
 import lombok.Getter;
 
@@ -22,14 +20,13 @@ public class User {
     public ResponseUserBody createUser(RequestUserBody body) {
         return responseUserBody =
                 given()
-                    .contentType(ContentType.JSON)
-                    .spec(new RequestSpecBuilder().log(LogDetail.ALL).build())
+                    .spec(new RequestSpec().defaultRequestSpec())
                     .body(body.toJsonWithoutNull())
                 .when()
                     .post("http://users.bugred.ru/tasks/rest/createuserwithtasks")
                 .then()
                     .statusCode(SC_OK)
-                    .spec(new ResponseSpecBuilder().log(LogDetail.ALL).build())
+                    .spec(new ResponseSpec().defaultResponseSpec())
                     .extract().response().as(ResponseUserBody.class, ObjectMapperType.GSON);
     }
 }
