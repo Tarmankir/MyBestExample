@@ -23,7 +23,7 @@ public class User {
                     .spec(new RequestSpec().defaultRequestSpec())
                     .body(body.toJsonWithoutNull())
                 .when()
-                    .post("http://users.bugred.ru/tasks/rest/createuserwithtasks")
+                    .post("/tasks/rest/createuserwithtasks")
                 .then()
                     .statusCode(SC_OK)
                     .spec(new ResponseSpec().defaultResponseSpec())

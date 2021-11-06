@@ -20,7 +20,7 @@ public class Company {
                         .spec(new RequestSpec().defaultRequestSpec())
                         .body(body)
                 .when()
-                        .post("http://users.bugred.ru/tasks/rest/createcompany")
+                        .post("/tasks/rest/createcompany")
                 .then()
                         .spec(new ResponseSpec().defaultResponseSpec())
                         .assertThat().body(matchesJsonSchema(new File("src/test/resources/schemes/CheckCreationCompany.json")));

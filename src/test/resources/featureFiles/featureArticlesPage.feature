@@ -1,7 +1,7 @@
-Feature: Test articles
+Feature: Test article and post
 
-  Scenario: Select random articles and check the button
+  Scenario: Select article and check the post counters
     Given I am open articles page
-      When I am open random article
-      And I am valid comments counter
-      Then I am check post views title contains Количество просмотров
+      When I am open article 8
+      And I am check post title
+      Then I am assert votes count

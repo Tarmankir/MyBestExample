@@ -30,7 +30,7 @@ public class Avatar {
                         .log(LogDetail.ALL)
                         .build())
         .when()
-                .post("http://users.bugred.ru/tasks/rest/addavatar")
+                .post("/tasks/rest/addavatar")
         .then()
                 .statusCode(SC_OK)
                 .spec(new ResponseSpec().defaultResponseSpec())

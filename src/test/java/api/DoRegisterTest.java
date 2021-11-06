@@ -4,8 +4,6 @@ import api.bodies.DoRegisterBody;
 import api.specifications.RequestSpec;
 import api.specifications.ResponseSpec;
 import io.qameta.allure.Step;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.filter.log.LogDetail;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;

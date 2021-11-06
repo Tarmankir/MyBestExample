@@ -1,6 +1,9 @@
 package ui.cucumber.selenium;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ui.selenium.pages.FooterMenuPage;
@@ -22,5 +25,21 @@ public class MenuPageSteps extends SeleniumDriverSetup {
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         mainMenuPage = initElements(driver, MainMenuPage.class);
         driver.get(getUiSetting("mainURL"));
+    }
+
+    @When("I am click to menu Develop")
+    public void IAmClickToMenuDevelop() {
+        mainMenuPage.clickDevelop();
+    }
+
+    @And("I am click menu site Map")
+    public void IAmClickMenuSiteMap() {
+        footerMenuPage.clickSiteMap();
+    }
+
+    @Then("^I am check text on button on menu ([^\"]*)$")
+    public void IAmCheckTextOnButtonOnMenu(String Text) {
+        footerMenuPage.checkText(Text);
+        driver.close();
     }
 }

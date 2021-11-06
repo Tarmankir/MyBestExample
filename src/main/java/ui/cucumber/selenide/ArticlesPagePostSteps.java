@@ -4,41 +4,43 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import ui.selenide.fragments.ArticlesFragment;
-import ui.selenide.fragments.PostFragment;
+import ui.selenide.pages.MainPage;
+import ui.selenide.pages.PostPage;
 import ui.settings.SelenideDriverSetup;
-
-import java.util.Random;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
-import static ui.settings.Config.getSetting;
-/*
+import static org.testng.Assert.assertEquals;
+import static ui.settings.UiConfig.getUiSetting;
+
 public class ArticlesPagePostSteps extends SelenideDriverSetup {
 
-    private ArticlesFragment articlesFragment;
-    private PostFragment postFragment;
+    private MainPage mainPage;
+    private PostPage postPage;
+
+    private String votesCountOnMainPage;
 
     @Given("I am open articles page")
     public void IAmOpenArticlesPage() {
-        open(getSetting("mainURL"));
-        articlesFragment = page(ArticlesFragment.class);
-        postFragment = page(PostFragment.class);
+        open(getUiSetting("mainURL"));
+        mainPage = page(MainPage.class);
+        postPage = page(PostPage.class);
+
+        votesCountOnMainPage = mainPage.getArticleVotesCount(8);
     }
 
-    @When("I am open random article")
-    public void IAmOpenRandomArticle() {
-        Random random = new Random();
-        articlesFragment.openArticle(random.nextInt(articlesFragment.getArticleCount()));
+    @When("^I am open article ([^\"]*)$")
+    public void IAmOpenArticle(int articleIndex) {
+        mainPage.openArticle(articleIndex);
     }
 
-    @And("I am valid comments counter")
-    public void IAmValidCommentsCounter() {
-        articlesFragment.checkCommentsCounter(postFragment.getCommentsCountForArticle());
+    @And("I am check post title")
+    public void IAmCheckPostTitle() {
+        postPage.checkPostTitle();
     }
 
-    @Then("^I am check post views title contains ([^\"]*)$")
-    public void IAmCheckShareButton(String text) {
-        postFragment.checkPostViewsTitle(text);
+    @Then("I am assert votes count")
+    public void IAmAssertVotesCount() {
+        assertEquals(votesCountOnMainPage, postPage.getPostVotesCount());
     }
-}*/
+}
