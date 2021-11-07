@@ -10,7 +10,7 @@ public class MobileConfig {
 
     static {
         try {
-            properties.load(new FileInputStream("src/main/resources/mobile.properties"));
+            properties.load(new FileInputStream("src/main/resources/config/mobile.properties"));
         } catch (IOException e) {
             throw new ExceptionInInitializerError(e);
         }

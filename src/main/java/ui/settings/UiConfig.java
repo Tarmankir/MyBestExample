@@ -10,7 +10,7 @@ public final class UiConfig {
 
     static {
         try {
-            properties.load(new FileInputStream("src/main/resources/ui.properties"));
+            properties.load(new FileInputStream("src/main/resources/config/ui.properties"));
         } catch (IOException e) {
             throw new ExceptionInInitializerError(e);
         }

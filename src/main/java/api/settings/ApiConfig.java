@@ -10,7 +10,7 @@ public class ApiConfig {
 
     static {
         try {
-            properties.load(new FileInputStream("src/main/resources/api.properties"));
+            properties.load(new FileInputStream("src/main/resources/config/api.properties"));
         } catch (IOException e) {
             throw new ExceptionInInitializerError(e);
         }
