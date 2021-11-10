@@ -2,4 +2,4 @@
 allure-results/
 target/
 build/
-.iml
+*.iml

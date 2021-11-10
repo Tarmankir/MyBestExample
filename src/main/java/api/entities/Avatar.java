@@ -1,10 +1,9 @@
 package api.entities;
 
+import api.specifications.RequestSpec;
 import api.specifications.ResponseSpec;
 import io.qameta.allure.Step;
 import io.restassured.builder.MultiPartSpecBuilder;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.log.LogDetail;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -18,22 +17,20 @@ public class Avatar {
     @Step("Add avatar for user")
     public void addAvatar(File file, String email) {
         given()
-                .spec(new RequestSpecBuilder()
-                        .addMultiPart(new MultiPartSpecBuilder(file)
+                .spec(new RequestSpec().defaultRequestSpec()
+                        .multiPart(new MultiPartSpecBuilder(file)
                                 .controlName("avatar")
                                 .fileName(file.getName())
                                 .build())
-                        .addMultiPart(new MultiPartSpecBuilder(email)
+                        .multiPart(new MultiPartSpecBuilder(email)
                                 .controlName("email")
                                 .build())
-                        .setContentType("multipart/form-data")
-                        .log(LogDetail.ALL)
-                        .build())
+                        .contentType("multipart/form-data"))
         .when()
                 .post("/tasks/rest/addavatar")
         .then()
-                .statusCode(SC_OK)
                 .spec(new ResponseSpec().defaultResponseSpec())
+                .statusCode(SC_OK)
                 .extract().response();
     }
 }
