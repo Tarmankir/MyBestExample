@@ -25,8 +25,8 @@ public class User {
                 .when()
                     .post("/tasks/rest/createuserwithtasks")
                 .then()
-                    .statusCode(SC_OK)
                     .spec(new ResponseSpec().defaultResponseSpec())
+                    .statusCode(SC_OK)
                     .extract().response().as(ResponseUserBody.class, ObjectMapperType.GSON);
     }
 }

@@ -9,12 +9,11 @@ import java.io.File;
 
 public class AddAvatarTest {
 
-    @DataProvider(name = "addAvatarProvider", parallel = true)
+    @DataProvider(name = "addAvatarProvider")
     public Object[][] avatarDataProvider(){
         return new Object[][] {
                 {"src/test/resources/files/avatar.png", "superhero@aa.ru"},
                 {"src/test/resources/files/avatar2.jpg", "superhero@aa.ru"},
-                {"src/test/resources/files/avatar3.bmp", "superhero@aa.ru"}
         };
     }
 

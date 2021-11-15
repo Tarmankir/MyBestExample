@@ -4,7 +4,6 @@ import api.specifications.RequestSpec;
 import api.specifications.ResponseSpec;
 import io.qameta.allure.Step;
 import io.restassured.builder.MultiPartSpecBuilder;
-import org.testng.annotations.Test;
 
 import java.io.File;
 
@@ -13,7 +12,6 @@ import static org.apache.http.HttpStatus.SC_OK;
 
 public class Avatar {
 
-    @Test
     @Step("Add avatar for user")
     public void addAvatar(File file, String email) {
         given()
