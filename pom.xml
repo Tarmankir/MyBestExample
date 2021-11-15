@@ -12,6 +12,7 @@
         <module>mobile</module>
         <module>api</module>
         <module>ui</module>
+        <module>core</module>
     </modules>
 
     <properties>
