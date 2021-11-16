@@ -5,13 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import selenium.enums.pages.AccountPage;
-import selenium.enums.pages.LoginPage;
-import ui.settings.SeleniumDriverSetup;
+import selenium.pages.AccountPage;
+import selenium.pages.LoginPage;
+import settings.SeleniumDriverSetup;
 
 import static selenium.enums.Credentials.*;
 import static org.openqa.selenium.support.PageFactory.initElements;
-import static ui.settings.UiConfig.getUiSetting;
+import static settings.UiConfig.getUiSetting;
 
 public class LoginPageTest extends SeleniumDriverSetup {
 

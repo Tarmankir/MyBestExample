@@ -6,11 +6,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import selenium.enums.pages.FooterMenuPage;
-import ui.settings.SeleniumDriverSetup;
+import selenium.pages.FooterMenuPage;
+import settings.SeleniumDriverSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
-import static ui.settings.UiConfig.getUiSetting;
+import static settings.UiConfig.getUiSetting;
 
 public class FooterMenuPageSteps extends SeleniumDriverSetup {
 

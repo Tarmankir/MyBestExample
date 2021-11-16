@@ -5,10 +5,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenide.pages.FeedbackPage;
-import ui.settings.SelenideDriverSetup;
+import settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.*;
-import static ui.settings.UiConfig.getUiSetting;
+import static settings.UiConfig.getUiSetting;
 
 public class FeedbackPageTest extends SelenideDriverSetup {
 

@@ -1,5 +1,6 @@
 package bodies;
 
+import fakers.DataFaker;
 import io.qameta.allure.Step;
 
 public class DoRegisterBody {

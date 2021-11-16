@@ -3,10 +3,10 @@ package selenide;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.*;
 import selenide.pages.SearchPage;
-import ui.settings.SelenideDriverSetup;
+import settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.*;
-import static ui.settings.UiConfig.getUiSetting;
+import static settings.UiConfig.getUiSetting;
 
 public class SearchPageTest extends SelenideDriverSetup {
 

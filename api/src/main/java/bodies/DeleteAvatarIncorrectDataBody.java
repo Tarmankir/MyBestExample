@@ -1,7 +1,7 @@
 package bodies;
 
+import fakers.DataFaker;
 import io.qameta.allure.Step;
-import utils.DataFaker;
 
 public class DeleteAvatarIncorrectDataBody {
 

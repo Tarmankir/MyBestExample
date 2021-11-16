@@ -5,11 +5,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import selenium.enums.pages.LanguagePage;
-import ui.settings.SeleniumDriverSetup;
+import selenium.pages.LanguagePage;
+import settings.SeleniumDriverSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
-import static ui.settings.UiConfig.getUiSetting;
+import static settings.UiConfig.getUiSetting;
 
 public class LanguagePageTest extends SeleniumDriverSetup {
 

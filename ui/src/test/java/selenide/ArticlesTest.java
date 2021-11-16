@@ -6,11 +6,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenide.pages.MainPage;
 import selenide.pages.PostPage;
-import ui.settings.SelenideDriverSetup;
+import settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.*;
 import static org.testng.Assert.assertEquals;
-import static ui.settings.UiConfig.getUiSetting;
+import static settings.UiConfig.getUiSetting;
 
 public class ArticlesTest extends SelenideDriverSetup {
 

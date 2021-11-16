@@ -1,7 +1,7 @@
 package selenide.pages;
 
 import org.openqa.selenium.support.FindBy;
-import selenide.enums.fragments.PostFragment;
+import selenide.fragments.PostFragment;
 
 public class PostPage {
 

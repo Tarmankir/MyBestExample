@@ -6,12 +6,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import selenide.pages.MainPage;
 import selenide.pages.PostPage;
-import ui.settings.SelenideDriverSetup;
+import settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static org.testng.Assert.assertEquals;
-import static ui.settings.UiConfig.getUiSetting;
+import static settings.UiConfig.getUiSetting;
 
 public class ArticlesPagePostSteps extends SelenideDriverSetup {
 

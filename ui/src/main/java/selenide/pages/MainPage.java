@@ -1,7 +1,7 @@
 package selenide.pages;
 
 import org.openqa.selenium.support.FindBy;
-import selenide.enums.fragments.ArticlesFragment;
+import selenide.fragments.ArticlesFragment;
 
 import java.util.List;
 
