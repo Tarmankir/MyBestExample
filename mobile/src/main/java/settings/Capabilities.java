@@ -15,4 +15,13 @@ public class Capabilities {
         capabilitiesAndroid.setCapability(APP, "/home/kir/Рабочий стол/MyBestExample/mobile/src/main/resources/applications/screenshoteasy.apk");
         return capabilitiesAndroid;
     }
+
+    public DesiredCapabilities androidCapabilitiesYandex() {
+        DesiredCapabilities capabilitiesAndroidYandex = new DesiredCapabilities();
+        capabilitiesAndroidYandex.setCapability(PLATFORM_NAME, "Android");
+        capabilitiesAndroidYandex.setCapability(PLATFORM_VERSION, "11.0");
+        capabilitiesAndroidYandex.setCapability(DEVICE_NAME, "fe8pcqxs5d49mr45");
+        capabilitiesAndroidYandex.setCapability(APP, "/home/kir/Рабочий стол/MyBestExample/mobile/src/main/resources/applications/yandexmail.apk");
+        return capabilitiesAndroidYandex;
+    }
 }
