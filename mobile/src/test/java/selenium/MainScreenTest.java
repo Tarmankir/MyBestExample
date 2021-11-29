@@ -1,7 +1,7 @@
 package selenium;
 
 import io.appium.java_client.AppiumDriver;
-import screens.selenium.MainScreen;
+import selenium.screens.MainScreen;
 import settings.AppiumDriverSetup;
 import settings.Capabilities;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static selenium.enums.Credentials.*;
 import static settings.MobileConfig.getMobileSetting;
 
 public class MainScreenTest extends AppiumDriverSetup {
@@ -32,6 +33,7 @@ public class MainScreenTest extends AppiumDriverSetup {
 
     @Test
     public void mainScreenTest() {
-        mainScreen.clickLogin();
+        mainScreen.loginInApp(TEST);
+        mainScreen.clickSignInButton();
     }
 }
