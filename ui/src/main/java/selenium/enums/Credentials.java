@@ -2,7 +2,7 @@ package selenium.enums;
 
 public enum Credentials {
 
-    TEST1("ivakidov@mail.ru", "School593");
+    TEST_USER_1("ivakidov@mail.ru", "School593");
 
     public String login;
     public String pass;

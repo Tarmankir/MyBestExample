@@ -1,8 +1,8 @@
-package selenium.enums;
+package settings;
 
 public enum Credentials {
 
-    TEST("ivakidov@ro.ru", "School593");
+    TEST_USER_1("ivakidov@ro.ru", "School593");
 
     public String login;
     public String pass;

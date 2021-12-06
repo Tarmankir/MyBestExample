@@ -34,7 +34,7 @@ public class LoginPageTest extends SeleniumDriverSetup {
 
     @Test
     public void loginPageTest() {
-        loginPage.loginInSite(TEST1);
+        loginPage.loginInSite(TEST_USER_1);
         loginPage.clickLogin();
         accountPage.checkLogin("Приветствуем вас, @Tarman332");
     }

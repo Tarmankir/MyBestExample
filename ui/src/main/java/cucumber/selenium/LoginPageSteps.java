@@ -11,7 +11,7 @@ import selenium.pages.LoginPage;
 import settings.SeleniumDriverSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
-import static selenium.enums.Credentials.TEST1;
+import static selenium.enums.Credentials.TEST_USER_1;
 import static settings.UiConfig.getUiSetting;
 
 public class LoginPageSteps extends SeleniumDriverSetup {
@@ -30,7 +30,7 @@ public class LoginPageSteps extends SeleniumDriverSetup {
 
     @When("I am use login page functionality to signup in site")
     public void IAmUseLoginPageFunctionalityToSignupInSite() {
-        loginPage.loginInSite(TEST1);
+        loginPage.loginInSite(TEST_USER_1);
     }
 
     @And("I am click signup button")
