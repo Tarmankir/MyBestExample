@@ -6,8 +6,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainSeleniumScreen {
 
@@ -19,7 +19,9 @@ public class MainSeleniumScreen {
     public MainSeleniumScreen(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebDriverWait wait;
+        wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.visibilityOf(mainAppMenu));
     }
 
     @Step("Open app menu")

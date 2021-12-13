@@ -12,8 +12,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import java.nio.charset.StandardCharsets;
-
-public class SeleniumListener implements LogEventListener {
+/*
+public class SeleniumMobileListener implements LogEventListener {
     private final AllureLifecycle lifecycle;
 
     public SeleniumListener() {
@@ -49,4 +49,4 @@ public class SeleniumListener implements LogEventListener {
     @Override
     public void beforeEvent(LogEvent logEvent) {
     }
-}
+}*/

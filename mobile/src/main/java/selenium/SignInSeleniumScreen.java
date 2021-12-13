@@ -6,9 +6,9 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import settings.Credentials;
-
-import static org.testng.Assert.assertEquals;
 
 public class SignInSeleniumScreen {
 
@@ -21,17 +21,14 @@ public class SignInSeleniumScreen {
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text, 'Войти')]")
     private MobileElement signInButton;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View/android.widget.Image")
-    private MobileElement mainAppMenu;
-
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.view.View[1]/android.view.View/android.widget.TextView")
-    private MobileElement userItem;
-
     private AppiumDriver<MobileElement> driver;
 
     public SignInSeleniumScreen(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+        WebDriverWait wait;
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(loginField));
     }
 
     @Step("Enter login and password")
@@ -51,15 +48,5 @@ public class SignInSeleniumScreen {
     @Step("Click on sign in button")
     public void clickSignInButton(){
         signInButton.click();
-    }
-
-    @Step("Open app menu")
-    public void openAppMenu() {
-        mainAppMenu.click();
-    }
-
-    @Step("Check user login name")
-    public void checkUserLoginName(String text) {
-        assertEquals(userItem.getText(), text);
     }
 }

@@ -5,17 +5,12 @@ import com.codeborne.selenide.logevents.LogEvent;
 import com.codeborne.selenide.logevents.LogEventListener;
 import io.qameta.allure.Allure;
 import io.qameta.allure.AllureLifecycle;
-import io.qameta.allure.Attachment;
 import io.qameta.allure.model.Status;
 import io.qameta.allure.model.StatusDetails;
 import io.qameta.allure.util.ResultsUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
 
-import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 
 public class SelenideListener implements LogEventListener {
