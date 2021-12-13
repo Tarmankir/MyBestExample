@@ -16,12 +16,12 @@ import static settings.MobileConfig.getMobileSetting;
 public class ChromeMainSeleniumScreenTest extends AppiumDriverSetup {
 
     private AppiumDriver driver;
-    private ChromeMainSeleniumScreen chromeMainSeleniumScreen;
+//    private ChromeMainSeleniumScreen chromeMainSeleniumScreen;
 
     @BeforeMethod
     public void driverSet() throws MalformedURLException {
         driver = new AppiumDriver(new URL(getMobileSetting("urlAndroid")),new DesiredCapabilities(new Capabilities().chromeMobileCapabilities()));
-        chromeMainSeleniumScreen = new ChromeMainSeleniumScreen(driver);
+//        chromeMainSeleniumScreen = new ChromeMainSeleniumScreen(driver);
     }
 
     @AfterMethod

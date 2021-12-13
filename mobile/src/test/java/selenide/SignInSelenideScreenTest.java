@@ -1,6 +1,7 @@
 package selenide;
 
 import com.codeborne.selenide.Configuration;
+import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -10,16 +11,17 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SignInSelenideScreenTest extends SelenideDriverSetup {
 
-    private SignInSelenideScreen mainScreenYandex;
+//    private SignInSelenideScreen mainScreenYandex;
 
     @BeforeMethod
     public void mainScreenYandexBefore() {
         closeWebDriver();
         Configuration.browserSize = null;
         Configuration.browser = SelenideDriverSetup.class.getName();
-        open();
-        mainScreenYandex = page(SignInSelenideScreen.class);
         Configuration.timeout=20000;
+        Configuration.startMaximized = false;
+        open();
+//        mainScreenYandex = page(SignInSelenideScreen.class);
     }
 
     @AfterMethod
@@ -29,6 +31,7 @@ public class SignInSelenideScreenTest extends SelenideDriverSetup {
 
     @Test
     public void mainScreenTest() {
-        mainScreenYandex.clickLogin();
+//        mainScreenYandex.clickLogin();
+        $(By.xpath("//*[@resource-id='login']")).setValue("ivakidov@ro.ru");
     }
 }
