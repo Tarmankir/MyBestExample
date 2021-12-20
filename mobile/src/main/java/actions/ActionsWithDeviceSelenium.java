@@ -1,4 +1,4 @@
-package settings;
+package actions;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -6,11 +6,11 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.PageFactory;
 
-public class ActionsWithDviceSelenium {
+public class ActionsWithDeviceSelenium {
 
     private AppiumDriver<MobileElement> driver;
 
-    public ActionsWithDviceSelenium(AppiumDriver<MobileElement> driver) {
+    public ActionsWithDeviceSelenium(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }

@@ -5,9 +5,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import settings.ActionsWithDviceSelenium;
-import settings.AppiumDriverSetup;
-import settings.Capabilities;
+import actions.ActionsWithDeviceSelenium;
+import settings.SeleniumDriverSetup;
+import settings.CapabilitiesSelenium;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -15,17 +15,17 @@ import java.net.URL;
 import static settings.Credentials.TEST_USER_1;
 import static settings.MobileConfig.getMobileSetting;
 
-public class SignInSeleniumScreenTest extends AppiumDriverSetup {
+public class SignInSeleniumScreenTest extends SeleniumDriverSetup {
 
     private AppiumDriver driver;
     private SignInSeleniumScreen signInSeleniumScreen;
     private MainSeleniumScreen mainSeleniumScreen;
     private AppMenuSeleniumScreen appMenuSeleniumScreen;
-    private ActionsWithDviceSelenium actionsWithDviceSelenium;
+    private ActionsWithDeviceSelenium actionsWithDeviceSelenium;
 
     @BeforeMethod
     public void driverSet() throws MalformedURLException {
-        driver = new AppiumDriver(new URL(getMobileSetting("urlAndroid")),new DesiredCapabilities(new Capabilities().androidCapabilities()));
+        driver = new AppiumDriver(new URL(getMobileSetting("urlAndroid")),new DesiredCapabilities(new CapabilitiesSelenium().androidCapabilities()));
         signInSeleniumScreen = new SignInSeleniumScreen(driver);
     }
 
@@ -42,7 +42,7 @@ public class SignInSeleniumScreenTest extends AppiumDriverSetup {
         mainSeleniumScreen.openAppMenu();
         appMenuSeleniumScreen = new AppMenuSeleniumScreen(driver);
         appMenuSeleniumScreen.checkUserLoginName("ivakidov@ro.ru");
-        actionsWithDviceSelenium = new ActionsWithDviceSelenium(driver);
-        actionsWithDviceSelenium.clickOnDeviceButtonBack();
+        actionsWithDeviceSelenium = new ActionsWithDeviceSelenium(driver);
+        actionsWithDeviceSelenium.clickOnDeviceButtonBack();
     }
 }

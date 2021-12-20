@@ -27,7 +27,7 @@ public class SignInSeleniumScreen {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         WebDriverWait wait;
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(loginField));
     }
 

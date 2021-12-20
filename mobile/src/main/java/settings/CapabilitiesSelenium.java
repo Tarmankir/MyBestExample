@@ -5,7 +5,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import static io.appium.java_client.remote.MobileCapabilityType.*;
 import static org.openqa.selenium.remote.CapabilityType.PLATFORM_NAME;
 
-public class Capabilities {
+public class CapabilitiesSelenium {
 
     public DesiredCapabilities androidCapabilities() {
         DesiredCapabilities capabilitiesAndroid = new DesiredCapabilities();
@@ -24,7 +24,6 @@ public class Capabilities {
         capabilitiesAndroid.setCapability(BROWSER_NAME, "Chrome");
         capabilitiesAndroid.setCapability("appPackage", "ru.rambler.mail");
         capabilitiesAndroid.setCapability("automationName", "Appium");
-//        capabilitiesAndroid.setCapability("appActivity", ".ApiDemos");
         return capabilitiesAndroid;
     }
 }

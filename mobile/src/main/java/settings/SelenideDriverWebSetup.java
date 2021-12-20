@@ -7,13 +7,13 @@ import org.testng.annotations.BeforeSuite;
 
 import java.net.MalformedURLException;
 
-public class SelenideDriverSetup {
+public class SelenideDriverWebSetup {
 
     private AppiumDriver driver;
 
     @BeforeSuite
     public void setUp() throws MalformedURLException {
-        driver = PlatformSelenide.getInstance().getDriver();
+        driver = PlatformSelenide.getInstance().getDriverWeb();
         WebDriverRunner.setWebDriver(driver);
     }
 

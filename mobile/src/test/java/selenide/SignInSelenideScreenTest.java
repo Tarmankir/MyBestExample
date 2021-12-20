@@ -1,37 +1,26 @@
 package selenide;
 
+import actions.ActionsWithDeviceSelenide;
 import com.codeborne.selenide.Configuration;
-import org.openqa.selenium.By;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import settings.SelenideDriverSetup;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.appium.ScreenObject.screen;
+import static settings.Credentials.TEST_USER_1;
 
 public class SignInSelenideScreenTest extends SelenideDriverSetup {
 
-//    private SignInSelenideScreen mainScreenYandex;
-
-    @BeforeMethod
-    public void mainScreenYandexBefore() {
-        closeWebDriver();
-        Configuration.browserSize = null;
-        Configuration.browser = SelenideDriverSetup.class.getName();
-        Configuration.timeout=20000;
-        Configuration.startMaximized = false;
-        open();
-//        mainScreenYandex = page(SignInSelenideScreen.class);
-    }
-
-    @AfterMethod
-    void afterMethod() {
-        closeWebDriver();
-    }
-
     @Test
     public void mainScreenTest() {
-//        mainScreenYandex.clickLogin();
-        $(By.xpath("//*[@resource-id='login']")).setValue("ivakidov@ro.ru");
+        SignInSelenideScreen signInSeleniumScreen = screen(SignInSelenideScreen.class);
+        Configuration.timeout = 30000;
+        signInSeleniumScreen.loginInApp(TEST_USER_1);
+        signInSeleniumScreen.clickSignInButton();
+        MainSelenideScreen mainSelenideScreen = screen(MainSelenideScreen.class);
+        mainSelenideScreen.openAppMenu();
+        AppMenuSelenideScreen appMenuSelenideScreen = screen(AppMenuSelenideScreen.class);
+        appMenuSelenideScreen.checkUserLoginName("ivakidov@ro.ru");
+        ActionsWithDeviceSelenide actionsWithDeviceSelenide = screen(ActionsWithDeviceSelenide.class);
+        actionsWithDeviceSelenide.clickOnDeviceButtonBack();
     }
 }
