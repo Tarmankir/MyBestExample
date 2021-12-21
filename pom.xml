@@ -142,7 +142,7 @@
                         <file>src/test/resources/testSuites/AcceptanceAPITesting.xml</file>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                        <allure.results.directory>allure-results</allure.results.directory>
                     </systemPropertyVariables>
                 </configuration>
                 <dependencies>
