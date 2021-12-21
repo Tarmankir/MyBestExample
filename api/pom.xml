@@ -52,7 +52,7 @@
                     -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                 </argLine>
                 <suiteXmlFiles>
-                    <file>/home/kir/Рабочий стол/MyBestExample/api/src/test/resources/testSuites/AcceptanceAPITesting.xml</file>
+                    <file>api/src/test/resources/testSuites/AcceptanceAPITesting.xml</file>
                 </suiteXmlFiles>
                 <systemPropertyVariables>
                     <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
