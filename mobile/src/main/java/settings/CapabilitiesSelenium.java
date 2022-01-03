@@ -1,29 +1,29 @@
 package settings;
 
+import com.google.common.collect.ImmutableMap;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
-import static io.appium.java_client.remote.MobileCapabilityType.*;
-import static org.openqa.selenium.remote.CapabilityType.PLATFORM_NAME;
 
 public class CapabilitiesSelenium {
 
-    public DesiredCapabilities androidCapabilities() {
+    public DesiredCapabilities getAndroidDesiredCapabilities() {
         DesiredCapabilities capabilitiesAndroid = new DesiredCapabilities();
-        capabilitiesAndroid.setCapability(PLATFORM_NAME, "Android");
-        capabilitiesAndroid.setCapability(PLATFORM_VERSION, "11.0");
-        capabilitiesAndroid.setCapability(DEVICE_NAME, "fe8pcqxs5d49mr45");
-        capabilitiesAndroid.setCapability(APP, "/home/kir/Рабочий стол/MyBestExample/mobile/src/main/resources/applications/ramblermail.apk");
+        capabilitiesAndroid.setCapability("platformName", "Android");
+        capabilitiesAndroid.setCapability("version", "11.0");
+        capabilitiesAndroid.setCapability("deviceName", "fe8pcqxs5d49mr45");
+        capabilitiesAndroid.setCapability("app", "/home/kir/Рабочий стол/MyBestExample/mobile/src/main/resources/applications/ramblermail.apk");
         return capabilitiesAndroid;
     }
 
-    public DesiredCapabilities chromeMobileCapabilities() {
-        DesiredCapabilities capabilitiesAndroid = new DesiredCapabilities();
-        capabilitiesAndroid.setCapability(PLATFORM_NAME, "Android");
-        capabilitiesAndroid.setCapability(PLATFORM_VERSION, "11.0");
-        capabilitiesAndroid.setCapability(DEVICE_NAME, "fe8pcqxs5d49mr45");
-        capabilitiesAndroid.setCapability(BROWSER_NAME, "Chrome");
-        capabilitiesAndroid.setCapability("appPackage", "ru.rambler.mail");
-        capabilitiesAndroid.setCapability("automationName", "Appium");
-        return capabilitiesAndroid;
+    public DesiredCapabilities getAndroidDesiredCapabilitiesWeb() {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("version", "11.0");
+        capabilities.setCapability("deviceName", "fe8pcqxs5d49mr45");
+        capabilities.setCapability("browserName", "Chrome");
+        capabilities.setCapability("automationName", "Appium");
+        capabilities.setCapability("chromedriverExecutable","/home/kir/Node/lib/node_modules/appium/node_modules/appium-chromedriver/chromedriver/linux/chromedriver");
+        capabilities.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
+        capabilities.setCapability("newCommandTimeout", 10);
+        return capabilities;
     }
 }

@@ -1,5 +1,6 @@
 package settings;
 
+import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -49,7 +50,7 @@ public class PlatformSelenide {
         capabilities.setCapability("automationName", "Appium");
         capabilities.setCapability("appPackage", "ru.rambler.mail");
         capabilities.setCapability("app", "/home/kir/Загрузки/Telegram Desktop/rambler-test/src/main/resources/ramblermail.apk");
-        capabilities.setCapability("newCommandTimeout", 11);
+        capabilities.setCapability("newCommandTimeout", 10);
         return capabilities;
     }
 
@@ -59,8 +60,10 @@ public class PlatformSelenide {
         capabilities.setCapability("deviceName", "fe8pcqxs5d49mr45");
         capabilities.setCapability("version", "11");
         capabilities.setCapability("automationName", "Appium");
-        capabilities.setCapability("browserName", "Chrome");
-        capabilities.setCapability("newCommandTimeout", 11);
+        capabilities.setCapability("browserName", "Firefox");
+        capabilities.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
+        capabilities.setCapability("chromedriverExecutable","/home/kir/Node/lib/node_modules/appium/node_modules/appium-chromedriver/chromedriver/linux/chromedriver");
+        capabilities.setCapability("newCommandTimeout", 10);
         return capabilities;
     }
 }

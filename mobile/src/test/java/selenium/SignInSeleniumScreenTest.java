@@ -25,7 +25,7 @@ public class SignInSeleniumScreenTest extends SeleniumDriverSetup {
 
     @BeforeMethod
     public void driverSet() throws MalformedURLException {
-        driver = new AppiumDriver(new URL(getMobileSetting("urlAndroid")),new DesiredCapabilities(new CapabilitiesSelenium().androidCapabilities()));
+        driver = new AppiumDriver(new URL(getMobileSetting("urlAndroid")),new DesiredCapabilities(new CapabilitiesSelenium().getAndroidDesiredCapabilities()));
         signInSeleniumScreen = new SignInSeleniumScreen(driver);
     }
 
