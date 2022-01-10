@@ -3,6 +3,7 @@ package selenium;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenium.pages.AccountPage;
@@ -19,7 +20,7 @@ public class LoginPageTest extends SeleniumDriverSetup {
     private LoginPage loginPage;
     private AccountPage accountPage;
 
-    @BeforeMethod
+    @BeforeGroups(groups = "UI")
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
         loginPage = initElements(driver, LoginPage.class);
@@ -32,7 +33,7 @@ public class LoginPageTest extends SeleniumDriverSetup {
         driver.close();
     }
 
-    @Test
+    @Test(groups = {"6"})
     public void loginPageTest() {
         loginPage.loginInSite(TEST_USER_1);
         loginPage.clickLogin();

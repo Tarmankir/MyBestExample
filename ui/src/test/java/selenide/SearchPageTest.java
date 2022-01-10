@@ -12,7 +12,7 @@ public class SearchPageTest extends SelenideDriverSetup {
 
     private SearchPage searchPage;
 
-    @BeforeMethod
+    @BeforeGroups(groups = "UI")
     public void SearchPageBefore() {
         open(getUiSetting("searchURL"));
         searchPage = Selenide.page(SearchPage.class);
@@ -28,7 +28,7 @@ public class SearchPageTest extends SelenideDriverSetup {
         return new Object[]{"12345678", "Programming", "Тестирование"};
     }
 
-    @Test(dataProvider = "searchTestProvider")
+    @Test(dataProvider = "searchTestProvider", groups = {"3"})
     public void searchPageTest(String searchData) {
         searchPage.clickOnSearchButton();
         searchPage.enterTextInSearchField(searchData);

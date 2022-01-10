@@ -2,6 +2,7 @@ package selenide;
 
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenide.pages.MainPage;
@@ -19,7 +20,7 @@ public class ArticlesTest extends SelenideDriverSetup {
 
     private String votesCountOnMainPage;
 
-    @BeforeMethod
+    @BeforeGroups(groups = "UI")
     public void articlesBefore() {
         open(getUiSetting("mainURL"));
         mainPage = Selenide.page(MainPage.class);
@@ -33,7 +34,7 @@ public class ArticlesTest extends SelenideDriverSetup {
         closeWindow();
     }
 
-    @Test
+    @Test(groups = {"1"})
     public void articlesPageTest() {
         mainPage.openArticle(8);
         postPage.checkPostTitle();

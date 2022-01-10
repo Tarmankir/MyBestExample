@@ -60,7 +60,7 @@ public class PlatformSelenide {
         capabilities.setCapability("deviceName", "fe8pcqxs5d49mr45");
         capabilities.setCapability("version", "11");
         capabilities.setCapability("automationName", "Appium");
-        capabilities.setCapability("browserName", "Firefox");
+        capabilities.setCapability("browserName", "Chrome");
         capabilities.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
         capabilities.setCapability("chromedriverExecutable","/home/kir/Node/lib/node_modules/appium/node_modules/appium-chromedriver/chromedriver/linux/chromedriver");
         capabilities.setCapability("newCommandTimeout", 10);

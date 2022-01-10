@@ -1,4 +1,4 @@
-package selenide;
+package selenide.app;
 
 import actions.ActionsWithDeviceSelenide;
 import com.codeborne.selenide.Configuration;

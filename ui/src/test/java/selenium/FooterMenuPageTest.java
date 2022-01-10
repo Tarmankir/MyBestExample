@@ -3,6 +3,7 @@ package selenium;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenium.pages.FooterMenuPage;
@@ -16,7 +17,7 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
     private WebDriver driver;
     private FooterMenuPage footerMenuPage;
 
-    @BeforeMethod
+    @BeforeGroups(groups = "UI")
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
@@ -28,7 +29,7 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
         driver.close();
     }
 
-    @Test
+    @Test(groups = {"4"})
     public void footerMenuPageTest() {
         footerMenuPage.clickSiteMap();
         footerMenuPage.clickMegaProjects();

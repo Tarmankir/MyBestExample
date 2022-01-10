@@ -3,9 +3,9 @@
 <suite name="Acceptance UI testing">
     <test name="Selenide">
         <classes>
+            <class name="selenide.ArticlesTest"/>
             <class name="selenide.FeedbackPageTest"/>
             <class name="selenide.SearchPageTest"/>
-            <class name="selenide.ArticlesTest"/>
         </classes>
     </test>
     <test name="Selenium">
@@ -13,6 +13,19 @@
             <class name="selenium.FooterMenuPageTest"/>
             <class name="selenium.LanguagePageTest"/>
             <class name="selenium.LoginPageTest"/>
+            <class name="selenium.MenuPageTest"/>
         </classes>
     </test>
+
+    <groups>
+        <run>
+            <include name="1"/>
+            <include name="2"/>
+            <include name="3"/>
+            <include name="4"/>
+            <include name="5"/>
+            <include name="6"/>
+            <include name="7"/>
+        </run>
+    </groups>
 </suite>

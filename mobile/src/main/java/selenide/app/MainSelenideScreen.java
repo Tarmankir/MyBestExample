@@ -1,4 +1,4 @@
-package selenide;
+package selenide.app;
 
 import com.codeborne.selenide.SelenideElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
