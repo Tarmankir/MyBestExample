@@ -15,7 +15,7 @@ public class FeedbackPageTest extends SelenideDriverSetup {
 
     private FeedbackPage feedbackPage;
 
-    @BeforeGroups(groups = "UI")
+    @BeforeGroups(groups = "2")
     public void feedbackPageBefore() {
         open(getUiSetting("feedbackURL"));
         feedbackPage = Selenide.page(FeedbackPage.class);

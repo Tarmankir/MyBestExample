@@ -12,7 +12,7 @@ public class SearchPageTest extends SelenideDriverSetup {
 
     private SearchPage searchPage;
 
-    @BeforeGroups(groups = "UI")
+    @BeforeGroups(groups = "3")
     public void SearchPageBefore() {
         open(getUiSetting("searchURL"));
         searchPage = Selenide.page(SearchPage.class);

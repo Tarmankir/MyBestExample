@@ -17,7 +17,7 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
     private WebDriver driver;
     private FooterMenuPage footerMenuPage;
 
-    @BeforeGroups(groups = "UI")
+    @BeforeGroups(groups = "4")
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);

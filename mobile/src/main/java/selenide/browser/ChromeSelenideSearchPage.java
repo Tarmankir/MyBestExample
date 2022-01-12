@@ -9,7 +9,7 @@ public class ChromeSelenideSearchPage {
     @AndroidFindBy(xpath = "//input[@name='q']")
     private SelenideElement searchField;
 
-    @AndroidFindBy(xpath = "//*[name()='use' and @*='/img/megazord-v24.4a410f80.svg#rss']")
+    @AndroidFindBy(xpath = "//button[@class='tm-rss-button tm-rss-button_default']")
     private SelenideElement copyLinkButton;
 
     @Step("Enter text in search field")

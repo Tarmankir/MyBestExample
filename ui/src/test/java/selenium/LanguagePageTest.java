@@ -17,7 +17,7 @@ public class LanguagePageTest extends SeleniumDriverSetup {
     private WebDriver driver;
     private LanguagePage languagePage;
 
-    @BeforeGroups(groups = "UI")
+    @BeforeGroups(groups = "5")
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
         languagePage = initElements(driver, LanguagePage.class);

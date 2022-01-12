@@ -2,6 +2,13 @@
 
 <suite name="Acceptance UI testing">
     <test name="Selenide">
+        <groups>
+            <run>
+                <include name="1"/>
+                <include name="2"/>
+                <include name="3"/>
+            </run>
+        </groups>
         <classes>
             <class name="selenide.ArticlesTest"/>
             <class name="selenide.FeedbackPageTest"/>
@@ -9,6 +16,14 @@
         </classes>
     </test>
     <test name="Selenium">
+        <groups>
+            <run>
+                <include name="4"/>
+                <include name="5"/>
+                <include name="6"/>
+                <include name="7"/>
+            </run>
+        </groups>
         <classes>
             <class name="selenium.FooterMenuPageTest"/>
             <class name="selenium.LanguagePageTest"/>
@@ -16,16 +31,4 @@
             <class name="selenium.MenuPageTest"/>
         </classes>
     </test>
-
-    <groups>
-        <run>
-            <include name="1"/>
-            <include name="2"/>
-            <include name="3"/>
-            <include name="4"/>
-            <include name="5"/>
-            <include name="6"/>
-            <include name="7"/>
-        </run>
-    </groups>
 </suite>

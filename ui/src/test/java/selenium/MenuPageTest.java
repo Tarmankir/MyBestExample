@@ -19,7 +19,7 @@ public class MenuPageTest extends SeleniumDriverSetup {
     private FooterMenuPage footerMenuPage;
     private MainMenuPage mainMenuPage;
 
-    @BeforeGroups(groups = "UI")
+    @BeforeGroups(groups = "7")
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);

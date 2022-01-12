@@ -20,7 +20,7 @@ public class LoginPageTest extends SeleniumDriverSetup {
     private LoginPage loginPage;
     private AccountPage accountPage;
 
-    @BeforeGroups(groups = "UI")
+    @BeforeGroups(groups = "6")
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
         loginPage = initElements(driver, LoginPage.class);

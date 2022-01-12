@@ -20,7 +20,7 @@ public class ArticlesTest extends SelenideDriverSetup {
 
     private String votesCountOnMainPage;
 
-    @BeforeGroups(groups = "UI")
+    @BeforeGroups(groups = "1")
     public void articlesBefore() {
         open(getUiSetting("mainURL"));
         mainPage = Selenide.page(MainPage.class);
