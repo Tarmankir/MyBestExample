@@ -25,7 +25,7 @@ public class ChromeSelenidePage {
     }
 
     @Step("Check logo size")
-    public void checkLogoSize(String height, String width) {
-        assertEquals(logo.getAttribute("height"), height, logo.getAttribute("width"), width);
+    public void checkLogoSize(String height) {
+        assertEquals(logo.getAttribute("height"), height);
     }
 }
