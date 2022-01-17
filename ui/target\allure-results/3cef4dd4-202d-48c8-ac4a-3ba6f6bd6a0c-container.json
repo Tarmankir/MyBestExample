@@ -1,0 +1,1 @@
+{"uuid":"3cef4dd4-202d-48c8-ac4a-3ba6f6bd6a0c","name":"selenide.FeedbackPageTest","children":["88d2bb62-d03e-4a29-88d3-fa420e93152d"],"befores":[],"afters":[{"name":"afterClass","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1642375095686,"stop":1642375095755}],"links":[],"start":1642375085388,"stop":1642375095770}

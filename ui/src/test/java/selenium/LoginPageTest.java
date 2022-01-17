@@ -2,16 +2,15 @@ package selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenium.pages.AccountPage;
 import selenium.pages.LoginPage;
 import settings.SeleniumDriverSetup;
 
-import static selenium.enums.Credentials.*;
 import static org.openqa.selenium.support.PageFactory.initElements;
+import static selenium.enums.Credentials.TEST_USER_1;
 import static settings.UiConfig.getUiSetting;
 
 public class LoginPageTest extends SeleniumDriverSetup {
@@ -20,7 +19,7 @@ public class LoginPageTest extends SeleniumDriverSetup {
     private LoginPage loginPage;
     private AccountPage accountPage;
 
-    @BeforeGroups(groups = "6")
+    @BeforeGroups(groups = "Regress")
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
         loginPage = initElements(driver, LoginPage.class);
@@ -28,12 +27,12 @@ public class LoginPageTest extends SeleniumDriverSetup {
         driver.get(getUiSetting("loginUrl"));
     }
 
-    @AfterMethod
+    @AfterGroups(groups = "Regress")
     void afterMethod() {
         driver.close();
     }
 
-    @Test(groups = {"6"})
+    @Test(groups = {"Regress"})
     public void loginPageTest() {
         loginPage.loginInSite(TEST_USER_1);
         loginPage.clickLogin();

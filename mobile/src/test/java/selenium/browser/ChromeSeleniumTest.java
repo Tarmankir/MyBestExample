@@ -13,9 +13,11 @@ import java.net.URL;
 
 import static settings.MobileConfig.getMobileSetting;
 
-public class ChromeMainSeleniumScreenTest extends SeleniumDriverSetup {
+public class ChromeSeleniumTest extends SeleniumDriverSetup {
 
     private AppiumDriver driver;
+    private ChromeSeleniumPage chromeSeleniumPage;
+    private ChromeSeleniumSearchPage chromeSeleniumSearchPage;
 
     @BeforeMethod
     public void driverSet() throws MalformedURLException {
@@ -28,7 +30,12 @@ public class ChromeMainSeleniumScreenTest extends SeleniumDriverSetup {
     }
 
     @Test
-    public void openYandexTest() {
-        driver.get("https://yandex.ru/");
+    public void chromeSeleniumTest() {
+        driver.get("https://habr.com/ru/all/");
+        chromeSeleniumPage = new ChromeSeleniumPage(driver);
+        chromeSeleniumPage.clickOnSearchButton();
+        chromeSeleniumSearchPage = new ChromeSeleniumSearchPage(driver);
+        chromeSeleniumSearchPage.enterTextInSearchField("Linux");
+        chromeSeleniumSearchPage.clickOnCopyLinkButton();
     }
 }

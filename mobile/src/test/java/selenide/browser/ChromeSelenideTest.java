@@ -10,11 +10,13 @@ import static com.codeborne.selenide.appium.ScreenObject.screen;
 
 public class ChromeSelenideTest extends SelenideDriverWebSetup {
 
-    @Test(groups = {"id123"})
-    void openYandex() {
+    @Test
+    void chromeSelenideTest() {
+//        switchTo().alert().accept();
         Configuration.baseUrl = "https://habr.com/ru/all/";
         open("https://habr.com/ru/all/");
         ChromeSelenidePage chromeSelenidePage = screen(ChromeSelenidePage.class);
+        chromeSelenidePage.checkLogoIsDisplayed();
         chromeSelenidePage.clickOnSearchButton();
         ChromeSelenideSearchPage chromeSelenideSearchPage = screen(ChromeSelenideSearchPage.class);
         chromeSelenideSearchPage.enterTextInSearchField("Apple");

@@ -2,9 +2,8 @@ package selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenium.pages.FooterMenuPage;
 import selenium.pages.MainMenuPage;
@@ -19,7 +18,7 @@ public class MenuPageTest extends SeleniumDriverSetup {
     private FooterMenuPage footerMenuPage;
     private MainMenuPage mainMenuPage;
 
-    @BeforeGroups(groups = "7")
+    @BeforeGroups(groups = "Regress")
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
@@ -27,12 +26,12 @@ public class MenuPageTest extends SeleniumDriverSetup {
         driver.get(getUiSetting("mainURL"));
     }
 
-    @AfterMethod
+    @AfterGroups(groups = "Regress")
     void afterMethod() {
         driver.close();
     }
 
-    @Test(groups = {"7"})
+    @Test(groups = {"Regress"})
     public void menuPageFragmentTest() {
         mainMenuPage.clickDevelop();
         footerMenuPage.clickSiteMap();

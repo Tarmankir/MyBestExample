@@ -1,10 +1,7 @@
 package selenide;
 
 import com.codeborne.selenide.Selenide;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import selenide.pages.FeedbackPage;
 import settings.SelenideDriverSetup;
 
@@ -15,7 +12,7 @@ public class FeedbackPageTest extends SelenideDriverSetup {
 
     private FeedbackPage feedbackPage;
 
-    @BeforeGroups(groups = "2")
+    @BeforeGroups(groups = "Smoke")
     public void feedbackPageBefore() {
         open(getUiSetting("feedbackURL"));
         feedbackPage = Selenide.page(FeedbackPage.class);
@@ -26,7 +23,7 @@ public class FeedbackPageTest extends SelenideDriverSetup {
         closeWindow();
     }
 
-    @Test(groups = {"2"})
+    @Test(groups = {"Smoke"})
     public void feedbackPageTest() {
         feedbackPage.selectTheme("Нарушение правил сайта");
         feedbackPage.checkThemesList();
