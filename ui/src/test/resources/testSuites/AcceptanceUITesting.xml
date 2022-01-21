@@ -2,11 +2,6 @@
 
 <suite name="Acceptance UI testing">
     <test name="Selenide">
-        <groups>
-            <run>
-                <include name="Smoke"/>
-            </run>
-        </groups>
         <classes>
             <class name="selenide.ArticlesTest"/>
             <class name="selenide.FeedbackPageTest"/>

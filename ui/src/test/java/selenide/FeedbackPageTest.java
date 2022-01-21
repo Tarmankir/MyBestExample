@@ -12,7 +12,7 @@ public class FeedbackPageTest extends SelenideDriverSetup {
 
     private FeedbackPage feedbackPage;
 
-    @BeforeGroups(groups = "Smoke")
+    @BeforeClass
     public void feedbackPageBefore() {
         open(getUiSetting("feedbackURL"));
         feedbackPage = Selenide.page(FeedbackPage.class);

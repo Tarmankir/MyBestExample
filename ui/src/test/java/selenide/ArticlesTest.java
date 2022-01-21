@@ -17,13 +17,11 @@ public class ArticlesTest extends SelenideDriverSetup {
 
     private String votesCountOnMainPage;
 
-    @BeforeGroups(groups = "Smoke")
+    @BeforeClass
     public void articlesBefore() {
         open(getUiSetting("mainURL"));
         mainPage = Selenide.page(MainPage.class);
         postPage = Selenide.page(PostPage.class);
-
-        votesCountOnMainPage = mainPage.getArticleVotesCount(8);
     }
 
     @AfterClass
@@ -33,6 +31,7 @@ public class ArticlesTest extends SelenideDriverSetup {
 
     @Test(groups = {"Smoke"})
     public void articlesPageTest() {
+        votesCountOnMainPage = mainPage.getArticleVotesCount(8);
         mainPage.openArticle(8);
         postPage.checkPostTitle();
         assertEquals(votesCountOnMainPage, postPage.getPostVotesCount());
