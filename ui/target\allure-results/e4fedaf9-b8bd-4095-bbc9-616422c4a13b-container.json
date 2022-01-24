@@ -1,1 +1,0 @@
-{"uuid":"e4fedaf9-b8bd-4095-bbc9-616422c4a13b","name":"selenide.ArticlesTest","children":["80c06761-d258-4731-85ac-16222db810e0"],"befores":[],"afters":[{"name":"afterClass","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1642445011107,"stop":1642445011177}],"links":[],"start":1642445002859,"stop":1642445011190}
