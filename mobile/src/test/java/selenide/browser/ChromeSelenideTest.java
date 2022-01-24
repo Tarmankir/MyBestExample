@@ -12,14 +12,15 @@ public class ChromeSelenideTest extends SelenideDriverWebSetup {
 
     @Test
     void chromeSelenideTest() {
-//        switchTo().alert().accept();
         Configuration.baseUrl = "https://habr.com/ru/all/";
         open("https://habr.com/ru/all/");
         ChromeSelenidePage chromeSelenidePage = screen(ChromeSelenidePage.class);
         chromeSelenidePage.checkLogoIsDisplayed();
+        chromeSelenidePage.checkLogoSize(16,16);
         chromeSelenidePage.clickOnSearchButton();
         ChromeSelenideSearchPage chromeSelenideSearchPage = screen(ChromeSelenideSearchPage.class);
         chromeSelenideSearchPage.enterTextInSearchField("Apple");
         chromeSelenideSearchPage.clickOnCopyLinkButton();
+        chromeSelenideSearchPage.checkCopyLinkPopUp();
     }
 }

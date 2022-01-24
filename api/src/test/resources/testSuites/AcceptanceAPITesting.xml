@@ -3,10 +3,12 @@
 <suite name="Acceptance API testing">
     <test name="API">
         <classes>
+            <class name="AddAvatarTest"/>
             <class name="CreateCompanyTest"/>
             <class name="CreateUserTest"/>
-            <class name="QuickSearchTest"/>
+            <class name="DeleteAvatarTest"/>
             <class name="DoRegisterTest"/>
+            <class name="QuickSearchTest"/>
         </classes>
     </test>
 </suite>

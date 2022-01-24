@@ -34,8 +34,11 @@ public class ChromeSeleniumTest extends SeleniumDriverSetup {
         driver.get("https://habr.com/ru/all/");
         chromeSeleniumPage = new ChromeSeleniumPage(driver);
         chromeSeleniumPage.clickOnSearchButton();
+        chromeSeleniumPage.checkLogoIsDisplayed();
+        chromeSeleniumPage.checkLogoSize(16,16);
         chromeSeleniumSearchPage = new ChromeSeleniumSearchPage(driver);
         chromeSeleniumSearchPage.enterTextInSearchField("Linux");
         chromeSeleniumSearchPage.clickOnCopyLinkButton();
+        chromeSeleniumSearchPage.checkCopyLinkPopUp();
     }
 }

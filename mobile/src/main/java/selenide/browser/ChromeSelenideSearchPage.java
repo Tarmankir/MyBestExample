@@ -12,6 +12,9 @@ public class ChromeSelenideSearchPage {
     @AndroidFindBy(xpath = "//button[@class='tm-rss-button tm-rss-button_default']")
     private SelenideElement copyLinkButton;
 
+    @AndroidFindBy(xpath = "//div[contains(text(),'Ссылка скопирована в буфер обмена')]")
+    private SelenideElement copyLinkPopUp;
+
     @Step("Enter text in search field")
     public void enterTextInSearchField(String text) {
         searchField.setValue(text);
@@ -21,5 +24,10 @@ public class ChromeSelenideSearchPage {
     @Step("Click on copy link button")
     public void clickOnCopyLinkButton() {
         copyLinkButton.click();
+    }
+
+    @Step("Check copy link pop up")
+    public void checkCopyLinkPopUp() {
+        copyLinkPopUp.isEnabled();
     }
 }

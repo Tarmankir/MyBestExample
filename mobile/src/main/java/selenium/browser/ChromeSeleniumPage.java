@@ -9,9 +9,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.testng.Assert.assertEquals;
+
 public class ChromeSeleniumPage {
     @AndroidFindBy(xpath = "//*[@href='/ru/search/']")
     private MobileElement searchButton;
+
+    @AndroidFindBy(xpath = "//*[@class='tm-svg-img tm-header__icon']")
+    private MobileElement logo;
 
     private AppiumDriver<MobileElement> driver;
 
@@ -26,5 +31,16 @@ public class ChromeSeleniumPage {
     @Step("Click on search button")
     public void clickOnSearchButton() {
         searchButton.click();
+    }
+
+    @Step("Check logo is displayed")
+    public void checkLogoIsDisplayed() {
+        logo.isDisplayed();
+    }
+
+    @Step("Check logo size")
+    public void checkLogoSize(Integer height, Integer width) {
+        assertEquals(logo.getAttribute("height"), height);
+        assertEquals(logo.getAttribute("width"), width);
     }
 }

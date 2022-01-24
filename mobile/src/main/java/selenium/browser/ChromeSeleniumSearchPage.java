@@ -18,6 +18,9 @@ public class ChromeSeleniumSearchPage {
     @AndroidFindBy(xpath = "//button[@class='tm-rss-button tm-rss-button_default']")
     private MobileElement copyLinkButton;
 
+    @AndroidFindBy(xpath = "//div[contains(text(),'Ссылка скопирована в буфер обмена')]")
+    private MobileElement copyLinkPopUp;
+
     private AppiumDriver<MobileElement> driver;
 
     public ChromeSeleniumSearchPage(AppiumDriver<MobileElement> driver) {
@@ -37,5 +40,10 @@ public class ChromeSeleniumSearchPage {
     @Step("Click on copy link button")
     public void clickOnCopyLinkButton() {
         copyLinkButton.click();
+    }
+
+    @Step("Check copy link pop up")
+    public void checkCopyLinkPopUp() {
+        copyLinkPopUp.isEnabled();
     }
 }
