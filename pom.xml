@@ -21,6 +21,27 @@
         <aspectj.version>1.8.10</aspectj.version>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>UI</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>API</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>Mobile</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

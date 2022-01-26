@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.visible;
 import static org.testng.Assert.assertEquals;
 
 public class ChromeSelenidePage {
@@ -21,12 +22,12 @@ public class ChromeSelenidePage {
 
     @Step("Check logo is displayed")
     public void checkLogoIsDisplayed() {
-        logo.isDisplayed();
+        logo.shouldBe(visible);
     }
 
     @Step("Check logo size")
     public void checkLogoSize(Integer height, Integer width) {
-        assertEquals(logo.getAttribute("height"), height);
-        assertEquals(logo.getAttribute("width"), width);
+        assertEquals(logo.getAttribute("height"), height.toString());
+        assertEquals(logo.getAttribute("width"), width.toString());
     }
 }

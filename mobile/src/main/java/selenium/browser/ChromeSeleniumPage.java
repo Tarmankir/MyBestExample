@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Step;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,10 +13,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.testng.Assert.assertEquals;
 
 public class ChromeSeleniumPage {
-    @AndroidFindBy(xpath = "//*[@href='/ru/search/']")
+    @FindBy(xpath = "//*[@href='/ru/search/']")
     private MobileElement searchButton;
 
-    @AndroidFindBy(xpath = "//*[@class='tm-svg-img tm-header__icon']")
+    @FindBy(xpath = "//*[@class='tm-svg-img tm-header__icon']")
     private MobileElement logo;
 
     private AppiumDriver<MobileElement> driver;
