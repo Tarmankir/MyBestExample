@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import org.testng.annotations.Test;
 import settings.SelenideDriverWebSetup;
 
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.appium.ScreenObject.screen;
 
@@ -22,5 +23,6 @@ public class ChromeSelenideTest extends SelenideDriverWebSetup {
         chromeSelenideSearchPage.enterTextInSearchField("Apple");
         chromeSelenideSearchPage.clickOnCopyLinkButton();
         chromeSelenideSearchPage.checkCopyLinkPopUp();
+        executeJavaScript("window.scrollBy(0,1000)", "");
     }
 }

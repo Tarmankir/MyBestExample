@@ -1,6 +1,7 @@
 package selenium.browser;
 
 import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -40,5 +41,7 @@ public class ChromeSeleniumTest extends SeleniumDriverSetup {
         chromeSeleniumSearchPage.enterTextInSearchField("Linux");
         chromeSeleniumSearchPage.clickOnCopyLinkButton();
         chromeSeleniumSearchPage.checkCopyLinkPopUp();
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("window.scrollBy(0,1000)", "");
     }
 }
