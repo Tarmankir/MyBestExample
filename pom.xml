@@ -29,7 +29,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suitePath>ui/src/test/resources/testSuites/AcceptanceUITesting.xml</suitePath>
+                <suitePath>src/test/resources/testSuites/AcceptanceUITesting.xml</suitePath>
             </properties>
         </profile>
         <profile>
@@ -38,7 +38,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suitePath>api/src/test/resources/testSuites/AcceptanceAPITesting.xml</suitePath>
+                <suitePath>src/test/resources/testSuites/AcceptanceAPITesting.xml</suitePath>
             </properties>
         </profile>
         <profile>
