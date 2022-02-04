@@ -19,7 +19,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <aspectj.version>1.8.10</aspectj.version>
-        <suitePath>src/test/resources/testSuites/AcceptanceAPITesting.xml</suitePath>
+        <suitePath>src/test/resources/testSuites/AcceptanceTesting.xml</suitePath>
     </properties>
 
     <profiles>
@@ -46,6 +46,9 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <properties>
+                <suitePath>src/test/resources/testSuites/AcceptanceMobileTesting.xml</suitePath>
+            </properties>
         </profile>
     </profiles>
 
@@ -170,7 +173,7 @@
                         <file>${suitePath}</file>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-                        <allure.results.directory>allure-results</allure.results.directory>
+                        <allure.results.directory>/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                 </configuration>
                 <dependencies>
