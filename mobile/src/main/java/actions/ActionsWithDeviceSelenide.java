@@ -10,4 +10,9 @@ public class ActionsWithDeviceSelenide {
     public void clickOnDeviceButtonBack() {
         back();
     }
+
+    @Step("Swipe left")
+    public void swipeLeft() {
+        swipeLeft();
+    }
 }

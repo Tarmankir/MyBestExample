@@ -6,6 +6,7 @@
             <class name="selenide.ArticlesTest"/>
             <class name="selenide.FeedbackPageTest"/>
             <class name="selenide.SearchPageTest"/>
+            <class name="selenide.MainPageScrollTest"/>
         </classes>
     </test>
     <test name="Selenium">

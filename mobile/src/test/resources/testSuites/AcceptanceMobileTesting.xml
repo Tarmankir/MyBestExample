@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Acceptance Mobile testing">
+    <test name="Selenide app">
+        <classes>
+            <class name="selenide.app.SignInSelenideScreenTest"/>
+        </classes>
+    </test>
+    <test name="Selenide browser">
+        <classes>
+            <class name="selenide.browser.ChromeSelenideTest"/>
+        </classes>
+    </test>
+    <test name="Selenium app">
+        <classes>
+            <class name="selenium.app.SignInSeleniumScreenTest"/>
+        </classes>
+    </test>
+    <test name="Selenium browser">
+        <classes>
+            <class name="selenium.browser.ChromeSeleniumTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,6 +1,8 @@
 package selenide;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 import selenide.pages.MainPage;
 import selenide.pages.PostPage;
@@ -18,6 +20,17 @@ public class ArticlesTest extends SelenideDriverSetup {
     private String votesCountOnMainPage;
 
     @BeforeClass
+    void beforeClass() {
+        Configuration.remote = "http://localhost:8080";
+        Configuration.browser = "chrome";
+        Configuration.browserSize = "chrome";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
+    }
+
+    @BeforeMethod
     public void articlesBefore() {
         open(getUiSetting("mainURL"));
         mainPage = Selenide.page(MainPage.class);
