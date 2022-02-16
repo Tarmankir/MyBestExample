@@ -4,7 +4,7 @@ Feature: Test feedback page
     Given I am open feedback page
       When I am insert test data in the themes list Гениальная идея
       And I am enter test email
-      And I am enter test text massage
+      And I am enter test text message
         | A store credit card usually is the next step |
         | Major credit card such as a Visa or MasterCard |
         | A credit card is an indispensable part of life in America |

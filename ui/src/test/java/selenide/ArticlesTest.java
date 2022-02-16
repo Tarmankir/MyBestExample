@@ -21,9 +21,9 @@ public class ArticlesTest extends SelenideDriverSetup {
 
     @BeforeClass
     void beforeClass() {
-        Configuration.remote = "http://localhost:8080";
-        Configuration.browser = "chrome";
-        Configuration.browserSize = "chrome";
+        Configuration.remote = "http://localhost:4444/wd/hub";
+        Configuration.browser = "firefox";
+        Configuration.browserSize = "1280x768";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVC", true);
         capabilities.setCapability("enableVideo", true);

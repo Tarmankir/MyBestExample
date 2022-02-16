@@ -38,8 +38,8 @@ public class LoginPageSteps extends SeleniumDriverSetup {
         loginPage.clickLogin();
     }
 
-    @Then("^I am check user login massage ([^\"]*)$")
-    public void IAmCheckUserLoginMassage(String ID) {
+    @Then("^I am check user login message ([^\"]*)$")
+    public void IAmCheckUserLoginMessage(String ID) {
         accountPage.checkLogin(ID);
         driver.close();
     }

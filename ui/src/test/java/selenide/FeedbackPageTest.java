@@ -28,7 +28,7 @@ public class FeedbackPageTest extends SelenideDriverSetup {
         feedbackPage.selectTheme("Нарушение правил сайта");
         feedbackPage.checkThemesList();
         feedbackPage.emailFieldTake();
-        feedbackPage.massageFieldTake();
+        feedbackPage.messageFieldTake();
         feedbackPage.checkSubmitButton("Отправить");
     }
 }

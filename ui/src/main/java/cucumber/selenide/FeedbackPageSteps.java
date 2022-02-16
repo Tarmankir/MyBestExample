@@ -34,10 +34,10 @@ public class FeedbackPageSteps extends SelenideDriverSetup {
         feedbackPage.emailFieldTake();
     }
 
-    @And("I am enter test text massage")
-    public void IAmEnterTestTextMassage(DataTable table) {
+    @And("I am enter test text message")
+    public void IAmEnterTestTextMessage(DataTable table) {
         List<String> data = table.asList();
-        feedbackPage.massageFieldTakeForCucumber(data.get(0));
+        feedbackPage.messageFieldTakeForCucumber(data.get(0));
     }
 
     @And("I am check list of themes")

@@ -20,7 +20,7 @@ public class AccountPage {
         this.driver = driver;
     }
 
-    @Step("Check user login massage")
+    @Step("Check user login message")
     public void checkLogin(String text) {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         assertEquals(userInfo.getText(), text);

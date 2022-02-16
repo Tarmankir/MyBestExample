@@ -4,4 +4,4 @@ Feature: Testing login page functionality
     Given I am open login page
       When I am use login page functionality to signup in site
       And I am click signup button
-      Then I am check user login massage Приветствуем вас, @Tarman332
+      Then I am check user login message Приветствуем вас, @Tarman332
