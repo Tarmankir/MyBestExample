@@ -7,6 +7,7 @@ import org.testng.annotations.*;
 import selenide.pages.MainPage;
 import selenide.pages.PostPage;
 import settings.SelenideDriverSetup;
+import settings.SelenoidSetup;
 
 import static com.codeborne.selenide.Selenide.*;
 import static org.testng.Assert.assertEquals;
@@ -24,10 +25,11 @@ public class ArticlesTest extends SelenideDriverSetup {
         Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.browser = "firefox";
         Configuration.browserSize = "1280x768";
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVC", true);
-        capabilities.setCapability("enableVideo", true);
-        Configuration.browserCapabilities = capabilities;
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability("enableVC", true);
+//        capabilities.setCapability("enableVideo", true);
+//        Configuration.browserCapabilities = capabilities;
+        Configuration.browserCapabilities = new SelenoidSetup().getSeleniumDesiredCapabilitiesUi();
     }
 
     @BeforeMethod
