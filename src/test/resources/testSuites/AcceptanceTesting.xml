@@ -1,9 +1,0 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-
-<suite name="Acceptance testing">
-    <test name="API">
-        <packages>
-            <package name="api.src.test.java.AddAvatarTest" />
-        </packages>
-    </test>
-</suite>
