@@ -4,10 +4,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class SelenoidSetup {
 
-    public DesiredCapabilities getSeleniumDesiredCapabilitiesUi () {
-        DesiredCapabilities seleniumDesiredCapabilitiesUi = new DesiredCapabilities();
-        seleniumDesiredCapabilitiesUi.setCapability("enableVC", true);
-        seleniumDesiredCapabilitiesUi.setCapability("enableVideo", true);
-        return seleniumDesiredCapabilitiesUi;
+    public DesiredCapabilities getSelenoidDefaultCapabilities() {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        return capabilities;
     }
 }

@@ -6,12 +6,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class CapabilitiesSelenium {
 
     public DesiredCapabilities getAndroidDesiredCapabilities() {
-        DesiredCapabilities capabilitiesAndroid = new DesiredCapabilities();
-        capabilitiesAndroid.setCapability("platformName", "Android");
-        capabilitiesAndroid.setCapability("version", "11.0");
-        capabilitiesAndroid.setCapability("deviceName", "fe8pcqxs5d49mr45");
-        capabilitiesAndroid.setCapability("app", "/home/kir/Рабочий стол/MyBestExample/mobile/src/main/resources/applications/ramblermail.apk");
-        return capabilitiesAndroid;
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("version", "11.0");
+        capabilities.setCapability("deviceName", "fe8pcqxs5d49mr45");
+        capabilities.setCapability("app", "/home/kir/Рабочий стол/MyBestExample/mobile/src/main/resources/applications/ramblermail.apk");
+        return capabilities;
     }
 
     public DesiredCapabilities getAndroidDesiredCapabilitiesWeb() {

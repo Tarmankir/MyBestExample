@@ -2,8 +2,9 @@ package settings;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
-public abstract class SeleniumDriverSetup {
+public class SeleniumDriverSetup {
 
     private ChromeOptions options;
 
@@ -15,5 +16,14 @@ public abstract class SeleniumDriverSetup {
         options.addArguments("window-size=1280,768");
         WebDriverManager.chromedriver().setup();
         return options;
+    }
+
+    public DesiredCapabilities getSelenoidCapabilities(ChromeOptions options) {
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setBrowserName("chrome");
+        capabilities.setVersion("61.0");
+        return capabilities;
     }
 }

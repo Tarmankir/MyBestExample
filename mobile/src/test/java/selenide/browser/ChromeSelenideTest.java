@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.appium.ScreenObject.screen;
 
-
 public class ChromeSelenideTest extends SelenideDriverWebSetup {
 
     @Test

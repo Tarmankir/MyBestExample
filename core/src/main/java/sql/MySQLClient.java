@@ -19,9 +19,6 @@ public class MySQLClient {
         }
         return connection;
     }
-/*
-    public static int selectId(String userId)
-    "SELECT FROM"*/
 
     public static void main(String[] args) {
         connectDataBase("localhost");

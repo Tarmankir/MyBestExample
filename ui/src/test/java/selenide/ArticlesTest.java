@@ -2,14 +2,17 @@ package selenide;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import selenide.pages.MainPage;
 import selenide.pages.PostPage;
 import settings.SelenideDriverSetup;
 import settings.SelenoidSetup;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.closeWindow;
+import static com.codeborne.selenide.Selenide.open;
 import static org.testng.Assert.assertEquals;
 import static settings.UiConfig.getUiSetting;
 
@@ -23,13 +26,9 @@ public class ArticlesTest extends SelenideDriverSetup {
     @BeforeClass
     void beforeClass() {
         Configuration.remote = "http://localhost:4444/wd/hub";
-        Configuration.browser = "firefox";
+        Configuration.browser = "chrome";
         Configuration.browserSize = "1280x768";
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("enableVC", true);
-//        capabilities.setCapability("enableVideo", true);
-//        Configuration.browserCapabilities = capabilities;
-        Configuration.browserCapabilities = new SelenoidSetup().getSeleniumDesiredCapabilitiesUi();
+        Configuration.browserCapabilities = new SelenoidSetup().getSelenoidDefaultCapabilities();
     }
 
     @BeforeMethod
