@@ -23,12 +23,15 @@ public class ArticlesTest extends SelenideDriverSetup {
 
     private String votesCountOnMainPage;
 
+//    private Configuration configuration;
+
     @BeforeClass
     void beforeClass() {
         Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.browser = "chrome";
         Configuration.browserSize = "1280x768";
         Configuration.browserCapabilities = new SelenoidSetup().getSelenoidDefaultCapabilities();
+//        configuration = new SelenoidSetup().getSelenoidDefaultConfigurations();
     }
 
     @BeforeMethod

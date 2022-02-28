@@ -12,15 +12,15 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import java.nio.charset.StandardCharsets;
-/*
+
 public class SelenideMobileListener implements LogEventListener {
     private final AllureLifecycle lifecycle;
 
-    public SelenideListener() {
+    public SelenideMobileListener() {
         this(Allure.getLifecycle());
     }
 
-    public SelenideListener(final AllureLifecycle lifecycle) {
+    public SelenideMobileListener(final AllureLifecycle lifecycle) {
         this.lifecycle = lifecycle;
     }
 
@@ -49,4 +49,4 @@ public class SelenideMobileListener implements LogEventListener {
     @Override
     public void beforeEvent(LogEvent logEvent) {
     }
-}*/
+}
