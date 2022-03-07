@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static org.testng.Assert.assertEquals;
 import static settings.UiConfig.getUiSetting;
 
-public class ArticlesTest extends SelenideDriverSetup {
+public class ArticlesTest extends SelenoidSetup {
 
     private MainPage mainPage;
     private PostPage postPage;

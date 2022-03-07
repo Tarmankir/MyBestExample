@@ -22,7 +22,7 @@ public class MenuPageTest extends SeleniumDriverSetup {
 
     @BeforeGroups(groups = "Regress")
     public void driverSet() throws MalformedURLException {
-        driver = new RemoteWebDriver(getSelenoidUrl(), getSelenoidCapabilities(new SeleniumDriverSetup().getOptions()));
+        driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         mainMenuPage = initElements(driver, MainMenuPage.class);
         driver.get(getUiSetting("mainURL"));

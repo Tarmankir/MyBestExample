@@ -26,12 +26,13 @@ public class SeleniumDriverSetup {
         return SelenoidUrl;
     }
 
-    public DesiredCapabilities getSelenoidCapabilities(ChromeOptions options) {
+    public ChromeOptions getOptionsSelenoid() {
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        options = new ChromeOptions();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         capabilities.setCapability("enableVNC", true);
         capabilities.setBrowserName("chrome");
         capabilities.setVersion("61.0");
-        return capabilities;
+        return options;
     }
 }
