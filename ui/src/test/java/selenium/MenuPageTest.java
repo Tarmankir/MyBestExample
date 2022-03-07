@@ -10,6 +10,7 @@ import selenium.pages.MainMenuPage;
 import settings.SeleniumDriverSetup;
 
 import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
@@ -23,6 +24,7 @@ public class MenuPageTest extends SeleniumDriverSetup {
     @BeforeGroups(groups = "Regress")
     public void driverSet() throws MalformedURLException {
         driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         mainMenuPage = initElements(driver, MainMenuPage.class);
         driver.get(getUiSetting("mainURL"));

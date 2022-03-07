@@ -1,5 +1,6 @@
 package selenide;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.*;
 import selenide.pages.SearchPage;
@@ -16,6 +17,7 @@ public class SearchPageTest extends SelenideDriverSetup {
     public void searchPageBefore() {
         open(getUiSetting("searchURL"));
         searchPage = Selenide.page(SearchPage.class);
+        Configuration.pageLoadTimeout = 30;
     }
 
     @AfterClass

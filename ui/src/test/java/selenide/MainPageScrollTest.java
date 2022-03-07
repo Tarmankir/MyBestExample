@@ -1,5 +1,6 @@
 package selenide;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -17,6 +18,7 @@ public class MainPageScrollTest {
     public void mainPageBefore() {
         open(getUiSetting("mainURL"));
         mainPage = Selenide.page(MainPage.class);
+        Configuration.pageLoadTimeout = 30;
     }
 
     @AfterClass

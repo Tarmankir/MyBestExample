@@ -9,6 +9,8 @@ import selenium.pages.AccountPage;
 import selenium.pages.LoginPage;
 import settings.SeleniumDriverSetup;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static selenium.enums.Credentials.TEST_USER_1;
 import static settings.UiConfig.getUiSetting;
@@ -22,6 +24,7 @@ public class LoginPageTest extends SeleniumDriverSetup {
     @BeforeGroups(groups = "Regress")
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         loginPage = initElements(driver, LoginPage.class);
         accountPage = initElements(driver, AccountPage.class);
         driver.get(getUiSetting("loginUrl"));

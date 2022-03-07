@@ -31,6 +31,7 @@ public class ArticlesTest extends SelenoidSetup {
         Configuration.browser = "chrome";
         Configuration.browserSize = "1280x768";
         Configuration.browserCapabilities = new SelenoidSetup().getSelenoidDefaultCapabilities();
+        Configuration.pageLoadTimeout = 30;
 //        configuration = new SelenoidSetup().getSelenoidDefaultConfigurations();
     }
 

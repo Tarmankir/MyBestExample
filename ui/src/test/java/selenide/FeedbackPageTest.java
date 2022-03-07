@@ -1,5 +1,6 @@
 package selenide;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.*;
 import selenide.pages.FeedbackPage;
@@ -16,6 +17,7 @@ public class FeedbackPageTest extends SelenideDriverSetup {
     public void feedbackPageBefore() {
         open(getUiSetting("feedbackURL"));
         feedbackPage = Selenide.page(FeedbackPage.class);
+        Configuration.pageLoadTimeout = 30;
     }
 
     @AfterClass
