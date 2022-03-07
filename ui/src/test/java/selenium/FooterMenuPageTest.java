@@ -23,7 +23,7 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         driver.get(getUiSetting("mainURL"));
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
     }
 
     @AfterGroups(groups = "Regress")

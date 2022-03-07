@@ -27,7 +27,7 @@ public class MenuPageTest extends SeleniumDriverSetup {
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         mainMenuPage = initElements(driver, MainMenuPage.class);
         driver.get(getUiSetting("mainURL"));
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
     }
 
     @AfterGroups(groups = "Regress")
