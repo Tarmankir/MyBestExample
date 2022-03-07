@@ -21,9 +21,9 @@ public class LanguagePageTest extends SeleniumDriverSetup {
     @BeforeGroups(groups = "Regress")
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         languagePage = initElements(driver, LanguagePage.class);
         driver.get(getUiSetting("mainURL"));
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
 
     @AfterGroups(groups = "Regress")

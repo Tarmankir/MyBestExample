@@ -24,10 +24,10 @@ public class MenuPageTest extends SeleniumDriverSetup {
     @BeforeGroups(groups = "Regress")
     public void driverSet() throws MalformedURLException {
         driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         mainMenuPage = initElements(driver, MainMenuPage.class);
         driver.get(getUiSetting("mainURL"));
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
 
     @AfterGroups(groups = "Regress")

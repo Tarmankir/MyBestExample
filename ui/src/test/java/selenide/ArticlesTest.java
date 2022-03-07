@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenide.pages.MainPage;
 import selenide.pages.PostPage;
-import settings.SelenideDriverSetup;
 import settings.SelenoidSetup;
 
 import static com.codeborne.selenide.Selenide.closeWindow;
@@ -31,7 +30,6 @@ public class ArticlesTest extends SelenoidSetup {
         Configuration.browser = "chrome";
         Configuration.browserSize = "1280x768";
         Configuration.browserCapabilities = new SelenoidSetup().getSelenoidDefaultCapabilities();
-        Configuration.pageLoadTimeout = 30;
 //        configuration = new SelenoidSetup().getSelenoidDefaultConfigurations();
     }
 
@@ -40,6 +38,7 @@ public class ArticlesTest extends SelenoidSetup {
         open(getUiSetting("mainURL"));
         mainPage = Selenide.page(MainPage.class);
         postPage = Selenide.page(PostPage.class);
+        Configuration.pageLoadTimeout = 30;
     }
 
     @AfterClass

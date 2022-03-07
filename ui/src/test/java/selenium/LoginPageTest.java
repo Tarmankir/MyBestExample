@@ -24,10 +24,10 @@ public class LoginPageTest extends SeleniumDriverSetup {
     @BeforeGroups(groups = "Regress")
     public void driverSet() {
         driver = new ChromeDriver(getOptions());
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         loginPage = initElements(driver, LoginPage.class);
         accountPage = initElements(driver, AccountPage.class);
         driver.get(getUiSetting("loginUrl"));
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
 
     @AfterGroups(groups = "Regress")
