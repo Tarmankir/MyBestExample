@@ -26,7 +26,7 @@ public class MainPageScrollTest extends SelenideDriverSetup {
         closeWindow();
     }
 
-    @Test(groups = {"Smoke"})
+    @Test
     public void mainPageScrollTest() {
         executeJavaScript("window.scrollBy(0,1000)", "");
     }

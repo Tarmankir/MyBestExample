@@ -27,7 +27,7 @@ public class FeedbackPageTest extends SelenoidSetup {
         closeWindow();
     }
 
-    @Test(groups = {"Smoke"})
+    @Test
     public void feedbackPageTest() {
         feedbackPage.selectTheme("Нарушение правил сайта");
         feedbackPage.checkThemesList();

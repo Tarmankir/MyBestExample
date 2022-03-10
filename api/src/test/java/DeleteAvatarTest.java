@@ -12,7 +12,7 @@ public class DeleteAvatarTest {
 
     @Test
     @Step("Delete user avatar")
-    public void deleteAvatar() {
+    public void deleteAvatarTest() {
         given()
                 .spec(new RequestSpec().defaultRequestSpec())
                 .body(new DeleteAvatarIncorrectDataBody().deleteAvatarIncorrectDataBody())

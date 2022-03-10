@@ -17,7 +17,7 @@ public class AddAvatarTest {
 
     @Test(dataProvider = "addAvatarProvider")
     @Step("Check add avatar")
-    void checkAddAvatar(String avatarFileName, String avatarEmail) {
+    void addAvatarTest(String avatarFileName, String avatarEmail) {
         new Avatar().addAvatar(new File(avatarFileName), avatarEmail);
     }
 }

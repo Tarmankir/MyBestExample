@@ -13,7 +13,7 @@ public class QuickSearchTest {
 
     @Test
     @Step("Check company search")
-    public void quickSearchCompany() {
+    public void quickSearchCompanyTest() {
         given()
                 .spec(new RequestSpec().defaultRequestSpec())
                 .body(new QuickSearchBody().quickSearchBody())

@@ -33,7 +33,7 @@ public class ArticlesTest extends SelenoidSetup {
         closeWindow();
     }
 
-    @Test(groups = {"Smoke"})
+    @Test
     public void articlesPageTest() {
         votesCountOnMainPage = mainPage.getArticleVotesCount(8);
         mainPage.openArticle(8);

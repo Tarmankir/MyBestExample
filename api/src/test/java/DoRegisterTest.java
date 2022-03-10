@@ -11,7 +11,7 @@ public class DoRegisterTest {
 
     @Test
     @Step("Check user registration")
-    public void doRegisterUser() {
+    public void doRegisterUserTest() {
         given()
                 .spec(new RequestSpec().defaultRequestSpec())
                 .body(new DoRegisterBody().doRegisterBody())
