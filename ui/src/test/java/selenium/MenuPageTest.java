@@ -2,15 +2,12 @@ package selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterGroups;
-import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import selenium.pages.FooterMenuPage;
 import selenium.pages.MainMenuPage;
 import settings.SeleniumDriverSetup;
 
 import java.net.MalformedURLException;
-import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
@@ -21,21 +18,21 @@ public class MenuPageTest extends SeleniumDriverSetup {
     private FooterMenuPage footerMenuPage;
     private MainMenuPage mainMenuPage;
 
-    @BeforeGroups(groups = "Regress")
-    public void driverSet() throws MalformedURLException {
+    @BeforeMethod
+    public void beforeMethod() throws MalformedURLException {
         driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         mainMenuPage = initElements(driver, MainMenuPage.class);
         driver.get(getUiSetting("mainURL"));
-        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
+//        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
     }
 
-    @AfterGroups(groups = "Regress")
+    @AfterMethod
     void afterMethod() {
         driver.close();
     }
 
-    @Test(groups = {"Regress"})
+    @Test
     public void menuPageFragmentTest() {
         mainMenuPage.clickDevelop();
         footerMenuPage.clickSiteMap();

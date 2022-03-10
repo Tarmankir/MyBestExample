@@ -1,13 +1,12 @@
 package selenium.app;
 
+import actions.ActionsWithDeviceSelenium;
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import actions.ActionsWithDeviceSelenium;
-import settings.SeleniumDriverSetup;
 import settings.CapabilitiesSelenium;
+import settings.SeleniumDriverSetup;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,7 +23,7 @@ public class SignInSeleniumScreenTest extends SeleniumDriverSetup {
     private ActionsWithDeviceSelenium actionsWithDeviceSelenium;
 
     @BeforeMethod
-    public void driverSet() throws MalformedURLException {
+    public void beforeMethod() throws MalformedURLException {
         driver = new AppiumDriver(new URL(getMobileSetting("urlAndroid")), new CapabilitiesSelenium().getAndroidDesiredCapabilities());
         signInSeleniumScreen = new SignInSeleniumScreen(driver);
     }

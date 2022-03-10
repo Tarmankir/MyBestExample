@@ -1,9 +1,7 @@
 package selenide;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenide.pages.MainPage;
@@ -22,27 +20,16 @@ public class ArticlesTest extends SelenoidSetup {
 
     private String votesCountOnMainPage;
 
-//    private Configuration configuration;
-
-    @BeforeClass
-    void beforeClass() {
-        Configuration.remote = "http://localhost:4444/wd/hub";
-        Configuration.browser = "chrome";
-        Configuration.browserSize = "1280x768";
-        Configuration.browserCapabilities = new SelenoidSetup().getSelenoidDefaultCapabilities();
-//        configuration = new SelenoidSetup().getSelenoidDefaultConfigurations();
-    }
-
     @BeforeMethod
-    public void articlesBefore() {
+    public void beforeMethod() {
         open(getUiSetting("mainURL"));
         mainPage = Selenide.page(MainPage.class);
         postPage = Selenide.page(PostPage.class);
-        Configuration.pageLoadTimeout = 30;
+//        Configuration.pageLoadTimeout = 30;
     }
 
-    @AfterClass
-    void afterClass() {
+    @AfterMethod
+    void afterMethod() {
         closeWindow();
     }
 

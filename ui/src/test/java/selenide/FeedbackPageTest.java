@@ -1,27 +1,29 @@
 package selenide;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import selenide.pages.FeedbackPage;
-import settings.SelenideDriverSetup;
+import settings.SelenoidSetup;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.closeWindow;
+import static com.codeborne.selenide.Selenide.open;
 import static settings.UiConfig.getUiSetting;
 
-public class FeedbackPageTest extends SelenideDriverSetup {
+public class FeedbackPageTest extends SelenoidSetup {
 
     private FeedbackPage feedbackPage;
 
-    @BeforeClass
-    public void feedbackPageBefore() {
+    @BeforeMethod
+    public void beforeMethod() {
         open(getUiSetting("feedbackURL"));
         feedbackPage = Selenide.page(FeedbackPage.class);
-        Configuration.pageLoadTimeout = 30;
+//        Configuration.pageLoadTimeout = 30;
     }
 
-    @AfterClass
-    void afterClass() {
+    @AfterMethod
+    void afterMethod() {
         closeWindow();
     }
 

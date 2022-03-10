@@ -3,8 +3,6 @@
 <suite name="Acceptance UI testing">
     <test name="Selenide">
         <classes>
-            <class name="selenide.ArticlesTest"/>
-            <class name="selenide.FeedbackPageTest"/>
             <class name="selenide.SearchPageTest"/>
             <class name="selenide.MainPageScrollTest"/>
         </classes>
@@ -18,8 +16,6 @@
         <classes>
             <class name="selenium.FooterMenuPageTest"/>
             <class name="selenium.LanguagePageTest"/>
-            <class name="selenium.LoginPageTest"/>
-            <class name="selenium.MenuPageTest"/>
         </classes>
     </test>
 </suite>

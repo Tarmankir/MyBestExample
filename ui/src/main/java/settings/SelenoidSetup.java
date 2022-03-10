@@ -2,6 +2,7 @@ package settings;
 
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.BeforeSuite;
 
 public class SelenoidSetup {
 
@@ -12,12 +13,11 @@ public class SelenoidSetup {
         return capabilities;
     }
 
-    public Configuration getSelenoidDefaultConfigurations() {
-        Configuration configuration = new Configuration();
-        configuration.remote = "http://localhost:4444/wd/hub";
-        configuration.browser = "chrome";
-        configuration.browserSize = "1280x768";
-        configuration.browserCapabilities = new SelenoidSetup().getSelenoidDefaultCapabilities();
-        return configuration;
+    @BeforeSuite
+    void beforeSuite() {
+        Configuration.remote = "http://localhost:4444/wd/hub";
+        Configuration.browser = "chrome";
+        Configuration.browserSize = "1280x768";
+        Configuration.browserCapabilities = new SelenoidSetup().getSelenoidDefaultCapabilities();
     }
 }

@@ -1,28 +1,28 @@
 package selenide;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenide.pages.MainPage;
+import settings.SelenideDriverSetup;
 
 import static com.codeborne.selenide.Selenide.*;
 import static settings.UiConfig.getUiSetting;
 
-public class MainPageScrollTest {
+public class MainPageScrollTest extends SelenideDriverSetup {
 
     private MainPage mainPage;
 
-    @BeforeClass
-    public void mainPageBefore() {
+    @BeforeMethod
+    public void beforeMethod() {
         open(getUiSetting("mainURL"));
         mainPage = Selenide.page(MainPage.class);
-        Configuration.pageLoadTimeout = 30;
+//        Configuration.pageLoadTimeout = 30;
     }
 
-    @AfterClass
-    void afterClass() {
+    @AfterMethod
+    void afterMethod() {
         closeWindow();
     }
 

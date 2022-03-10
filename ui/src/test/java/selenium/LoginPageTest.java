@@ -1,15 +1,13 @@
 package selenium;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterGroups;
-import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.Test;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.*;
 import selenium.pages.AccountPage;
 import selenium.pages.LoginPage;
 import settings.SeleniumDriverSetup;
 
-import java.util.concurrent.TimeUnit;
+import java.net.MalformedURLException;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static selenium.enums.Credentials.TEST_USER_1;
@@ -21,21 +19,21 @@ public class LoginPageTest extends SeleniumDriverSetup {
     private LoginPage loginPage;
     private AccountPage accountPage;
 
-    @BeforeGroups(groups = "Regress")
-    public void driverSet() {
-        driver = new ChromeDriver(getOptions());
+    @BeforeMethod
+    public void beforeMethod() throws MalformedURLException {
+        driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
         loginPage = initElements(driver, LoginPage.class);
         accountPage = initElements(driver, AccountPage.class);
         driver.get(getUiSetting("loginUrl"));
-        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
+//        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
     }
 
-    @AfterGroups(groups = "Regress")
+    @AfterMethod
     void afterMethod() {
         driver.close();
     }
 
-    @Test(groups = {"Regress"})
+    @Test
     public void loginPageTest() {
         loginPage.loginInSite(TEST_USER_1);
         loginPage.clickLogin();

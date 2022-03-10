@@ -12,13 +12,13 @@ public class SelenideDriverSetup {
     private AppiumDriver driver;
 
     @BeforeSuite
-    public void setUp() throws MalformedURLException {
+    public void beforeSuite() throws MalformedURLException {
         driver = PlatformSelenide.getInstance().getDriver();
         WebDriverRunner.setWebDriver(driver);
     }
 
     @AfterSuite
-    public void tearDown() {
+    public void afterSuite() {
         driver.quit();
     }
 }

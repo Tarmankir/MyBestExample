@@ -8,8 +8,6 @@ import org.testng.annotations.Test;
 import selenium.pages.FooterMenuPage;
 import settings.SeleniumDriverSetup;
 
-import java.util.concurrent.TimeUnit;
-
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
 
@@ -19,11 +17,11 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
     private FooterMenuPage footerMenuPage;
 
     @BeforeGroups(groups = "Regress")
-    public void driverSet() {
+    public void beforeMethod() {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         driver.get(getUiSetting("mainURL"));
-        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
+//        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
     }
 
     @AfterGroups(groups = "Regress")

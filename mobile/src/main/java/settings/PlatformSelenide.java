@@ -13,18 +13,18 @@ import static settings.MobileConfig.getMobileSetting;
 
 public class PlatformSelenide {
 
-    private static final String PLATFORM_ANDROID = "android";
+//    private static final String PLATFORM_ANDROID = "android";
 
     private static final PlatformSelenide instance = new PlatformSelenide();
-    private final String name;
+//    private final String name;
 
     public static PlatformSelenide getInstance() {
         return instance;
     }
-
+/*
     private PlatformSelenide() {
         name = System.getenv("PLATFORM");
-    }
+    }*/
 
     <T extends MobileElement> AppiumDriver<T> getDriver() throws MalformedURLException {
         URL URL = new URL(getMobileSetting("urlAndroid"));
@@ -37,10 +37,10 @@ public class PlatformSelenide {
         return new AndroidDriver<>(URL, getAndroidDesiredCapabilitiesWeb());
 
     }
-
+/*
     public boolean isAndroid() {
         return PLATFORM_ANDROID.equals(name);
-    }
+    }*/
 
     private DesiredCapabilities getAndroidDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();

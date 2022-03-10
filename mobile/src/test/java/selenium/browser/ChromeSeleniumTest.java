@@ -20,7 +20,7 @@ public class ChromeSeleniumTest extends SeleniumDriverSetup {
     private ChromeSeleniumSearchPage chromeSeleniumSearchPage;
 
     @BeforeMethod
-    public void driverSet() throws MalformedURLException {
+    public void beforeMethod() throws MalformedURLException {
         driver = new AppiumDriver(new URL(getMobileSetting("urlAndroid")), new CapabilitiesSelenium().getAndroidDesiredCapabilitiesWeb());
     }
 

@@ -1,27 +1,30 @@
 package selenide;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 import selenide.pages.SearchPage;
 import settings.SelenideDriverSetup;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.closeWindow;
+import static com.codeborne.selenide.Selenide.open;
 import static settings.UiConfig.getUiSetting;
 
 public class SearchPageTest extends SelenideDriverSetup {
 
     private SearchPage searchPage;
 
-    @BeforeClass
-    public void searchPageBefore() {
+    @BeforeMethod
+    public void beforeMethod() {
         open(getUiSetting("searchURL"));
         searchPage = Selenide.page(SearchPage.class);
-        Configuration.pageLoadTimeout = 30;
+//        Configuration.pageLoadTimeout = 30;
     }
 
-    @AfterClass
-    void afterClass() {
+    @AfterMethod
+    void afterMethod() {
         closeWindow();
     }
 

@@ -8,8 +8,6 @@ import org.testng.annotations.Test;
 import selenium.pages.LanguagePage;
 import settings.SeleniumDriverSetup;
 
-import java.util.concurrent.TimeUnit;
-
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
 
@@ -19,11 +17,11 @@ public class LanguagePageTest extends SeleniumDriverSetup {
     private LanguagePage languagePage;
 
     @BeforeGroups(groups = "Regress")
-    public void driverSet() {
+    public void beforeMethod() {
         driver = new ChromeDriver(getOptions());
         languagePage = initElements(driver, LanguagePage.class);
         driver.get(getUiSetting("mainURL"));
-        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
+//        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
     }
 
     @AfterGroups(groups = "Regress")
