@@ -9,10 +9,8 @@ import settings.CapabilitiesSelenium;
 import settings.SeleniumDriverSetup;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 
 import static settings.Credentials.TEST_USER_1;
-import static settings.MobileConfig.getMobileSetting;
 
 public class SignInSeleniumScreenTest extends SeleniumDriverSetup {
 
@@ -24,7 +22,7 @@ public class SignInSeleniumScreenTest extends SeleniumDriverSetup {
 
     @BeforeMethod
     public void beforeMethod() throws MalformedURLException {
-        driver = new AppiumDriver(new URL(getMobileSetting("urlAndroid")), new CapabilitiesSelenium().getAndroidDesiredCapabilities());
+        driver = new AppiumDriver(new CapabilitiesSelenium().getAndroidUrl(), new CapabilitiesSelenium().getAndroidDesiredCapabilities());
         signInSeleniumScreen = new SignInSeleniumScreen(driver);
     }
 

@@ -9,32 +9,30 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static settings.MobileConfig.getMobileSetting;
-
-public class PlatformSelenide {
+public class CapabilitiesSelenide {
 
 //    private static final String PLATFORM_ANDROID = "android";
 
-    private static final PlatformSelenide instance = new PlatformSelenide();
+//    private static final CapabilitiesSelenide instance = new CapabilitiesSelenide();
 //    private final String name;
 
-    public static PlatformSelenide getInstance() {
-        return instance;
-    }
+//    public static CapabilitiesSelenide getInstance() {
+//        return instance;
+//    }
 /*
     private PlatformSelenide() {
         name = System.getenv("PLATFORM");
     }*/
 
-    <T extends MobileElement> AppiumDriver<T> getDriver() throws MalformedURLException {
-        URL URL = new URL(getMobileSetting("urlAndroid"));
-        return new AndroidDriver<>(URL, getAndroidDesiredCapabilities());
+    public AppiumDriver getDriver() throws MalformedURLException {
+//        URL URL = new URL(getMobileSetting("urlAndroid"));
+        return new AppiumDriver(getAndroidUrl(), getAndroidDesiredCapabilities());
 
     }
 
-    <T extends MobileElement> AppiumDriver<T> getDriverWeb() throws MalformedURLException {
-        URL URL = new URL(getMobileSetting("urlAndroid"));
-        return new AndroidDriver<>(URL, getAndroidDesiredCapabilitiesWeb());
+    public AppiumDriver getDriverWeb() throws MalformedURLException {
+//        URL URL = new URL(getMobileSetting("urlAndroid"));
+        return new AppiumDriver(getAndroidUrl(), getAndroidDesiredCapabilitiesWeb());
 
     }
 /*
@@ -65,5 +63,9 @@ public class PlatformSelenide {
         capabilities.setCapability("chromedriverExecutable","/home/kir/Node/lib/node_modules/appium/node_modules/appium-chromedriver/chromedriver/linux/chromedriver");
         capabilities.setCapability("newCommandTimeout", 10);
         return capabilities;
+    }
+
+    private URL getAndroidUrl() throws MalformedURLException {
+        return new URL("http://127.0.0.1:4723/wd/hub");
     }
 }

@@ -5,6 +5,8 @@
         <classes>
             <class name="selenide.SearchPageTest"/>
             <class name="selenide.MainPageScrollTest"/>
+            <class name="selenide.ArticlesTest"/>
+            <class name="selenide.FeedbackPageTest"/>
         </classes>
     </test>
     <test name="Selenium">
@@ -16,6 +18,8 @@
         <classes>
             <class name="selenium.FooterMenuPageTest"/>
             <class name="selenium.LanguagePageTest"/>
+            <class name="selenium.LoginPageTest"/>
+            <class name="selenium.MenuPageTest"/>
         </classes>
     </test>
 </suite>

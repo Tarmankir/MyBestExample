@@ -15,7 +15,7 @@ public class FooterMenuPage {
     @FindBy(css = "a[href*='/ru/megaprojects/']")
     private WebElement megaProjects;
 
-    @FindBy(css = "a[href*='/ru/all/']")
+    @FindBy(css = "a[href*='/ru/flows/all']")
     private WebElement buttonText;
 
     private WebDriver driver;

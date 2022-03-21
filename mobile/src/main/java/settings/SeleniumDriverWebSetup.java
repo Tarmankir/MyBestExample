@@ -1,24 +1,22 @@
 package settings;
 
-import com.codeborne.selenide.WebDriverRunner;
 import io.appium.java_client.AppiumDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.net.MalformedURLException;
 
-public class SelenideDriverSetup {
+public class SeleniumDriverWebSetup {
 
-    private AppiumDriver driver;
+    public AppiumDriver driver;
 
     @BeforeSuite
     public void beforeSuite() throws MalformedURLException {
-        driver = new CapabilitiesSelenide().getDriver();
-        WebDriverRunner.setWebDriver(driver);
+        driver = new AppiumDriver(new CapabilitiesSelenium().getAndroidUrl(), new CapabilitiesSelenium().getAndroidDesiredCapabilitiesWeb());
     }
 
     @AfterSuite
-    public void afterSuite() {
+    void afterSuite() {
         driver.quit();
     }
 }

@@ -19,7 +19,7 @@ public class LoginPageTest extends SeleniumDriverSetup {
     private LoginPage loginPage;
     private AccountPage accountPage;
 
-    @BeforeMethod
+    @BeforeGroups(groups = "Regress")
     public void beforeMethod() throws MalformedURLException {
         driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
         loginPage = initElements(driver, LoginPage.class);
@@ -28,12 +28,12 @@ public class LoginPageTest extends SeleniumDriverSetup {
 //        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
     }
 
-    @AfterMethod
+    @AfterGroups(groups = "Regress")
     void afterMethod() {
         driver.close();
     }
 
-    @Test
+    @Test(groups = {"Regress"})
     public void loginPageTest() {
         loginPage.loginInSite(TEST_USER_1);
         loginPage.clickLogin();

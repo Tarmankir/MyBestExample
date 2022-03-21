@@ -1,37 +1,19 @@
 package selenium.browser;
 
-import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import settings.CapabilitiesSelenium;
-import settings.SeleniumDriverSetup;
-
-import java.net.MalformedURLException;
-import java.net.URL;
+import settings.SeleniumDriverWebSetup;
 
 import static settings.MobileConfig.getMobileSetting;
 
-public class ChromeSeleniumTest extends SeleniumDriverSetup {
+public class ChromeSeleniumTest extends SeleniumDriverWebSetup {
 
-    private AppiumDriver driver;
     private ChromeSeleniumPage chromeSeleniumPage;
     private ChromeSeleniumSearchPage chromeSeleniumSearchPage;
 
-    @BeforeMethod
-    public void beforeMethod() throws MalformedURLException {
-        driver = new AppiumDriver(new URL(getMobileSetting("urlAndroid")), new CapabilitiesSelenium().getAndroidDesiredCapabilitiesWeb());
-    }
-
-    @AfterMethod
-    void afterMethod() {
-        driver.quit();
-    }
-
     @Test
     public void chromeSeleniumTest() {
-        driver.get("https://habr.com/ru/all/");
+        driver.get(getMobileSetting("mainURL"));
         chromeSeleniumPage = new ChromeSeleniumPage(driver);
         chromeSeleniumPage.clickOnSearchButton();
         chromeSeleniumPage.checkLogoIsDisplayed();

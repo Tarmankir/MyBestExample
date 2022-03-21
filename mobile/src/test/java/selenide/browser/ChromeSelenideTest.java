@@ -7,13 +7,14 @@ import settings.SelenideDriverWebSetup;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.appium.ScreenObject.screen;
+import static settings.MobileConfig.getMobileSetting;
 
 public class ChromeSelenideTest extends SelenideDriverWebSetup {
 
     @Test
     void chromeSelenideTest() {
-        Configuration.baseUrl = "https://habr.com/ru/all/";
-        open("https://habr.com/ru/all/");
+        Configuration.baseUrl = getMobileSetting("mainURL");
+        open(getMobileSetting("mainURL"));
         ChromeSelenidePage chromeSelenidePage = screen(ChromeSelenidePage.class);
         chromeSelenidePage.checkLogoIsDisplayed();
         chromeSelenidePage.checkLogoSize(16,16);

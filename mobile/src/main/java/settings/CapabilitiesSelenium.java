@@ -3,6 +3,9 @@ package settings;
 import com.google.common.collect.ImmutableMap;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class CapabilitiesSelenium {
 
     public DesiredCapabilities getAndroidDesiredCapabilities() {
@@ -25,5 +28,9 @@ public class CapabilitiesSelenium {
         capabilities.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
         capabilities.setCapability("newCommandTimeout", 10);
         return capabilities;
+    }
+
+    public URL getAndroidUrl() throws MalformedURLException {
+        return new URL("http://127.0.0.1:4723/wd/hub");
     }
 }

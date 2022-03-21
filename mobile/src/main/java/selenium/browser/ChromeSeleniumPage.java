@@ -40,7 +40,7 @@ public class ChromeSeleniumPage {
 
     @Step("Check logo size")
     public void checkLogoSize(Integer height, Integer width) {
-        assertEquals(logo.getAttribute("height"), height);
-        assertEquals(logo.getAttribute("width"), width);
+        assertEquals(logo.getAttribute("height"), height.toString());
+        assertEquals(logo.getAttribute("width"), width.toString());
     }
 }
