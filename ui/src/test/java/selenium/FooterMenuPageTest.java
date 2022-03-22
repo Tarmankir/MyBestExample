@@ -2,11 +2,11 @@ package selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterGroups;
-import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import selenium.pages.FooterMenuPage;
 import settings.SeleniumDriverSetup;
+
+import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
@@ -16,20 +16,20 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
     private WebDriver driver;
     private FooterMenuPage footerMenuPage;
 
-    @BeforeGroups(groups = "Regress")
+    @BeforeMethod
     public void beforeMethod() {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         driver.get(getUiSetting("mainURL"));
-//        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
     }
 
-    @AfterGroups(groups = "Regress")
+    @AfterMethod
     void afterMethod() {
         driver.close();
     }
 
-    @Test(groups = {"Regress"})
+    @Test
     public void footerMenuPageTest() {
         footerMenuPage.clickSiteMap();
         footerMenuPage.clickMegaProjects();

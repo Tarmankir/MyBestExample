@@ -1,5 +1,6 @@
 package selenide;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -22,6 +23,10 @@ public class ArticlesTest extends SelenoidSetup {
 
     @BeforeMethod
     public void beforeMethod() {
+        Configuration.remote = "http://localhost:4444/wd/hub";
+        Configuration.browser = "chrome";
+        Configuration.browserSize = "1280x768";
+        Configuration.browserCapabilities = getSelenoidDefaultCapabilities();
         open(getUiSetting("mainURL"));
         mainPage = Selenide.page(MainPage.class);
         postPage = Selenide.page(PostPage.class);

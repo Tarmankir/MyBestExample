@@ -10,11 +10,6 @@
         </classes>
     </test>
     <test name="Selenium">
-        <groups>
-            <run>
-                <include name="Regress"/>
-            </run>
-        </groups>
         <classes>
             <class name="selenium.FooterMenuPageTest"/>
             <class name="selenium.LanguagePageTest"/>

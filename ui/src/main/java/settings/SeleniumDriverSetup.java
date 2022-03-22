@@ -26,8 +26,9 @@ public class SeleniumDriverSetup {
         options = new ChromeOptions();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
         capabilities.setBrowserName("chrome");
-        capabilities.setVersion("61.0");
+        capabilities.setVersion("94.0");
         return options;
     }
 

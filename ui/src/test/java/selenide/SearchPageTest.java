@@ -19,9 +19,9 @@ public class SearchPageTest extends SelenideDriverSetup {
 
     @BeforeMethod
     public void beforeMethod() {
+        Configuration.pageLoadTimeout = 30000;
         open(getUiSetting("searchURL"));
         searchPage = Selenide.page(SearchPage.class);
-//        Configuration.pageLoadTimeout = 30;
     }
 
     @AfterMethod

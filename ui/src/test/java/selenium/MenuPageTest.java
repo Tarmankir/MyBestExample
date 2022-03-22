@@ -18,7 +18,7 @@ public class MenuPageTest extends SeleniumDriverSetup {
     private FooterMenuPage footerMenuPage;
     private MainMenuPage mainMenuPage;
 
-    @BeforeGroups(groups = "Regress")
+    @BeforeMethod
     public void beforeMethod() throws MalformedURLException {
         driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
@@ -27,12 +27,12 @@ public class MenuPageTest extends SeleniumDriverSetup {
 //        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
     }
 
-    @AfterGroups(groups = "Regress")
+    @AfterMethod
     void afterMethod() {
         driver.close();
     }
 
-    @Test(groups = {"Regress"})
+    @Test
     public void menuPageFragmentTest() {
         mainMenuPage.clickDevelop();
         footerMenuPage.clickSiteMap();
