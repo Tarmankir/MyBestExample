@@ -23,6 +23,7 @@ public class ArticlesTest extends SelenoidSetup {
 
     @BeforeMethod
     public void beforeMethod() {
+        Configuration.pageLoadTimeout = 300000;
         Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.browser = "chrome";
         Configuration.browserSize = "1280x768";
@@ -30,7 +31,6 @@ public class ArticlesTest extends SelenoidSetup {
         open(getUiSetting("mainURL"));
         mainPage = Selenide.page(MainPage.class);
         postPage = Selenide.page(PostPage.class);
-//        Configuration.pageLoadTimeout = 30;
     }
 
     @AfterMethod

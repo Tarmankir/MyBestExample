@@ -1,13 +1,13 @@
 package selenium;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import selenium.pages.FooterMenuPage;
 import selenium.pages.MainMenuPage;
 import settings.SeleniumDriverSetup;
-
-import java.net.MalformedURLException;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
@@ -19,12 +19,11 @@ public class MenuPageTest extends SeleniumDriverSetup {
     private MainMenuPage mainMenuPage;
 
     @BeforeMethod
-    public void beforeMethod() throws MalformedURLException {
-        driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
+    public void beforeMethod() {
+        driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         mainMenuPage = initElements(driver, MainMenuPage.class);
         driver.get(getUiSetting("mainURL"));
-//        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
     }
 
     @AfterMethod

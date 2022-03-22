@@ -18,13 +18,13 @@ public class FeedbackPageTest extends SelenoidSetup {
 
     @BeforeMethod
     public void beforeMethod() {
+        Configuration.pageLoadTimeout = 300000;
         Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.browser = "chrome";
         Configuration.browserSize = "1280x768";
         Configuration.browserCapabilities = getSelenoidDefaultCapabilities();
         open(getUiSetting("feedbackURL"));
         feedbackPage = Selenide.page(FeedbackPage.class);
-//        Configuration.pageLoadTimeout = 30;
     }
 
     @AfterMethod

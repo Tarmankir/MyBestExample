@@ -2,11 +2,11 @@ package selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import selenium.pages.FooterMenuPage;
 import settings.SeleniumDriverSetup;
-
-import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
@@ -21,7 +21,7 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         driver.get(getUiSetting("mainURL"));
-        driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
     }
 
     @AfterMethod
