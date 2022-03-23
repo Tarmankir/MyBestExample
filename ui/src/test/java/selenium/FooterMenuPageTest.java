@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 import selenium.pages.FooterMenuPage;
 import settings.SeleniumDriverSetup;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
 
@@ -21,7 +23,7 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         driver.get(getUiSetting("mainURL"));
-//        driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @AfterMethod

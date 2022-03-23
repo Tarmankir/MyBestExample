@@ -25,7 +25,6 @@ public class LoginPageTest extends SeleniumDriverSetup {
         loginPage = initElements(driver, LoginPage.class);
         accountPage = initElements(driver, AccountPage.class);
         driver.get(getUiSetting("loginUrl"));
-//        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
     }
 
     @AfterMethod
