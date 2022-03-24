@@ -6,6 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenium.pages.FooterMenuPage;
+import selenium.pages.MainMenuPage;
 import settings.SeleniumDriverSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
@@ -15,11 +16,13 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
 
     private WebDriver driver;
     private FooterMenuPage footerMenuPage;
+    private MainMenuPage mainMenuPage;
 
     @BeforeMethod
     public void beforeMethod() {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
+        mainMenuPage = initElements(driver, MainMenuPage.class);
         driver.get(getUiSetting("mainURL"));
    }
 
@@ -31,7 +34,7 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
     @Test
     public void footerMenuPageTest() {
         footerMenuPage.clickMegaProjects();
-        footerMenuPage.switchWindowBack();
+        mainMenuPage.clickAllStreams();
         footerMenuPage.checkURL("https://habr.com/ru/all/");
     }
 }

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MainMenuPage {
 
-    @FindBy(css = "a[href='/ru/top']")
+    @FindBy(css = "a[href='/ru/flows/all']")
     private WebElement allStreams;
 
     @FindBy(css = "a[href='/ru/flows/develop/']")
