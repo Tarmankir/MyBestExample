@@ -30,9 +30,7 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
 
     @Test
     public void footerMenuPageTest() {
-        footerMenuPage.clickSiteMap();
         footerMenuPage.clickMegaProjects();
-        footerMenuPage.switchWindowBack();
-        footerMenuPage.checkURL("https://habr.com/ru/docs/help/rules/");
+        footerMenuPage.checkURL("https://habr.com/ru/megaprojects/");
     }
 }
