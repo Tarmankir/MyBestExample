@@ -8,8 +8,6 @@ import org.testng.annotations.Test;
 import selenium.pages.FooterMenuPage;
 import settings.SeleniumDriverSetup;
 
-import java.util.concurrent.TimeUnit;
-
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
 
@@ -23,7 +21,7 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
         driver = new ChromeDriver(getOptions());
         footerMenuPage = initElements(driver, FooterMenuPage.class);
         driver.get(getUiSetting("mainURL"));
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);    }
+   }
 
     @AfterMethod
     void afterMethod() {
@@ -33,6 +31,7 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
     @Test
     public void footerMenuPageTest() {
         footerMenuPage.clickMegaProjects();
-        footerMenuPage.checkURL("https://habr.com/ru/megaprojects/");
+        footerMenuPage.switchWindowBack();
+        footerMenuPage.checkURL("https://habr.com/ru/all/");
     }
 }
