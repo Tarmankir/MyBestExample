@@ -29,11 +29,10 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
     }
 
     @Test
-    public void footerMenuPageTest() throws InterruptedException {
+    public void footerMenuPageTest() {
         footerMenuPage.clickSiteMap();
         footerMenuPage.clickMegaProjects();
         footerMenuPage.switchWindowBack();
-        Thread.sleep(3000);
-        footerMenuPage.checkText("Все потоки");
+        footerMenuPage.checkURL("https://habr.com/ru/docs/help/rules/");
     }
 }

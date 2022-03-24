@@ -43,4 +43,9 @@ public class FooterMenuPage {
     public void checkText(String text) {
         assertEquals(buttonText.getText(), text);
     }
+
+    @Step("Check URL site")
+    public void checkURL(String text) {
+        assertEquals(driver.getCurrentUrl(), text);
+    }
 }
