@@ -13,7 +13,7 @@ public class SelenideDriverSetup {
 
     @BeforeSuite
     public void beforeSuite() throws MalformedURLException {
-        driver = new CapabilitiesSelenide().getDriver();
+        driver = CapabilitiesSelenide.getInstance().getDriver();
         WebDriverRunner.setWebDriver(driver);
     }
 

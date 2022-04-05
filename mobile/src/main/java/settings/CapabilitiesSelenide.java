@@ -11,34 +11,28 @@ import java.net.URL;
 
 public class CapabilitiesSelenide {
 
-//    private static final String PLATFORM_ANDROID = "android";
+    private static final CapabilitiesSelenide instance = new CapabilitiesSelenide();
+    private final String name;
 
-//    private static final CapabilitiesSelenide instance = new CapabilitiesSelenide();
-//    private final String name;
+    public static CapabilitiesSelenide getInstance() {
+        return instance;
+    }
 
-//    public static CapabilitiesSelenide getInstance() {
-//        return instance;
-//    }
-/*
-    private PlatformSelenide() {
+    private CapabilitiesSelenide() {
         name = System.getenv("PLATFORM");
-    }*/
+    }
 
-    public AppiumDriver getDriver() throws MalformedURLException {
-//        URL URL = new URL(getMobileSetting("urlAndroid"));
-        return new AppiumDriver(getAndroidUrl(), getAndroidDesiredCapabilities());
+    <T extends MobileElement> AppiumDriver<T> getDriver() throws MalformedURLException {
+        URL URL = new URL("http://127.0.0.1:4723/wd/hub");
+        return new AndroidDriver<>(URL, getAndroidDesiredCapabilities());
 
     }
 
-    public AppiumDriver getDriverWeb() throws MalformedURLException {
-//        URL URL = new URL(getMobileSetting("urlAndroid"));
-        return new AppiumDriver(getAndroidUrl(), getAndroidDesiredCapabilitiesWeb());
+    <T extends MobileElement> AppiumDriver<T> getDriverWeb() throws MalformedURLException {
+        URL URL = new URL("http://127.0.0.1:4723/wd/hub");
+        return new AndroidDriver<>(URL, getAndroidDesiredCapabilitiesWeb());
 
     }
-/*
-    public boolean isAndroid() {
-        return PLATFORM_ANDROID.equals(name);
-    }*/
 
     private DesiredCapabilities getAndroidDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
