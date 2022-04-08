@@ -13,7 +13,6 @@ public class ChromeSeleniumNumberPageTest extends SeleniumDriverWebSetup {
     public void chromeSeleniumNumberPage() {
         driver.get(getMobileSetting("page8"));
         chromeSeleniumNumberPage = new ChromeSeleniumNumberPage(driver);
-        chromeSeleniumNumberPage.separateNumberPage();
-        chromeSeleniumNumberPage.checkNumPage("8");
+        chromeSeleniumNumberPage.pageNumberComparison();
     }
 }

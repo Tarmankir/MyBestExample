@@ -9,9 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import static common.DataConverter.separateNumberInString;
 import static org.testng.Assert.assertEquals;
 
 public class ChromeSeleniumNumberPage {
@@ -29,19 +27,13 @@ public class ChromeSeleniumNumberPage {
         wait.until(ExpectedConditions.visibilityOf(numberPage));
     }
 
-    @Step("Separate number page")
-    public String separateNumberPage() {
-        String pageNumber = "";
-        String strUrl = driver.getCurrentUrl();
-        Pattern p = Pattern.compile("(\\d+)");
-        Matcher m = p.matcher(strUrl);
-        while(m.find()) {
-            pageNumber = m.group();
-        }
-        return pageNumber;
+    @Step("Get URL in string")
+    public String getUrlInString() {
+        return driver.getCurrentUrl();
     }
 
-    public void checkNumPage(String numm) {
-        assertEquals(separateNumberPage(), numm);
+    @Step("Page number comparison")
+    public void pageNumberComparison() {
+        assertEquals(separateNumberInString(getUrlInString()), numberPage.getText());
     }
 }
