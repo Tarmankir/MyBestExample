@@ -2,8 +2,6 @@ package settings;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -11,30 +9,7 @@ import java.net.URL;
 
 public class CapabilitiesSelenide {
 
-    private static final CapabilitiesSelenide instance = new CapabilitiesSelenide();
-    private final String name;
-
-    public static CapabilitiesSelenide getInstance() {
-        return instance;
-    }
-
-    private CapabilitiesSelenide() {
-        name = System.getenv("PLATFORM");
-    }
-
-    <T extends MobileElement> AppiumDriver<T> getDriver() throws MalformedURLException {
-        URL URL = new URL("http://127.0.0.1:4723/wd/hub");
-        return new AndroidDriver<>(URL, getAndroidDesiredCapabilities());
-
-    }
-
-    <T extends MobileElement> AppiumDriver<T> getDriverWeb() throws MalformedURLException {
-        URL URL = new URL("http://127.0.0.1:4723/wd/hub");
-        return new AndroidDriver<>(URL, getAndroidDesiredCapabilitiesWeb());
-
-    }
-
-    private DesiredCapabilities getAndroidDesiredCapabilities() {
+    private static DesiredCapabilities getAndroidDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName", "fe8pcqxs5d49mr45");
@@ -46,7 +21,7 @@ public class CapabilitiesSelenide {
         return capabilities;
     }
 
-    private DesiredCapabilities getAndroidDesiredCapabilitiesWeb() {
+    private static DesiredCapabilities getAndroidDesiredCapabilitiesWeb() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName", "fe8pcqxs5d49mr45");
@@ -59,7 +34,15 @@ public class CapabilitiesSelenide {
         return capabilities;
     }
 
-    private URL getAndroidUrl() throws MalformedURLException {
+    private static URL getAndroidUrl() throws MalformedURLException {
         return new URL("http://127.0.0.1:4723/wd/hub");
+    }
+
+    public static AppiumDriver getDriver() throws MalformedURLException {
+        return new AppiumDriver(getAndroidUrl(), getAndroidDesiredCapabilities());
+    }
+
+    public static AppiumDriver getDriverWeb() throws MalformedURLException {
+        return new AppiumDriver(getAndroidUrl(), getAndroidDesiredCapabilitiesWeb());
     }
 }
