@@ -2,8 +2,8 @@ package settings;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.appium.java_client.AppiumDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 
@@ -11,14 +11,14 @@ public class SelenideDriverWebSetup {
 
     private AppiumDriver driver;
 
-    @BeforeSuite
-    public void beforeSuite() throws MalformedURLException {
+    @BeforeMethod
+    public void beforeMethod() throws MalformedURLException {
         driver = CapabilitiesSelenide.getDriverWeb();
         WebDriverRunner.setWebDriver(driver);
     }
 
-    @AfterSuite
-    public void afterSuite() {
+    @AfterMethod
+    public void afterMethod() {
         driver.quit();
     }
 }

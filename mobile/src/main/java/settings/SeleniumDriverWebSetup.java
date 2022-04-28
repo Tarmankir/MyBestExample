@@ -1,8 +1,8 @@
 package settings;
 
 import io.appium.java_client.AppiumDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 
@@ -10,13 +10,13 @@ public class SeleniumDriverWebSetup {
 
     public AppiumDriver driver;
 
-    @BeforeSuite
-    public void beforeSuite() throws MalformedURLException {
+    @BeforeMethod
+    public void beforeMethod() throws MalformedURLException {
         driver = new AppiumDriver(new CapabilitiesSelenium().getAndroidUrl(), new CapabilitiesSelenium().getAndroidDesiredCapabilitiesWeb());
     }
 
-    @AfterSuite
-    void afterSuite() {
+    @AfterMethod
+    void afterMethod() {
         driver.quit();
     }
 }
