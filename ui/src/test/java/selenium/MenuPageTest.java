@@ -35,6 +35,6 @@ public class MenuPageTest extends SeleniumDriverSetup {
     public void menuPageFragmentTest() {
         mainMenuPage.clickDevelop();
         footerMenuPage.clickSiteMap();
-        footerMenuPage.checkText("Все потоки");
+        footerMenuPage.checkText("СТАТЬИ");
     }
 }
