@@ -15,6 +15,7 @@ public class MainPageScrollTest extends SelenideDriverSetup {
     public void mainPageScrollTest() {
         open(getUiSetting("mainURL"));
         MainPage mainPage = Selenide.page(MainPage.class);
+        mainPage.openArticle(8);
         executeJavaScript("window.scrollBy(0,1000)", "");
     }
 }

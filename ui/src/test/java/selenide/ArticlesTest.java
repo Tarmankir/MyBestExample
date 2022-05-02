@@ -4,13 +4,13 @@ import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import selenide.pages.MainPage;
 import selenide.pages.PostPage;
-import settings.SelenoidSetup;
+import settings.SelenideSelenoidSetup;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.testng.Assert.assertEquals;
 import static settings.UiConfig.getUiSetting;
 
-public class ArticlesTest extends SelenoidSetup {
+public class ArticlesTest extends SelenideSelenoidSetup {
 
     private String votesCountOnMainPage;
 

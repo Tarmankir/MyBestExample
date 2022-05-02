@@ -4,8 +4,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import selenium.pages.FooterMenuPage;
 import settings.SeleniumDriverSetup;
 
@@ -14,14 +12,12 @@ import static settings.UiConfig.getUiSetting;
 
 public class FooterMenuPageSteps extends SeleniumDriverSetup {
 
-    private WebDriver driver;
     private FooterMenuPage footerMenuPage;
 
     @Given("I am open main page for footer testing")
     public void IAmOpenMainPageForFooterTesting() {
-        driver = new ChromeDriver(getOptions());
-        footerMenuPage = initElements(driver, FooterMenuPage.class);
         driver.get(getUiSetting("mainURL"));
+        footerMenuPage = initElements(driver, FooterMenuPage.class);
     }
 
     @When("I am click site map")
@@ -42,6 +38,5 @@ public class FooterMenuPageSteps extends SeleniumDriverSetup {
     @Then("^I am check text on button on site ([^\"]*)$")
     public void IAmCheckTextOnButtonOnSite(String Text) {
         footerMenuPage.checkText(Text);
-        driver.close();
     }
 }

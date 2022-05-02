@@ -1,38 +1,22 @@
 package settings;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import static settings.SeleniumDriverCapabilities.getOptions;
 
 public class SeleniumDriverSetup {
 
-    private ChromeOptions options;
-
-    public ChromeOptions getOptions() {
-        options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("window-size=1280,768");
-        WebDriverManager.chromedriver().setup();
-        return options;
+    public WebDriver driver;
+    @BeforeMethod
+    public void beforeMethod() {
+        driver = new ChromeDriver(getOptions());
     }
 
-    public ChromeOptions getOptionsSelenoid() {
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        options = new ChromeOptions();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-        capabilities.setBrowserName("chrome");
-        capabilities.setVersion("94.0");
-        return options;
-    }
-
-    public URL getSelenoidUrl() throws MalformedURLException {
-        return new URL("http://localhost:4444/wd/hub");
+    @AfterMethod
+    public void afterMethod() {
+        driver.close();
     }
 }

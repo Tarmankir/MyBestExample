@@ -4,8 +4,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import selenium.pages.AccountPage;
 import selenium.pages.LoginPage;
 import settings.SeleniumDriverSetup;
@@ -16,16 +14,14 @@ import static settings.UiConfig.getUiSetting;
 
 public class LoginPageSteps extends SeleniumDriverSetup {
 
-    private WebDriver driver;
     private LoginPage loginPage;
     private AccountPage accountPage;
 
     @Given("I am open login page")
     public void IAmOpenLoginPage() {
-        driver = new ChromeDriver(getOptions());
+        driver.get(getUiSetting("loginUrl"));
         loginPage = initElements(driver, LoginPage.class);
         accountPage = initElements(driver, AccountPage.class);
-        driver.get(getUiSetting("loginUrl"));
     }
 
     @When("I am use login page functionality to signup in site")
@@ -41,6 +37,5 @@ public class LoginPageSteps extends SeleniumDriverSetup {
     @Then("^I am check user login message ([^\"]*)$")
     public void IAmCheckUserLoginMessage(String ID) {
         accountPage.checkLogin(ID);
-        driver.close();
     }
 }

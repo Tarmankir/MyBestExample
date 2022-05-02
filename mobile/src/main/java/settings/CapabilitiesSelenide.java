@@ -9,7 +9,7 @@ import java.net.URL;
 
 public class CapabilitiesSelenide {
 
-    private static DesiredCapabilities getAndroidDesiredCapabilities() {
+    public static DesiredCapabilities getAndroidDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName", "fe8pcqxs5d49mr45");
@@ -21,7 +21,7 @@ public class CapabilitiesSelenide {
         return capabilities;
     }
 
-    private static DesiredCapabilities getAndroidDesiredCapabilitiesWeb() {
+    public static DesiredCapabilities getAndroidDesiredCapabilitiesWeb() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName", "fe8pcqxs5d49mr45");
@@ -34,7 +34,7 @@ public class CapabilitiesSelenide {
         return capabilities;
     }
 
-    private static URL getAndroidUrl() throws MalformedURLException {
+    public static URL getAndroidUrl() throws MalformedURLException {
         return new URL("http://127.0.0.1:4723/wd/hub");
     }
 

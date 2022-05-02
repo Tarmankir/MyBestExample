@@ -1,9 +1,5 @@
 package selenium;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenium.pages.FooterMenuPage;
 import selenium.pages.MainMenuPage;
@@ -14,27 +10,13 @@ import static settings.UiConfig.getUiSetting;
 
 public class FooterMenuPageTest extends SeleniumDriverSetup {
 
-    private WebDriver driver;
-    private FooterMenuPage footerMenuPage;
-    private MainMenuPage mainMenuPage;
-
-    @BeforeMethod
-    public void beforeMethod() {
-        driver = new ChromeDriver(getOptions());
-        footerMenuPage = initElements(driver, FooterMenuPage.class);
-        mainMenuPage = initElements(driver, MainMenuPage.class);
-        driver.get(getUiSetting("mainURL"));
-   }
-
-    @AfterMethod
-    void afterMethod() {
-        driver.close();
-    }
-
     @Test
     public void footerMenuPageTest() {
+        driver.get(getUiSetting("mainURL"));
+        FooterMenuPage footerMenuPage = initElements(driver, FooterMenuPage.class);
         footerMenuPage.clickMegaProjects();
+        MainMenuPage mainMenuPage = initElements(driver, MainMenuPage.class);
         mainMenuPage.clickAllStreams();
-        footerMenuPage.checkURL("https://habr.com/ru/all/");
+        footerMenuPage.checkURL("https://habr.com/ru/megaprojects/");
     }
 }

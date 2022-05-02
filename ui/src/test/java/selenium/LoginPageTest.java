@@ -1,41 +1,23 @@
 package selenium;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 import selenium.pages.AccountPage;
 import selenium.pages.LoginPage;
-import settings.SeleniumDriverSetup;
-
-import java.net.MalformedURLException;
+import settings.SeleniumSelenoidSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static selenium.enums.Credentials.TEST_USER_1;
 import static settings.UiConfig.getUiSetting;
 
-public class LoginPageTest extends SeleniumDriverSetup {
-
-    private WebDriver driver;
-    private LoginPage loginPage;
-    private AccountPage accountPage;
-
-    @BeforeMethod
-    public void beforeMethod() throws MalformedURLException {
-        driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
-        loginPage = initElements(driver, LoginPage.class);
-        accountPage = initElements(driver, AccountPage.class);
-        driver.get(getUiSetting("loginUrl"));
-    }
-
-    @AfterMethod
-    void afterMethod() {
-        driver.close();
-    }
+public class LoginPageTest extends SeleniumSelenoidSetup {
 
     @Test
     public void loginPageTest() {
+        driver.get(getUiSetting("loginUrl"));
+        LoginPage loginPage = initElements(driver, LoginPage.class);
         loginPage.loginInSite(TEST_USER_1);
         loginPage.clickLogin();
+        AccountPage accountPage = initElements(driver, AccountPage.class);
         accountPage.checkLogin("Hello, @Tarman332");
     }
 }

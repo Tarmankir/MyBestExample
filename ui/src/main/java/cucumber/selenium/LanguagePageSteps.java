@@ -4,8 +4,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import selenium.pages.LanguagePage;
 import settings.SeleniumDriverSetup;
 
@@ -14,14 +12,12 @@ import static settings.UiConfig.getUiSetting;
 
 public class LanguagePageSteps extends SeleniumDriverSetup {
 
-    private WebDriver driver;
     private LanguagePage languagePage;
 
     @Given("I am open main page")
     public void IAmOpenMainPage() {
-        driver = new ChromeDriver(getOptions());
-        languagePage = initElements(driver, LanguagePage.class);
         driver.get(getUiSetting("mainURL"));
+        languagePage = initElements(driver, LanguagePage.class);
     }
 
     @When("I am click language settings")
@@ -42,6 +38,5 @@ public class LanguagePageSteps extends SeleniumDriverSetup {
     @Then("^I am check text on button login on site ([^\"]*)$")
     public void IAmCheckTextOnButtonLoginOnSite(String Text) {
         languagePage.checkButtonLogin(Text);
-        driver.close();
     }
 }

@@ -3,12 +3,12 @@ package selenide;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import selenide.pages.FeedbackPage;
-import settings.SelenoidSetup;
+import settings.SelenideSelenoidSetup;
 
 import static com.codeborne.selenide.Selenide.open;
 import static settings.UiConfig.getUiSetting;
 
-public class FeedbackPageTest extends SelenoidSetup {
+public class FeedbackPageTest extends SelenideSelenoidSetup {
 
     @Test
     public void feedbackPageTest() {

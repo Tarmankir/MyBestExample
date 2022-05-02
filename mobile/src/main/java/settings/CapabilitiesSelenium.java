@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class CapabilitiesSelenium {
 
-    public DesiredCapabilities getAndroidDesiredCapabilities() {
+    public static DesiredCapabilities getAndroidDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("version", "11.0");
@@ -17,7 +17,7 @@ public class CapabilitiesSelenium {
         return capabilities;
     }
 
-    public DesiredCapabilities getAndroidDesiredCapabilitiesWeb() {
+    public static DesiredCapabilities getAndroidDesiredCapabilitiesWeb() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("version", "11.0");
@@ -30,7 +30,7 @@ public class CapabilitiesSelenium {
         return capabilities;
     }
 
-    public URL getAndroidUrl() throws MalformedURLException {
+    public static URL getAndroidUrl() throws MalformedURLException {
         return new URL("http://127.0.0.1:4723/wd/hub");
     }
 }
