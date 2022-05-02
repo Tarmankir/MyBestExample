@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ChromeSeleniumSearchPage {
 
-    @AndroidFindBy(xpath = "//input[@name='q']")
+    @AndroidFindBy(xpath = "//div[@name='q']")
     private MobileElement searchField;
 
     @AndroidFindBy(xpath = "//button[@class='tm-rss-button tm-rss-button_default']")
@@ -33,6 +33,7 @@ public class ChromeSeleniumSearchPage {
 
     @Step("Enter text in search field")
     public void enterTextInSearchField(String text) {
+        searchField.click();
         searchField.setValue(text);
         searchField.sendKeys(Keys.ENTER);
     }

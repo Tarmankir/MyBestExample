@@ -4,8 +4,11 @@ import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
+import static com.codeborne.selenide.Selenide.closeWindow;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 public abstract class SelenideDriverSetup {
@@ -15,12 +18,22 @@ public abstract class SelenideDriverSetup {
     @BeforeSuite
     public void getOptions() {
         options = new ChromeOptions();
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("window-size=1280,768");
         addListener("allure", new SelenideListener());
         Configuration.browserCapabilities = new MutableCapabilities(options);
         WebDriverManager.chromedriver().setup();
+    }
+
+    @BeforeMethod
+    public void beforeMethod() {
+        Configuration.pageLoadTimeout = 300000;
+    }
+
+    @AfterMethod
+    void afterMethod() {
+        closeWindow();
     }
 }
