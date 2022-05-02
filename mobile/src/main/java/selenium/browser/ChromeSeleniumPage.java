@@ -23,9 +23,9 @@ public class ChromeSeleniumPage {
     public ChromeSeleniumPage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        WebDriverWait wait;
-        wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOf(searchButton));
+//        WebDriverWait wait;
+//        wait = new WebDriverWait(driver, 5);
+//        wait.until(ExpectedConditions.visibilityOf(searchButton));
     }
 
     @Step("Click on search button")

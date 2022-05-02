@@ -17,6 +17,6 @@ public class SeleniumDriverWebSetup {
 
     @AfterMethod
     void afterMethod() {
-        driver.quit();
+        driver.closeApp();
     }
 }

@@ -11,12 +11,10 @@ import static settings.UiConfig.getUiSetting;
 
 public class MainPageScrollTest extends SelenideDriverSetup {
 
-    private MainPage mainPage;
-
     @Test
     public void mainPageScrollTest() {
         open(getUiSetting("mainURL"));
-        mainPage = Selenide.page(MainPage.class);
+        MainPage mainPage = Selenide.page(MainPage.class);
         executeJavaScript("window.scrollBy(0,1000)", "");
     }
 }

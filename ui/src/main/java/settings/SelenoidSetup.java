@@ -9,24 +9,21 @@ import static com.codeborne.selenide.Selenide.closeWindow;
 
 public class SelenoidSetup {
 
-    public DesiredCapabilities getSelenoidDefaultCapabilities() {
+    @BeforeMethod
+    public void beforeMethod() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        return capabilities;
-    }
 
-    @BeforeMethod
-    public void beforeMethod() {
         Configuration.pageLoadTimeout = 300000;
         Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.browser = "chrome";
         Configuration.browserSize = "1280x768";
-        Configuration.browserCapabilities = getSelenoidDefaultCapabilities();
+        Configuration.browserCapabilities = capabilities;
     }
 
     @AfterMethod
-    void afterMethod() {
+    public void afterMethod() {
         closeWindow();
     }
 }

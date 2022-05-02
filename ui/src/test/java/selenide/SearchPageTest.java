@@ -11,8 +11,6 @@ import static settings.UiConfig.getUiSetting;
 
 public class SearchPageTest extends SelenideDriverSetup {
 
-    private SearchPage searchPage;
-
     @DataProvider(name = "searchTestProvider")
     public Object[] searchDataProvider() {
         return new Object[]{"12345678", "Programming", "Тестирование"};
@@ -21,7 +19,7 @@ public class SearchPageTest extends SelenideDriverSetup {
     @Test(dataProvider = "searchTestProvider")
     public void searchPageTest(String searchData) {
         open(getUiSetting("searchURL"));
-        searchPage = Selenide.page(SearchPage.class);
+        SearchPage searchPage = Selenide.page(SearchPage.class);
         searchPage.clickOnSearchButton();
         searchPage.enterTextInSearchField(searchData);
         searchPage.checkSearch(searchData);

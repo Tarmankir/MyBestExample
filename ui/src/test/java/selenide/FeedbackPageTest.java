@@ -10,13 +10,10 @@ import static settings.UiConfig.getUiSetting;
 
 public class FeedbackPageTest extends SelenoidSetup {
 
-    private FeedbackPage feedbackPage;
-
     @Test
     public void feedbackPageTest() {
-//        Configuration.baseUrl = getUiSetting("feedbackURL");
         open(getUiSetting("feedbackURL"));
-        feedbackPage = Selenide.page(FeedbackPage.class);
+        FeedbackPage feedbackPage = Selenide.page(FeedbackPage.class);
         feedbackPage.selectTheme("Нарушение правил сайта");
         feedbackPage.checkThemesList();
         feedbackPage.emailFieldTake();
