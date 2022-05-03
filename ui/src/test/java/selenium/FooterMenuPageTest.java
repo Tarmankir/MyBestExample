@@ -3,12 +3,12 @@ package selenium;
 import org.testng.annotations.Test;
 import selenium.pages.FooterMenuPage;
 import selenium.pages.MainMenuPage;
-import settings.SeleniumDriverSetup;
+import settings.SeleniumSelenoidSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
 
-public class FooterMenuPageTest extends SeleniumDriverSetup {
+public class FooterMenuPageTest extends SeleniumSelenoidSetup {
 
     @Test
     public void footerMenuPageTest() {
@@ -17,6 +17,6 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
         footerMenuPage.clickMegaProjects();
         MainMenuPage mainMenuPage = initElements(driver, MainMenuPage.class);
         mainMenuPage.clickAllStreams();
-        footerMenuPage.checkURL("https://habr.com/ru/all/");
+        mainMenuPage.checkURL("https://habr.com/ru/all/");
     }
 }

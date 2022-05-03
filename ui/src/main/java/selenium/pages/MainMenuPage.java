@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static org.testng.Assert.assertEquals;
+
 public class MainMenuPage {
 
     @FindBy(css = "a[href*='/ru/all']")
@@ -67,5 +69,10 @@ public class MainMenuPage {
     @Step("Click to popsci")
     public void clickPopsci() {
         popsci.click();
+    }
+
+    @Step("Check URL site")
+    public void checkURL(String text) {
+        assertEquals(driver.getCurrentUrl(), text);
     }
 }
