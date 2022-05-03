@@ -17,6 +17,6 @@ public class FooterMenuPageTest extends SeleniumDriverSetup {
         footerMenuPage.clickMegaProjects();
         MainMenuPage mainMenuPage = initElements(driver, MainMenuPage.class);
         mainMenuPage.clickAllStreams();
-        footerMenuPage.checkURL("https://habr.com/ru/megaprojects/");
+        footerMenuPage.checkURL("https://habr.com/ru/all/");
     }
 }

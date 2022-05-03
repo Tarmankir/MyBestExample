@@ -9,14 +9,14 @@ import static org.testng.Assert.assertEquals;
 
 public class FooterMenuPage {
 
-    @FindBy(css = "a[href*='/ru/docs/help/']")
+    @FindBy(css = "a[href='/ru/docs/help/']")
     private WebElement siteMap;
 
     @FindBy(css = "a[href*='/ru/megaprojects/']")
     private WebElement megaProjects;
 
-    @FindBy(css = "a[href*='/ru/flows/all']")
-    private WebElement buttonText;
+    @FindBy(xpath = "//h3[contains(text(),'Информация')]")
+    private WebElement fieldText;
 
     private WebDriver driver;
 
@@ -39,9 +39,9 @@ public class FooterMenuPage {
         driver.navigate().back();
     }
 
-    @Step("Check text on button on site")
+    @Step("Check text on site")
     public void checkText(String text) {
-        assertEquals(buttonText.getText(), text);
+        assertEquals(fieldText.getText(), text);
     }
 
     @Step("Check URL site")

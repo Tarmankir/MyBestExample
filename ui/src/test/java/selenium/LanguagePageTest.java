@@ -2,12 +2,12 @@ package selenium;
 
 import org.testng.annotations.Test;
 import selenium.pages.LanguagePage;
-import settings.SeleniumDriverSetup;
+import settings.SeleniumSelenoidSetup;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
 
-public class LanguagePageTest extends SeleniumDriverSetup {
+public class LanguagePageTest extends SeleniumSelenoidSetup {
 
     @Test
     public void languagePageTest() {
