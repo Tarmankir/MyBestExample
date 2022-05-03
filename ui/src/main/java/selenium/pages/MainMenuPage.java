@@ -75,4 +75,9 @@ public class MainMenuPage {
     public void checkURL(String text) {
         assertEquals(driver.getCurrentUrl(), text);
     }
+
+    @Step("Check text on site")
+    public void checkText(String text) {
+        assertEquals(allStreams.getText(), text);
+    }
 }
