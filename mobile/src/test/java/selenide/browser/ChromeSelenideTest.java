@@ -1,6 +1,5 @@
 package selenide.browser;
 
-import com.codeborne.selenide.Configuration;
 import org.testng.annotations.Test;
 import settings.SelenideDriverWebSetup;
 
@@ -13,7 +12,6 @@ public class ChromeSelenideTest extends SelenideDriverWebSetup {
 
     @Test
     void chromeSelenideTest() {
-        Configuration.baseUrl = getMobileSetting("mainURL");
         open(getMobileSetting("mainURL"));
         ChromeSelenidePage chromeSelenidePage = screen(ChromeSelenidePage.class);
         chromeSelenidePage.checkLogoIsDisplayed();
