@@ -5,12 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import selenium.pages.FooterMenuPage;
-import settings.SeleniumDriverSetup;
+import settings.CucumberRunnerSelenium;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
 
-public class FooterMenuPageSteps extends SeleniumDriverSetup {
+public class FooterMenuPageSteps extends CucumberRunnerSelenium {
 
     private FooterMenuPage footerMenuPage;
 

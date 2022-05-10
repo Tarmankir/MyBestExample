@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import static com.codeborne.selenide.Selenide.closeWindow;
 import static settings.SelenideSelenoidCapabilities.getSelenoidCapabilities;
 
-public class SelenideSelenoidSetup {
+public abstract class SelenideSelenoidSetup {
 
     @BeforeMethod
     public void beforeMethod() {

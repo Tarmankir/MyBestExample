@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 
 import static settings.SeleniumDriverCapabilities.getOptions;
 
-public class SeleniumDriverSetup {
+public abstract class SeleniumDriverSetup {
 
     public WebDriver driver;
     @BeforeMethod

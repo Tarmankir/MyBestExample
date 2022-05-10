@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 
-public class SelenideDriverSetup {
+public abstract class SelenideDriverSetup {
 
     private AppiumDriver driver;
 

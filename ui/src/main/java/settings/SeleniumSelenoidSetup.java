@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import static settings.SeleniumSelenoidCapabilities.getOptionsSelenoid;
 import static settings.SeleniumSelenoidCapabilities.getSelenoidUrl;
 
-public class SeleniumSelenoidSetup {
+public abstract class SeleniumSelenoidSetup {
 
     public WebDriver driver;
 

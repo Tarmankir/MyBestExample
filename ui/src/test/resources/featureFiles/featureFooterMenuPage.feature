@@ -1,5 +1,6 @@
 Feature: Testing footer menu functionality
 
+  @TC-76844
   Scenario: Footer menu functionality check
     Given I am open main page for footer testing
       When I am click site map

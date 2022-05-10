@@ -9,7 +9,7 @@ import java.net.MalformedURLException;
 import static settings.CapabilitiesSelenium.getAndroidDesiredCapabilitiesWeb;
 import static settings.CapabilitiesSelenium.getAndroidUrl;
 
-public class SeleniumDriverWebSetup {
+public abstract class SeleniumDriverWebSetup {
 
     public AppiumDriver driver;
 
