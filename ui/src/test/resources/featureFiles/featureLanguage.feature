@@ -1,5 +1,6 @@
 Feature: Testing language settings functionality
 
+  @smoke @TC-4
   Scenario: English language configuration check
     Given I am open main page
       When I am click language settings

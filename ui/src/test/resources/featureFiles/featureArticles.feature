@@ -1,5 +1,6 @@
 Feature: Test article and post
 
+  @smoke @TC-1
   Scenario: Select article and check the post counters
     Given I am open articles page
       When I am open article 8

@@ -5,13 +5,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import selenide.pages.SearchPage;
-import settings.SelenideDriverSetup;
+import settings.CucumberRunnerSelenide;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static settings.UiConfig.getUiSetting;
 
-public class SearchPageSteps extends SelenideDriverSetup {
+public class SearchPageSteps extends CucumberRunnerSelenide {
 
     private SearchPage searchPage;
 

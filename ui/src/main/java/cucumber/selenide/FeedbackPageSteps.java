@@ -6,7 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import selenide.pages.FeedbackPage;
-import settings.SelenideDriverSetup;
+import settings.CucumberRunnerSelenide;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static settings.UiConfig.getUiSetting;
 
-public class FeedbackPageSteps extends SelenideDriverSetup {
+public class FeedbackPageSteps extends CucumberRunnerSelenide {
 
     private FeedbackPage feedbackPage;
 

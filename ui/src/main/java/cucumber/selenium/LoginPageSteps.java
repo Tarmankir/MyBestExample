@@ -6,13 +6,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import selenium.pages.AccountPage;
 import selenium.pages.LoginPage;
-import settings.SeleniumDriverSetup;
+import settings.CucumberRunnerSelenium;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static selenium.enums.Credentials.TEST_USER_1;
 import static settings.UiConfig.getUiSetting;
 
-public class LoginPageSteps extends SeleniumDriverSetup {
+public class LoginPageSteps extends CucumberRunnerSelenium {
 
     private LoginPage loginPage;
     private AccountPage accountPage;

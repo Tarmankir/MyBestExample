@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Acceptance UI cucumber selenium testing">
+    <test name = "Selenium">
+        <classes>
+            <class name = "settings.CucumberRunnerSelenium"/>
+        </classes>
+    </test>
+</suite>
