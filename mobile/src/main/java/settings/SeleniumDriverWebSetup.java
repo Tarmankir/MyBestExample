@@ -20,6 +20,6 @@ public abstract class SeleniumDriverWebSetup {
 
     @AfterMethod
     public void afterMethod() {
-        driver.closeApp();
+        driver.close();
     }
 }
