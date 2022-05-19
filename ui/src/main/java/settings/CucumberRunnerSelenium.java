@@ -1,30 +1,29 @@
 package settings;
 
-import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.testng.CucumberOptions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 
 import static settings.SeleniumDriverCapabilities.getOptions;
 
 @CucumberOptions(
         features = "src/test/resources/featureFiles",
         glue = "cucumber/selenium",
-        tags = "@smoke"
+        tags = "@TC-4"
 )
 
-public abstract class CucumberRunnerSelenium extends AbstractTestNGCucumberTests {
+public abstract class CucumberRunnerSelenium {
 
     public static WebDriver driver;
 
-    @BeforeClass(alwaysRun = true)
+    @Before
     public static void beforeClass() {
         driver = new ChromeDriver(getOptions());
     }
 
-    @AfterClass(alwaysRun = true)
+    @After
     public static void afterClass() {
         driver.quit();
     }
