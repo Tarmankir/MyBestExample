@@ -19,6 +19,6 @@ public abstract class SelenideDriverSetup {
 
     @AfterMethod
     public void afterMethod() {
-        driver.quit();
+        driver.closeApp();
     }
 }

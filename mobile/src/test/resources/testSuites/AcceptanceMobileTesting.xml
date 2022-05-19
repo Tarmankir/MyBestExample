@@ -18,8 +18,8 @@
     </test>
     <test name="Selenium browser">
         <classes>
-            <class name="selenium.browser.ChromeSeleniumNumberPageTest"/>
             <class name="selenium.browser.ChromeSeleniumTest"/>
+            <class name="selenium.browser.ChromeSeleniumNumberPageTest"/>
         </classes>
     </test>
 </suite>

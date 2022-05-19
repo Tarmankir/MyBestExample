@@ -5,12 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import selenium.pages.LanguagePage;
-import settings.SeleniumDriverSetup;
+import settings.CucumberRunnerSelenium;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 import static settings.UiConfig.getUiSetting;
 
-public class LanguagePageSteps extends SeleniumDriverSetup {
+public class LanguagePageSteps extends CucumberRunnerSelenium {
 
     private LanguagePage languagePage;
 

@@ -1,5 +1,6 @@
 Feature: Test feedback page
 
+  @smoke @TC-2
   Scenario: Feedback page load and check button
     Given I am open feedback page
       When I am insert test data in the themes list Гениальная идея
