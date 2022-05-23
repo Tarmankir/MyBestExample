@@ -2,7 +2,7 @@ package settings;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.testng.CucumberOptions;
+import io.cucumber.junit.CucumberOptions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 

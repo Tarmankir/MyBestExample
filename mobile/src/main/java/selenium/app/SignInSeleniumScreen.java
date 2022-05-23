@@ -6,9 +6,9 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import settings.Credentials;
+
+import static common.WaiterSelenium.getTimeout;
 
 public class SignInSeleniumScreen {
 
@@ -26,9 +26,7 @@ public class SignInSeleniumScreen {
     public SignInSeleniumScreen(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        WebDriverWait wait;
-        wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.visibilityOf(loginField));
+        getTimeout(5);
     }
 
     @Step("Enter login and password")

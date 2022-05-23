@@ -6,9 +6,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static common.WaiterSelenium.getTimeout;
 import static org.testng.Assert.assertEquals;
 
 public class ChromeSeleniumPage {
@@ -23,9 +22,7 @@ public class ChromeSeleniumPage {
     public ChromeSeleniumPage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        WebDriverWait wait;
-        wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOf(searchButton));
+        getTimeout(5);
     }
 
     @Step("Click on search button")
