@@ -1,7 +1,8 @@
 package settings;
 
 import com.codeborne.selenide.Configuration;
-import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -14,7 +15,7 @@ import static settings.SelenideSelenoidCapabilities.getSelenoidCapabilities;
         tags = "@smoke"
 )
 
-public abstract class CucumberRunnerSelenide {
+public class CucumberRunnerSelenide extends AbstractTestNGCucumberTests {
 
     @BeforeClass(alwaysRun = true)
     public static void beforeClass() {
