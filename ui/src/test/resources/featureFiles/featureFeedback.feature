@@ -1,6 +1,6 @@
 Feature: Test feedback page
 
-  @regress @smoke-selenide @TC-2
+  @smoke-selenide @TC-2-selenide
   Scenario: Feedback page load and check button
     Given I am open feedback page
       When I am insert test data in the themes list Гениальная идея

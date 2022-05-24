@@ -1,6 +1,6 @@
 Feature: Testing language settings functionality
 
-  @regress @smoke-selenium @TC-4
+  @smoke-selenium @TC-2-selenium
   Scenario: English language configuration check
     Given I am open main page
       When I am click language settings

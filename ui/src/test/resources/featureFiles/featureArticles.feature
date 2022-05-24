@@ -1,6 +1,6 @@
 Feature: Test article and post
 
-  @regress @smoke-selenide @TC-1
+  @smoke-selenide @TC-1-selenide
   Scenario: Select article and check the post counters
     Given I am open articles page
       When I am open article 8

@@ -1,6 +1,6 @@
 Feature: Testing footer menu functionality
 
-  @regress @smoke-selenium @TC-3
+  @smoke-selenium @TC-1-selenium
   Scenario: Footer menu functionality check
     Given I am open main page for footer testing
       When I am click site map
