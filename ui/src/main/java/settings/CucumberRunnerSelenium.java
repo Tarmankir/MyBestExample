@@ -12,7 +12,7 @@ import static settings.SeleniumDriverCapabilities.getOptions;
 @CucumberOptions(
         features = "src/test/resources/featureFiles",
         glue = "cucumber/selenium",
-        tags = "@smoke"
+        tags = "@smoke-selenium"
 )
 
 public class CucumberRunnerSelenium extends AbstractTestNGCucumberTests {

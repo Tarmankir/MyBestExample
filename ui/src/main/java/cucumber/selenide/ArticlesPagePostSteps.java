@@ -6,14 +6,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import selenide.pages.MainPage;
 import selenide.pages.PostPage;
-import settings.CucumberRunnerSelenide;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static org.testng.Assert.assertEquals;
 import static settings.UiConfig.getUiSetting;
 
-public class ArticlesPagePostSteps extends CucumberRunnerSelenide {
+public class ArticlesPagePostSteps {
 
     private MainPage mainPage;
     private PostPage postPage;

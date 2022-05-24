@@ -1,6 +1,6 @@
 Feature: Testing login page functionality
 
-  @smoke @TC-3
+  @regress @smoke-selenium @TC-5
   Scenario: Login page authorization check
     Given I am open login page
       When I am use login page functionality to signup in site

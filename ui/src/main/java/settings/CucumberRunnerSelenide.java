@@ -12,7 +12,7 @@ import static settings.SelenideSelenoidCapabilities.getSelenoidCapabilities;
 @CucumberOptions(
         features = "src/test/resources/featureFiles",
         glue = "cucumber/selenide",
-        tags = "@smoke"
+        tags = "@smoke-selenide"
 )
 
 public class CucumberRunnerSelenide extends AbstractTestNGCucumberTests {

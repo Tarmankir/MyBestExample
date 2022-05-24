@@ -1,6 +1,6 @@
 Feature: Testing menu page functionality
 
-  @smoke @TC-2
+  @regress @smoke-selenium @TC-6
   Scenario: Menu page check
     Given I am open main page for menu testing
       When I am click to menu Develop
