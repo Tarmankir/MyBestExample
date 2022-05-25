@@ -13,6 +13,7 @@
     </test>
     <test name="Selenium app">
         <classes>
+            <class name="selenium.app.ScreenshotSeleniumScreenTest"/>
             <class name="selenium.app.SignInSeleniumScreenTest"/>
         </classes>
     </test>
