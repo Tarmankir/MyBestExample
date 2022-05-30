@@ -6,15 +6,13 @@ import settings.SeleniumDriverWebSetup;
 
 import static settings.MobileConfig.getMobileSetting;
 
-public class ChromeSeleniumTest extends SeleniumDriverWebSetup {
+public class ChromeSeleniumSearchTest extends SeleniumDriverWebSetup {
 
     @Test
-    public void chromeSeleniumTest() {
+    public void chromeSeleniumSearchTest() {
         driver.get(getMobileSetting("mainURL"));
         ChromeSeleniumPage chromeSeleniumPage = new ChromeSeleniumPage(driver);
         chromeSeleniumPage.clickOnSearchButton();
-        chromeSeleniumPage.checkLogoIsDisplayed();
-        chromeSeleniumPage.checkLogoSize(16,16);
         ChromeSeleniumSearchPage chromeSeleniumSearchPage = new ChromeSeleniumSearchPage(driver);
         chromeSeleniumSearchPage.enterTextInSearchField("Linux");
         chromeSeleniumSearchPage.clickOnCopyLinkButton();

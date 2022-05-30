@@ -3,12 +3,14 @@
 <suite name="Acceptance Mobile testing">
     <test name="Selenide app">
         <classes>
+            <class name="selenide.app.ScreenshotSelenideScreenTest"/>
             <class name="selenide.app.SignInSelenideScreenTest"/>
         </classes>
     </test>
     <test name="Selenide browser">
         <classes>
-            <class name="selenide.browser.ChromeSelenideTest"/>
+            <class name="selenide.browser.ChromeSelenideLogoTest"/>
+            <class name="selenide.browser.ChromeSelenideSearchTest"/>
         </classes>
     </test>
     <test name="Selenium app">
@@ -19,8 +21,9 @@
     </test>
     <test name="Selenium browser">
         <classes>
-            <class name="selenium.browser.ChromeSeleniumTest"/>
+            <class name="selenium.browser.ChromeSeleniumLogoTest"/>
             <class name="selenium.browser.ChromeSeleniumNumberPageTest"/>
+            <class name="selenium.browser.ChromeSeleniumSearchTest"/>
         </classes>
     </test>
 </suite>

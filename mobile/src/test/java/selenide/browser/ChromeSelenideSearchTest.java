@@ -8,14 +8,12 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.appium.ScreenObject.screen;
 import static settings.MobileConfig.getMobileSetting;
 
-public class ChromeSelenideTest extends SelenideDriverWebSetup {
+public class ChromeSelenideSearchTest extends SelenideDriverWebSetup {
 
     @Test
-    void chromeSelenideTest() {
+    void chromeSelenideSearchTest() {
         open(getMobileSetting("mainURL"));
         ChromeSelenidePage chromeSelenidePage = screen(ChromeSelenidePage.class);
-        chromeSelenidePage.checkLogoIsDisplayed();
-        chromeSelenidePage.checkLogoSize(16,16);
         chromeSelenidePage.clickOnSearchButton();
         ChromeSelenideSearchPage chromeSelenideSearchPage = screen(ChromeSelenideSearchPage.class);
         chromeSelenideSearchPage.enterTextInSearchField("Apple");
