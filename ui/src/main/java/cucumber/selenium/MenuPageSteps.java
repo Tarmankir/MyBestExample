@@ -33,8 +33,8 @@ public class MenuPageSteps extends CucumberRunnerSelenium {
         footerMenuPage.clickSiteMap();
     }
 
-    @Then("^I am check text on button on menu ([^\"]*)$")
-    public void IAmCheckTextOnButtonOnMenu(String Text) {
-        footerMenuPage.checkText(Text);
+    @Then("^I am check footer Copyright ([^\"]*)$")
+    public void IAmCheckFooterCopyright(String Text) {
+        footerMenuPage.checkFooterCopyright(Text);
     }
 }

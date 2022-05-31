@@ -9,7 +9,7 @@ import static org.testng.Assert.assertEquals;
 
 public class FooterMenuPage {
 
-    @FindBy(css = "a[href='/ru/docs/help/']")
+    @FindBy(css = "a[href$='docs/help/']")
     private WebElement siteMap;
 
     @FindBy(css = "a[href*='/ru/megaprojects/']")
@@ -17,6 +17,9 @@ public class FooterMenuPage {
 
     @FindBy(xpath = "//h3[contains(text(),'Информация')]")
     private WebElement fieldText;
+
+    @FindBy(xpath = "//span[contains(text(),'© 2006–2022, ')]")
+    private WebElement footerCopyright;
 
     private WebDriver driver;
 
@@ -42,5 +45,10 @@ public class FooterMenuPage {
     @Step("Check text on site")
     public void checkText(String text) {
         assertEquals(fieldText.getText(), text);
+    }
+
+    @Step("Check footer copyright")
+    public void checkFooterCopyright(String text) {
+        assertEquals(footerCopyright.getText(), text);
     }
 }

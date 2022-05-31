@@ -12,7 +12,7 @@ public class MainMenuPage {
     @FindBy(css = "a[href*='/ru/all']")
     private WebElement allStreams;
 
-    @FindBy(css = "a[href='/ru/flows/develop/']")
+    @FindBy(css = "a[href$='flows/develop/']")
     private WebElement develop;
 
     @FindBy(css = "a[href='/ru/flows/admin/']")
