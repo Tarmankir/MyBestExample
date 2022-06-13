@@ -19,6 +19,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <aspectj.version>1.8.10</aspectj.version>
+        <skip.foo.module.tests>false</skip.foo.module.tests>
     </properties>
 
     <profiles>
@@ -29,6 +30,7 @@
             </activation>
             <properties>
                 <suitePath>src/test/resources/testSuites/AcceptanceUITesting.xml</suitePath>
+                <skip.UI>true</skip.UI>
             </properties>
         </profile>
         <profile>
@@ -38,6 +40,7 @@
             </activation>
             <properties>
                 <suitePath>src/test/resources/testSuites/AcceptanceAPITesting.xml</suitePath>
+                <skip.API>true</skip.API>
             </properties>
         </profile>
         <profile>
@@ -47,6 +50,7 @@
             </activation>
             <properties>
                 <suitePath>src/test/resources/testSuites/AcceptanceMobileTesting.xml</suitePath>
+                <skip.Mobile>true</skip.Mobile>
             </properties>
         </profile>
     </profiles>
@@ -147,6 +151,26 @@
 
         <plugins>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.12</version>
+                <executions>
+                    <execution>
+                        <id>regex-property</id>
+                        <goals>
+                            <goal>regex-property</goal>
+                        </goals>
+                        <configuration>
+                            <name>maven.test.skip</name>
+                            <value>${project.artifactId}</value>
+                            <regex>(api)|(mobile)</regex>
+                            <replacement>true</replacement>
+                            <failIfNoMatch>false</failIfNoMatch>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
@@ -184,6 +208,9 @@
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemPropertyVariables>
+                    <skipTests>${skip.UI}</skipTests>
+                    <skipTests>${skip.API}</skipTests>
+                    <skipTests>${skip.Mobile}</skipTests>
                 </configuration>
                 <dependencies>
                     <dependency>

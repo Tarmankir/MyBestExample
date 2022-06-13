@@ -1,9 +1,12 @@
 package selenide.app;
 
 import com.codeborne.selenide.SelenideElement;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
 import settings.Credentials;
+
+import static org.testng.Assert.assertEquals;
 
 public class SignInSelenideScreen {
 
@@ -15,6 +18,9 @@ public class SignInSelenideScreen {
 
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text, 'Войти')]")
     private SelenideElement signInButton;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text, 'Войти по Сбер ID')]")
+    private MobileElement sberButton;
 
     @Step("Enter login and password")
     public void loginInApp(Credentials cred) {
@@ -33,5 +39,10 @@ public class SignInSelenideScreen {
     @Step("Click on sign in button")
     public void clickSignInButton(){
         signInButton.click();
+    }
+
+    @Step("Check Sber button")
+    public void checkSberButton(String text) {
+        assertEquals(sberButton.getText(), text);
     }
 }

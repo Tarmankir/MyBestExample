@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import settings.Credentials;
 
 import static common.WaiterSelenium.getTimeout;
+import static org.testng.Assert.assertEquals;
 
 public class SignInSeleniumScreen {
 
@@ -20,6 +21,9 @@ public class SignInSeleniumScreen {
 
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text, 'Войти')]")
     private MobileElement signInButton;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text, 'Войти по Сбер ID')]")
+    private MobileElement sberButton;
 
     private AppiumDriver<MobileElement> driver;
 
@@ -46,5 +50,10 @@ public class SignInSeleniumScreen {
     @Step("Click on sign in button")
     public void clickSignInButton(){
         signInButton.click();
+    }
+
+    @Step("Check Sber button")
+    public void checkSberButton(String text) {
+        assertEquals(sberButton.getText(), text);
     }
 }

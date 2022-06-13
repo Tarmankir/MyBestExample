@@ -5,6 +5,7 @@
         <classes>
             <class name="selenide.app.ScreenshotSelenideScreenTest"/>
             <class name="selenide.app.SignInSelenideScreenTest"/>
+            <class name="selenide.app.SberButtonSelenideTest"/>
         </classes>
     </test>
     <test name="Selenide browser">
@@ -17,6 +18,7 @@
         <classes>
             <class name="selenium.app.ScreenshotSeleniumScreenTest"/>
             <class name="selenium.app.SignInSeleniumScreenTest"/>
+            <class name="selenium.app.SberButtonSeleniumTest"/>
         </classes>
     </test>
     <test name="Selenium browser">
