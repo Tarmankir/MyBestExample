@@ -4,7 +4,7 @@ import bodies.RequestUserBody;
 import bodies.ResponseUserBody;
 import io.qameta.allure.Step;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 public class UserWithTasksAssertions {
 
