@@ -1,8 +1,8 @@
 package common;
 
-public class WaiterSelenium {
+public class Waiter {
 
-    public static void getTimeout(int ms) {
+    public static void waitMS(int ms) {
         try {
             Thread.sleep(ms);
         } catch(InterruptedException ex) {

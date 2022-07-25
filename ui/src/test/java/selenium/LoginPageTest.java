@@ -13,7 +13,7 @@ public class LoginPageTest extends SeleniumSelenoidSetup {
 
     @Test
     public void loginPageTest() {
-        driver.get(getUiSetting("loginUrl"));
+        driver.get(getUiSetting("loginURL"));
         LoginPage loginPage = initElements(driver, LoginPage.class);
         loginPage.loginInSite(TEST_USER_1);
         loginPage.clickLogin();

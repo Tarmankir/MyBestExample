@@ -8,7 +8,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.support.PageFactory;
 import settings.Credentials;
 
-import static common.WaiterSelenium.getTimeout;
+import static common.Waiter.waitMS;
 import static org.testng.Assert.assertEquals;
 
 public class SignInSeleniumScreen {
@@ -30,7 +30,7 @@ public class SignInSeleniumScreen {
     public SignInSeleniumScreen(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        getTimeout(5);
+        waitMS(5);
     }
 
     @Step("Enter login and password")

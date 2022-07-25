@@ -19,7 +19,7 @@ public class LoginPageSteps extends CucumberRunnerSelenium {
 
     @Given("I am open login page")
     public void IAmOpenLoginPage() {
-        driver.get(getUiSetting("loginUrl"));
+        driver.get(getUiSetting("loginURL"));
         loginPage = initElements(driver, LoginPage.class);
         accountPage = initElements(driver, AccountPage.class);
     }

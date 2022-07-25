@@ -11,7 +11,7 @@ public class RequestSpec {
 
     public RequestSpecification defaultRequestSpec() {
         return new RequestSpecBuilder()
-                .setBaseUri(getApiSetting("baseUrl"))
+                .setBaseUri(getApiSetting("baseURL"))
                 .setAccept(ContentType.JSON)
                 .log(LogDetail.ALL)
                 .build();

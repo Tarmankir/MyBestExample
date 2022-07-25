@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static common.WaiterSelenium.getTimeout;
+import static common.Waiter.waitMS;
 import static org.testng.Assert.assertEquals;
 
 public class ChromeSeleniumPage {
@@ -22,7 +22,7 @@ public class ChromeSeleniumPage {
     public ChromeSeleniumPage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        getTimeout(5);
+        waitMS(5);
     }
 
     @Step("Click on search button")

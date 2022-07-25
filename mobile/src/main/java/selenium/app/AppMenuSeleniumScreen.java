@@ -7,7 +7,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.PageFactory;
 
-import static common.WaiterSelenium.getTimeout;
+import static common.Waiter.waitMS;
 import static org.testng.Assert.assertEquals;
 
 public class AppMenuSeleniumScreen {
@@ -20,7 +20,7 @@ public class AppMenuSeleniumScreen {
     public AppMenuSeleniumScreen(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        getTimeout(5);
+        waitMS(5);
     }
 
     @Step("Check user login name")

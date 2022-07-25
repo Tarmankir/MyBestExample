@@ -8,7 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static common.WaiterSelenium.getTimeout;
+import static common.Waiter.waitMS;
 
 public class ChromeSeleniumSearchPage {
 
@@ -26,7 +26,7 @@ public class ChromeSeleniumSearchPage {
     public ChromeSeleniumSearchPage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        getTimeout(5);
+        waitMS(5);
     }
 
     @Step("Enter text in search field")

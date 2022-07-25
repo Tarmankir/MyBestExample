@@ -7,7 +7,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.PageFactory;
 
-import static common.WaiterSelenium.getTimeout;
+import static common.Waiter.waitMS;
 
 public class MainSeleniumScreen {
 
@@ -19,7 +19,7 @@ public class MainSeleniumScreen {
     public MainSeleniumScreen(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        getTimeout(5);
+        waitMS(5);
     }
 
     @Step("Open app menu")
