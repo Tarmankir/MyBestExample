@@ -11,7 +11,8 @@ import static settings.Credentials.TEST_USER_1;
 public class SignInSelenideScreenTest extends SelenideDriverSetup {
 
     @Test
-    public void mainScreenTest() {
+    public void mainScreenTest() throws InterruptedException {
+        Thread.sleep(10000);
         SignInSelenideScreen signInSeleniumScreen = screen(SignInSelenideScreen.class);
         Configuration.timeout = 30000;
         signInSeleniumScreen.loginInApp(TEST_USER_1);

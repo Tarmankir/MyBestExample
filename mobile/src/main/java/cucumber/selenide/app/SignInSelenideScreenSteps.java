@@ -21,9 +21,10 @@ public class SignInSelenideScreenSteps {
     private ActionsWithDeviceSelenide actionsWithDeviceSelenide;
 
     @Given("I am open sign in screen")
-    public void IAmOpenSignInScreen() {
+    public void IAmOpenSignInScreen() throws InterruptedException {
+        Thread.sleep(10000);
         signInSeleniumScreen = screen(SignInSelenideScreen.class);
-        Configuration.timeout = 30000;
+//        Configuration.timeout = 30000;
     }
 
     @When("I am login in app")
