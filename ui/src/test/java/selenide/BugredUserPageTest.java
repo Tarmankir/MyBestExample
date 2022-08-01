@@ -16,8 +16,8 @@ public class BugredUserPageTest extends SelenideDriverSetup {
     public void bugredUserPageTest() {
         open(getUiSetting("bugredURL"));
         BugredUserPage bugredUserPage = Selenide.page(BugredUserPage.class);
-        BugredUserCreate bugredUserCreate = Selenide.page(BugredUserCreate.class);
-        bugredUserCreate.bugredUserCreate();
+//        BugredUserCreate bugredUserCreate = Selenide.page(BugredUserCreate.class);
+//        bugredUserCreate.bugredUserCreate();
         String userEmail = new BugredUserCreate().bugredUserCreate();
         refresh();
         bugredUserPage.checkCreatedUserEmail(userEmail);
