@@ -12,6 +12,7 @@
         <classes>
             <class name="selenide.browser.ChromeSelenideLogoTest"/>
             <class name="selenide.browser.ChromeSelenideSearchTest"/>
+            <class name="selenide.browser.ChromeSelenideCompaniesTest"/>
         </classes>
     </test>
     <test name="Selenium app">
