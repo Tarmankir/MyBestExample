@@ -15,7 +15,7 @@ import static settings.Credentials.TEST_USER_1;
 
 public class SignInSelenideScreenSteps {
 
-    private SignInSelenideScreen signInSeleniumScreen;
+    private SignInSelenideScreen signInSelenideScreen;
     private MainSelenideScreen mainSelenideScreen;
     private AppMenuSelenideScreen appMenuSelenideScreen;
     private ActionsWithDeviceSelenide actionsWithDeviceSelenide;
@@ -23,14 +23,14 @@ public class SignInSelenideScreenSteps {
     @Given("I am open sign in screen")
     public void IAmOpenSignInScreen() throws InterruptedException {
         Thread.sleep(10000);
-        signInSeleniumScreen = screen(SignInSelenideScreen.class);
+        signInSelenideScreen = screen(SignInSelenideScreen.class);
 //        Configuration.timeout = 30000;
     }
 
     @When("I am login in app")
     public void IAmLoginInApp() {
-        signInSeleniumScreen.loginInApp(TEST_USER_1);
-        signInSeleniumScreen.clickSignInButton();
+        signInSelenideScreen.loginInApp(TEST_USER_1);
+        signInSelenideScreen.clickSignInButton();
     }
 
     @And("I am open app menu")

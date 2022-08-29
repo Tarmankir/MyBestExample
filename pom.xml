@@ -78,6 +78,28 @@
                 <projectModulesDisabledFromBuild>(api)|(core)|(ui)</projectModulesDisabledFromBuild>
             </properties>
         </profile>
+        <profile>
+            <id>MobileCucumberSelenium</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suitePath>src/test/resources/testSuites/AcceptanceMobileCucumberSeleniumTesting.xml</suitePath>
+                <skip.Mobile>true</skip.Mobile>
+                <projectModulesDisabledFromBuild>(api)|(core)|(ui)</projectModulesDisabledFromBuild>
+            </properties>
+        </profile>
+        <profile>
+            <id>MobileCucumberSelenide</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suitePath>src/test/resources/testSuites/AcceptanceMobileCucumberSelenideTesting.xml</suitePath>
+                <skip.Mobile>true</skip.Mobile>
+                <projectModulesDisabledFromBuild>(api)|(core)|(ui)</projectModulesDisabledFromBuild>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>

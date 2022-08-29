@@ -15,8 +15,6 @@ public class BugredUserPageSteps {
     private BugredUserPage bugredUserPage;
     private BugredUserCreate bugredUserCreate;
 
-    String userEmail;
-
     @Given("I am open bugred page")
     public void IAmOpenBugredPage() {
         open(getUiSetting("bugredURL"));
@@ -41,7 +39,7 @@ public class BugredUserPageSteps {
     }
 
     @Then("I am check created user email")
-    public void IAmCheckCreatedUserEmail(String) {
+    public void IAmCheckCreatedUserEmail(String userEmail) {
         bugredUserPage.checkCreatedUserEmail(userEmail);
     }
 }

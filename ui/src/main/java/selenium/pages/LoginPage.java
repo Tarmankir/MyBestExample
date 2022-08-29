@@ -1,10 +1,10 @@
 package selenium.pages;
 
-import selenium.enums.Credentials;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import selenium.enums.Credentials;
 
 public class LoginPage {
 
@@ -39,6 +39,7 @@ public class LoginPage {
 
     @Step("Click on the Login site")
     public void clickLogin(){
+//        Assert.assertTrue(isElementPresent(buttonSignUp, 5000, 50));
         buttonSignUp.click();
     }
 }

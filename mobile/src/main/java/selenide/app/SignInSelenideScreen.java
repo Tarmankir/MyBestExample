@@ -20,7 +20,7 @@ public class SignInSelenideScreen {
     private SelenideElement signInButton;
 
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text, 'Войти по Сбер ID')]")
-    private MobileElement sberButton;
+    private SelenideElement sberButton;
 
     @Step("Enter login and password")
     public void loginInApp(Credentials cred) {
