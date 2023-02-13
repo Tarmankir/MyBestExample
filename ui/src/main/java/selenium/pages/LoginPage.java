@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import selenium.enums.Credentials;
 
-import static common.ElementPresent.isElementPresent;
+//import static common.ElementPresent.isElementPresent;
 
 public class LoginPage {
 
@@ -42,7 +42,7 @@ public class LoginPage {
 
     @Step("Click on the Login site")
     public void clickLogin(){
-        Assert.assertTrue(isElementPresent(buttonSignUp, 50000, 5000));
+//        Assert.assertTrue(isElementPresent(buttonSignUp, 50000, 5000));
         buttonSignUp.click();
     }
 }

@@ -7,7 +7,7 @@ import static common.Waiter.waitMS;
 import static java.lang.System.currentTimeMillis;
 
 public class ElementPresent {
-
+/*
     public static boolean isElementPresent(Predicate<T> condition, long timeOut, long poolingInterval) {
         long timeStart;
 
@@ -25,5 +25,5 @@ public class ElementPresent {
         for (long start = currentTimeMillis(); currentTimeMillis() - timeStart < timeout && !condition.apply(subject); ) {
             waitMS(poolingInterval);
         }
-    }
+    }*/
 }
