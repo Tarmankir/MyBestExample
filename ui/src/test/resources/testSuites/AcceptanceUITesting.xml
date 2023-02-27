@@ -8,6 +8,7 @@
             <class name="selenide.ArticlesTest"/>
             <class name="selenide.FeedbackPageTest"/>
             <class name="selenide.SandboxPageTest"/>
+            <class name="selenide.CopyrightYearsTest"/>
         </classes>
     </test>
     <test name="Selenium">
