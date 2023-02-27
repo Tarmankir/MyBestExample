@@ -12,7 +12,7 @@ public abstract class SeleniumDriverSetup {
     public WebDriver driver;
     @BeforeMethod
     public void beforeMethod() {
-        driver = new ChromeDriver(getOptions());
+//        driver = new ChromeDriver(getOptions());
     }
 
     @AfterMethod

@@ -5,6 +5,7 @@ import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.CollectionCondition.size;
 import static common.Waiter.waitMS;
 
 public class BugredUserPage {
@@ -15,6 +16,6 @@ public class BugredUserPage {
     @Step("Check created user email")
     public void checkCreatedUserEmail(String email) {
         waitMS(5000);
-        usersList.filter(Condition.text(email)).shouldHaveSize(1);
+        usersList.filter(Condition.text(email)).shouldHave(size(1));
     }
 }

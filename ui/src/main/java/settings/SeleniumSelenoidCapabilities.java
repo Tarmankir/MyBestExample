@@ -9,14 +9,14 @@ import java.net.URL;
 public class SeleniumSelenoidCapabilities {
 
     public static ChromeOptions getOptionsSelenoid() {
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+/*        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         capabilities.setBrowserName("chrome");
-        capabilities.setVersion("94.0");
-        return options;
+        capabilities.setVersion("94.0");*/
+        return null;
     }
 
     public static URL getSelenoidUrl() throws MalformedURLException {

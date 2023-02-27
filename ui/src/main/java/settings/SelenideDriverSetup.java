@@ -14,7 +14,7 @@ public abstract class SelenideDriverSetup {
     @BeforeMethod
     public void beforeMethod() {
         Configuration.pageLoadTimeout = 300000;
-        Configuration.browserCapabilities = new MutableCapabilities(getOptions());
+//        Configuration.browserCapabilities = new MutableCapabilities(getOptions());
         WebDriverManager.chromedriver().setup();
     }
 

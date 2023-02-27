@@ -21,7 +21,7 @@ public class CucumberRunnerSelenium extends AbstractTestNGCucumberTests {
 
     @BeforeClass(alwaysRun = true)
     public static void beforeClass() {
-        driver = new ChromeDriver(getOptions());
+//        driver = new ChromeDriver(getOptions());
     }
 
     @AfterClass(alwaysRun = true)

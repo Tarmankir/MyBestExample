@@ -16,7 +16,7 @@ public abstract class SeleniumSelenoidSetup {
 
     @BeforeMethod
     public void beforeMethod() throws MalformedURLException {
-        driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
+//        driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
     }
 
     @AfterMethod
