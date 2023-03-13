@@ -1,5 +1,6 @@
 package selenide.pages;
 
+import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Step;
@@ -15,6 +16,6 @@ public class BugredUserPage {
     @Step("Check created user email")
     public void checkCreatedUserEmail(String email) {
         waitMS(5000);
-        usersList.filter(Condition.text(email)).shouldHaveSize(1);
+        usersList.filter(Condition.text(email)).shouldHave(CollectionCondition.size(1));
     }
 }

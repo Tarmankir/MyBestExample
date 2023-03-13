@@ -9,7 +9,7 @@ import java.net.URL;
 public class SeleniumSelenoidCapabilities {
 
     public static ChromeOptions getOptionsSelenoid() {
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions options = new ChromeOptions();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         capabilities.setCapability("enableVNC", true);
