@@ -1,7 +1,6 @@
 package cucumber.selenide.app;
 
 import actions.ActionsWithDeviceSelenide;
-import com.codeborne.selenide.Configuration;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,7 +9,7 @@ import selenide.app.AppMenuSelenideScreen;
 import selenide.app.MainSelenideScreen;
 import selenide.app.SignInSelenideScreen;
 
-import static com.codeborne.selenide.appium.ScreenObject.screen;
+import static com.codeborne.selenide.Selenide.page;
 import static settings.Credentials.TEST_USER_1;
 
 public class SignInSelenideScreenSteps {
@@ -23,7 +22,7 @@ public class SignInSelenideScreenSteps {
     @Given("I am open sign in screen")
     public void IAmOpenSignInScreen() throws InterruptedException {
         Thread.sleep(10000);
-        signInSelenideScreen = screen(SignInSelenideScreen.class);
+        signInSelenideScreen = page(SignInSelenideScreen.class);
 //        Configuration.timeout = 30000;
     }
 
@@ -35,19 +34,19 @@ public class SignInSelenideScreenSteps {
 
     @And("I am open app menu")
     public void IAmOpenAppMenu() {
-        mainSelenideScreen = screen(MainSelenideScreen.class);
+        mainSelenideScreen = page(MainSelenideScreen.class);
         mainSelenideScreen.openAppMenu();
     }
 
     @And("I am check user login name")
     public void IAmCheckUserLoginName() {
-        appMenuSelenideScreen = screen(AppMenuSelenideScreen.class);
+        appMenuSelenideScreen = page(AppMenuSelenideScreen.class);
         appMenuSelenideScreen.checkUserLoginName("ivakidov@ro.ru");
     }
 
     @Then("I am click on device button back")
     public void IAmClickOnDeviceButtonBack() {
-        actionsWithDeviceSelenide = screen(ActionsWithDeviceSelenide.class);
+        actionsWithDeviceSelenide = page(ActionsWithDeviceSelenide.class);
         actionsWithDeviceSelenide.clickOnDeviceButtonBack();
     }
 }

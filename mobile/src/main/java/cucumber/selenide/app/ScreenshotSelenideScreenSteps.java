@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import selenide.app.SignInSelenideScreen;
 
-import static com.codeborne.selenide.appium.ScreenObject.screen;
+import static com.codeborne.selenide.Selenide.page;
 import static settings.Credentials.TEST_USER_1;
 
 public class ScreenshotSelenideScreenSteps {
@@ -17,7 +17,7 @@ public class ScreenshotSelenideScreenSteps {
 
     @Given("I am open sign in screen")
     public void IAmOpenSignInScreen() throws InterruptedException {
-        signInSeleniumScreen = screen(SignInSelenideScreen.class);
+        signInSeleniumScreen = page(SignInSelenideScreen.class);
         Configuration.timeout = 30000;
     }
 
@@ -29,7 +29,7 @@ public class ScreenshotSelenideScreenSteps {
 
     @Then("I am take screenshot")
     public void IAmTakeScreenshot() {
-        actionsWithDeviceSelenide = screen(ActionsWithDeviceSelenide.class);
+        actionsWithDeviceSelenide = page(ActionsWithDeviceSelenide.class);
         actionsWithDeviceSelenide.takeScreenshot();
     }
 }

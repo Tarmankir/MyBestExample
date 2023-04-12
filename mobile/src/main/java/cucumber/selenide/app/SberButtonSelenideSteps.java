@@ -5,7 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import selenide.app.SignInSelenideScreen;
 
-import static com.codeborne.selenide.appium.ScreenObject.screen;
+import static com.codeborne.selenide.Selenide.page;
 
 public class SberButtonSelenideSteps {
 
@@ -13,7 +13,7 @@ public class SberButtonSelenideSteps {
 
     @Given("I am open sign in screen")
     public void IAmOpenSignInScreen() throws InterruptedException {
-        signInSeleniumScreen = screen(SignInSelenideScreen.class);
+        signInSeleniumScreen = page(SignInSelenideScreen.class);
         Configuration.timeout = 30000;
     }
 
