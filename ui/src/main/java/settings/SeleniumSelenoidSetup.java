@@ -1,5 +1,6 @@
 package settings;
 
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
@@ -16,7 +17,7 @@ public abstract class SeleniumSelenoidSetup {
 
     @BeforeMethod
     public void beforeMethod() throws MalformedURLException {
-        driver = new RemoteWebDriver(getSelenoidUrl(), getOptionsSelenoid());
+        driver = new RemoteWebDriver(getSelenoidUrl(), (Capabilities) getOptionsSelenoid());
     }
 
     @AfterMethod

@@ -2,6 +2,7 @@ package settings;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,7 +15,7 @@ public abstract class SelenideDriverSetup {
     @BeforeMethod
     public void beforeMethod() {
         Configuration.pageLoadTimeout = 300000;
-        Configuration.browserCapabilities = new MutableCapabilities(getOptions());
+        Configuration.browserCapabilities = new MutableCapabilities((Capabilities) getOptions());
         WebDriverManager.chromedriver().setup();
     }
 
