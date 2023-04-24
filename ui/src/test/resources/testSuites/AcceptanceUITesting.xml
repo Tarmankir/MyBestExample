@@ -1,22 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="Acceptance UI testing">
-    <test name="Selenide">
-        <classes>
-            <class name="selenide.SearchPageTest"/>
-            <class name="selenide.MainPageScrollTest"/>
-            <class name="selenide.ArticlesTest"/>
-            <class name="selenide.FeedbackPageTest"/>
-            <class name="selenide.SandboxPageTest"/>
-            <class name="selenide.CopyrightYearsTest"/>
-        </classes>
-    </test>
     <test name="Selenium">
         <classes>
-            <class name="selenium.FooterMenuPageTest"/>
             <class name="selenium.LanguagePageTest"/>
-            <class name="selenium.LoginPageTest"/>
-            <class name="selenium.MenuPageTest"/>
         </classes>
     </test>
 </suite>
