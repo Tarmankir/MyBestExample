@@ -12,7 +12,7 @@ public class SeleniumDriverCapabilities {
         options.addArguments("--no-sandbox");
         options.addArguments("window-size=1280,768");
         options.addArguments("--disable-gpu");
-        WebDriverManager.chromedriver().driverVersion("112.0.5615.165").setup();;
+        WebDriverManager.chromedriver().driverVersion("112.0.5615.165").setup();
         return options;
     }
 }
