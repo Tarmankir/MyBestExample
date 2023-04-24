@@ -11,6 +11,7 @@ public class SeleniumDriverCapabilities {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("window-size=1280,768");
+        options.addArguments("--disable-gpu");
         WebDriverManager.chromedriver().setup();
         return options;
     }
